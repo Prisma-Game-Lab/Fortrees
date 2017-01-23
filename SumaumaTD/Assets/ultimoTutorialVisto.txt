@@ -1,0 +1,12 @@
+26
+
+no video 13 particulas de efeito na morte do inimigo ignorado - 20:40
+video 14  ignorado (laser beam)
+video 15  ignorado (particulas do laser)
+no video 17 *1*, game over animation ignorado
+no video 21 pause menu animation ignorado
+video 22 ignorado (criar um menu) ( para quit: application.quit(); para play SceneManager.LoadScene(levelToLoad); public variavel levelToLoad pra preencher no inspector com a primeira cena)
+video 24 ignorado (fading entre levels - parece muito bom)
+
+
+*1*scale with screen UI lembrar disso para não ter fixed size

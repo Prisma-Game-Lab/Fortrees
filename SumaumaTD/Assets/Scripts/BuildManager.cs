@@ -1,0 +1,88 @@
+﻿using JetBrains.Annotations;
+using UnityEngine;
+
+namespace Assets.Scripts
+{
+    public class BuildManager : MonoBehaviour {
+
+        #region Variables
+        public static BuildManager Instance;
+        public TurretUI TurretUI;
+
+        [Header("Optional")]
+        public GameObject BuildParticleEffectPrefab;
+        public GameObject SellParticleEffectPrefab;
+
+        private TurretBlueprint _turretToBuild;
+        private Node _selectedNode;
+        #endregion
+
+        #region Properties
+        public bool CanBuild { get { return _turretToBuild != null; } }
+        public bool HasEnoughMoney { get { return PlayerStats.Money >= _turretToBuild.Cost; } }
+        public TurretBlueprint GetTurretToBuild { get { return _turretToBuild; } }
+        #endregion
+
+        public void Awake()
+        {
+            if (Instance != null) {
+                Debug.LogError ("More than one BuildManager in scene!");
+                return;
+            }
+            Instance = this;
+        }
+        
+        public void SelectTurretToBuild(TurretBlueprint turret)
+        {
+            if (turret == null)
+            {
+                Debug.Log("prefab da torre não setado no shop");
+                return;
+            }
+            _turretToBuild = turret;
+            DeselectNode(); //selecting a turret from shop disables selection of node
+            
+        }
+
+        public void SelectNode(Node node)
+        {
+            if (_selectedNode == node)
+            {
+                DeselectNode();
+                return;
+            }
+
+            _selectedNode = node;
+            _turretToBuild = null; //selecting a node disables selection of turret from shop
+
+            TurretUI.SetTarget(node);
+        }
+
+        public void DeselectNode()
+        {
+            _selectedNode = null;
+            TurretUI.Hide();
+        }
+
+        //public void BuildTorrentOn(Node node)
+        //{
+        //    if (PlayerStats.Money < _turretToBuild.Cost)
+        //    {
+        //        Debug.Log("Not enough money");
+        //        return;
+        //    }
+        //    PlayerStats.Money -= _turretToBuild.Cost;
+
+        //    GameObject turret = (GameObject)Instantiate(_turretToBuild.Prefab, node.GetBuildPosition, Quaternion.identity);
+        //    node.Turret = turret;
+
+        //    if (BuildParticleEffectPrefab != null)
+        //    {
+        //        GameObject effect =
+        //            (GameObject) Instantiate(BuildParticleEffectPrefab, node.GetBuildPosition, Quaternion.identity);
+        //        Destroy(effect, 5f);
+        //    }
+
+        //}
+    }
+}
