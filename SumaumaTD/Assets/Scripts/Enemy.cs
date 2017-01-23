@@ -4,6 +4,7 @@ namespace Assets.Scripts
 {
     public class Enemy : MonoBehaviour
     {
+        //TODO remove unnecessary things
         [HideInInspector]
         public float Speed;
         public float StartSpeed = 10f;
@@ -35,7 +36,7 @@ namespace Assets.Scripts
         private void Die()
         {
             WaveSpawner.EnemiesAlive--;
-            PlayerStats.Money += Value;
+            //PlayerStats.Money += Value;
             Destroy(gameObject);
         }
 

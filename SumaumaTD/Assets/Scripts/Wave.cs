@@ -9,6 +9,6 @@ namespace Assets.Scripts
         public GameObject EnemyPrefab;
         public int Count;
         public float SpawnRate;
-
+        public int SeedsEarned;
     }
 }

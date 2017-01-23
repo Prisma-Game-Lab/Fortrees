@@ -5,11 +5,12 @@ namespace Assets.Scripts
 {
     public class TurretUI : MonoBehaviour
     {
+        //TODO remove unnecessary things
         public GameObject UI;
         private Node _target;
         public Text UpgradeCost;
         public Button UpgradeButton;
-        public Text SellCost;
+        //public Text SellCost;
 
         public void SetTarget(Node target)
         {
@@ -28,7 +29,7 @@ namespace Assets.Scripts
                 UpgradeButton.interactable = false;
             }
 
-            SellCost.text = "$" + _target.TurretBlueprint.GetSellCost();
+            //SellCost.text = "$" + _target.TurretBlueprint.GetSellCost();
 
             UI.SetActive(true);
         }
@@ -46,7 +47,7 @@ namespace Assets.Scripts
 
         public void Sell()
         {
-            _target.SellTurret();
+            //_target.SellTurret(); 
             BuildManager.Instance.DeselectNode();
         }
 

@@ -18,7 +18,7 @@ namespace Assets.Scripts
 
         private float _countdown = 2f;
         private int _waveNumber = 0;
-
+        private bool _seedsEarned = true;
 
         public void Start()
         {
@@ -31,12 +31,15 @@ namespace Assets.Scripts
             {
                 return;
             }
-
+            
             if(_countdown <= 0f) {
                 StartCoroutine(SpawnWave());
                 _countdown = TimeBetweenWaves;
+                _seedsEarned = false;
                 return;
             }
+
+            EarnSeeds();
 
             _countdown -= Time.deltaTime;
 
@@ -44,6 +47,15 @@ namespace Assets.Scripts
 
             WaveCountdownText.text = string.Format("{0:00.00}", _countdown);
 
+        }
+
+        private void EarnSeeds()
+        {
+            if(_seedsEarned)
+                return;
+
+            PlayerStats.Seeds += Waves[_waveNumber -1].SeedsEarned; //TODO: diminuir de acordo com quantos inimigos chegaram na base?
+            _seedsEarned = true;
         }
 
         //Chamada no começo da wave

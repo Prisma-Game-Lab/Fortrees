@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Assets.Scripts
 {
     public class BuildManager : MonoBehaviour {
+        //TODO remove unnecessary things
 
         #region Variables
         public static BuildManager Instance;
@@ -19,7 +20,7 @@ namespace Assets.Scripts
 
         #region Properties
         public bool CanBuild { get { return _turretToBuild != null; } }
-        public bool HasEnoughMoney { get { return PlayerStats.Money >= _turretToBuild.Cost; } }
+        public bool HasEnoughMoney { get { return PlayerStats.Seeds /*.Money*/ >= _turretToBuild.Cost; } }
         public TurretBlueprint GetTurretToBuild { get { return _turretToBuild; } }
         #endregion
 

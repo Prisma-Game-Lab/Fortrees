@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 namespace Assets.Scripts
 {
     public class Node : MonoBehaviour {
+        //TODO remove unnecessary things
+
         #region Variables
         public Color HoverColor;
         public Color NotEnoughMoneyColor;
@@ -76,12 +78,12 @@ namespace Assets.Scripts
 
         private void BuildTurret(TurretBlueprint blueprint)
         {
-            if (PlayerStats.Money < blueprint.Cost)
+            if (PlayerStats.Seeds /*.Money*/ < blueprint.Cost)
             {
                 Debug.Log("Not enough money");
                 return;
             }
-            PlayerStats.Money -= blueprint.Cost;
+            PlayerStats.Seeds /*.Money*/ -= blueprint.Cost;
 
             GameObject turret = (GameObject)Instantiate(blueprint.Prefab, GetBuildPosition, Quaternion.identity);
             Turret = turret;
@@ -100,12 +102,12 @@ namespace Assets.Scripts
 
         public void UpgradeTurret()
         {
-            if (PlayerStats.Money < TurretBlueprint.UpgradeCost)
+            if (PlayerStats.Seeds /*.Money*/ < TurretBlueprint.UpgradeCost)
             {
                 Debug.Log("Not enough money to upgrade");
                 return;
             }
-            PlayerStats.Money -= TurretBlueprint.UpgradeCost;
+            PlayerStats.Seeds /*.Money*/ -= TurretBlueprint.UpgradeCost;
 
             //Get rid of the old turret
             Destroy(Turret);
@@ -126,8 +128,12 @@ namespace Assets.Scripts
             Debug.Log("Turret upgraded!");
         }
 
+
+
+        /*
         public void SellTurret()
         {
+            
             PlayerStats.Money += TurretBlueprint.GetSellCost();
             //todo: spawn effect
 
@@ -140,7 +146,10 @@ namespace Assets.Scripts
 
             Destroy(Turret);
             TurretBlueprint = null;
-        }
+            
+
+            Debug.Log("Turret sold!");
+        }*/
         
     }
 }
