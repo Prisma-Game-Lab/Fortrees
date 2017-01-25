@@ -7,8 +7,10 @@ namespace Assets.Scripts
         //TODO remove unnecessary things
 
         #region Variables
+
+        public bool CanBuild = true;
         public Color HoverColor;
-        public Color NotEnoughMoneyColor;
+        public Color CantBuildColor;
         public Vector3 PositionOffset;
         [HideInInspector]
         public GameObject Turret;
@@ -37,36 +39,36 @@ namespace Assets.Scripts
         public void OnMouseDown()
         {
             if (EventSystem.current.IsPointerOverGameObject())
-                return;//checar se o mouse não tá na IU
-
+            {
+                return; //checar se o mouse não tá na IU
+            }
             if (Turret != null) {//se já existe um turret no node, seleciona o node 
                 _buildManager.SelectNode(this);
                 return;
             }
 
-            if (!_buildManager.CanBuild)
+            if (!CanBuild)
                 return;
 
-            //_buildManager.BuildTorrentOn(this);
-            BuildTurret(_buildManager.GetTurretToBuild);
+            _buildManager.SelectNodeToBuild(this);
+            //BuildTurret(_buildManager.GetTurretToBuild);
         }
-
-        public void OnMouseEnter()
+        
+        public void OnMouseEnter() //Hover
         {
 
             if (EventSystem.current.IsPointerOverGameObject())
-                return;//checar se o mouse não tá na IU
+            {
+                return; //checar se o mouse não tá na IU
+            }
 
-            if (!_buildManager.CanBuild)
-                return;
-
-            if (_buildManager.HasEnoughMoney)
+            if (CanBuild)
             {
                 _rend.material.color = HoverColor;
             }
             else
             {
-                _rend.material.color = NotEnoughMoneyColor;
+                _rend.material.color = CantBuildColor;
             }
 
         }
@@ -76,7 +78,7 @@ namespace Assets.Scripts
             _rend.material.color = _startColor;
         }
 
-        private void BuildTurret(TurretBlueprint blueprint)
+        public void BuildTurret(TurretBlueprint blueprint)
         {
             if (PlayerStats.Seeds /*.Money*/ < blueprint.Cost)
             {

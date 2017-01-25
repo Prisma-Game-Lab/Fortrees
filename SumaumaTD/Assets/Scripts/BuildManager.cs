@@ -9,6 +9,7 @@ namespace Assets.Scripts
         #region Variables
         public static BuildManager Instance;
         public TurretUI TurretUI;
+        //public bool CanBuild = true;
 
         [Header("Optional")]
         public GameObject BuildParticleEffectPrefab;
@@ -19,8 +20,8 @@ namespace Assets.Scripts
         #endregion
 
         #region Properties
-        public bool CanBuild { get { return _turretToBuild != null; } }
-        public bool HasEnoughMoney { get { return PlayerStats.Seeds /*.Money*/ >= _turretToBuild.Cost; } }
+        /*public bool CanBuild { get { return _turretToBuild != null; } }*/
+        public bool HasEnoughMoney { get { return true; /*PlayerStats.Seeds .Money >= _turretToBuild.Cost;*/ } }
         public TurretBlueprint GetTurretToBuild { get { return _turretToBuild; } }
         #endregion
 
@@ -41,9 +42,10 @@ namespace Assets.Scripts
                 return;
             }
             _turretToBuild = turret;
+            _selectedNode.BuildTurret(_turretToBuild);
             DeselectNode(); //selecting a turret from shop disables selection of node
-            
         }
+
 
         public void SelectNode(Node node)
         {
@@ -57,6 +59,21 @@ namespace Assets.Scripts
             _turretToBuild = null; //selecting a node disables selection of turret from shop
 
             TurretUI.SetTarget(node);
+
+        }
+
+        public void SelectNodeToBuild(Node node)
+        {
+            if (_selectedNode == node)
+            {
+                DeselectNode();
+                return;
+            }
+
+            _selectedNode = node;
+            _turretToBuild = null; //selecting a node disables selection of turret from shop
+
+            TurretUI.SetTargetToBuild(node);
         }
 
         public void DeselectNode()
@@ -85,5 +102,6 @@ namespace Assets.Scripts
         //    }
 
         //}
+        
     }
 }
