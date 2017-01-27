@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -11,12 +10,9 @@ namespace Assets.Scripts
         public static int Seeds;
         public int StartSeeds = 3;
         public static int Lives;
-        public static int TotalLives; //variavel criada para ser usada no script EnemyMovement
         public int StartLives = 20;
 
         public static int Waves;
-
-        [Header("UnityStuff")] public Image HealthBar;
 
         public void Start ()
         {
@@ -24,7 +20,6 @@ namespace Assets.Scripts
             //Money = StartMoney;
             Seeds = StartSeeds;
             Lives = StartLives;
-            TotalLives = StartLives; //start
         }
 
         public void Update ()
