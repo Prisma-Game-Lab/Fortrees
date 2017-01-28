@@ -18,10 +18,12 @@ namespace Assets.Scripts
         public TurretBlueprint TurretBlueprint;
         [HideInInspector]
         public bool IsUpgraded = false;
+        public bool IsSelectable = true;
 
         private Renderer _rend;
         private Color _startColor;
         private BuildManager _buildManager;
+        private NodeSelect _nodeSelect;
         #endregion
         
         #region Properties
@@ -33,6 +35,7 @@ namespace Assets.Scripts
             _rend = GetComponent<Renderer>();
             _startColor = _rend.material.color;
             _buildManager = BuildManager.Instance;
+            _nodeSelect = gameObject.GetComponentInParent<NodeSelect>();
         }
 
        
@@ -42,16 +45,8 @@ namespace Assets.Scripts
             {
                 return; //checar se o mouse não tá na IU
             }
-            if (Turret != null) {//se já existe um turret no node, seleciona o node 
-                _buildManager.SelectNode(this);
-                return;
-            }
 
-            if (!CanBuild)
-                return;
-
-            _buildManager.SelectNodeToBuild(this);
-            //BuildTurret(_buildManager.GetTurretToBuild);
+            BuildOnSelectedNode();
         }
         
         public void OnMouseEnter() //Hover
@@ -62,6 +57,16 @@ namespace Assets.Scripts
                 return; //checar se o mouse não tá na IU
             }
 
+            _nodeSelect.changeSelectedNode(this);
+        }
+
+        public void OnMouseExit()
+        {
+            _rend.material.color = _startColor;
+        }
+
+        public void Highlight()
+        {
             if (CanBuild)
             {
                 _rend.material.color = HoverColor;
@@ -70,12 +75,21 @@ namespace Assets.Scripts
             {
                 _rend.material.color = CantBuildColor;
             }
-
         }
 
-        public void OnMouseExit()
+        public void BuildOnSelectedNode()
         {
-            _rend.material.color = _startColor;
+            if (Turret != null)
+            {//se já existe um turret no node, seleciona o node 
+                _buildManager.SelectNode(this);
+                return;
+            }
+
+            if (!CanBuild)
+                return;
+
+            _buildManager.SelectNodeToBuild(this);
+            //BuildTurret(_buildManager.GetTurretToBuild);
         }
 
         public void BuildTurret(TurretBlueprint blueprint)
