@@ -56,7 +56,7 @@ namespace Assets.Scripts
             }
 
             _selectedNode = node;
-            _turretToBuild = null; //selecting a node disables selection of turret from shop
+            _turretToBuild = null; 
 
             TurretUI.SetTarget(node);
 
@@ -71,7 +71,7 @@ namespace Assets.Scripts
             }
 
             _selectedNode = node;
-            _turretToBuild = null; //selecting a node disables selection of turret from shop
+            _turretToBuild = null; 
 
             TurretUI.SetTargetToBuild(node);
         }

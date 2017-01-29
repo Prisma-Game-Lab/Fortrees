@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -8,12 +9,18 @@ namespace Assets.Scripts
 
         public GameObject Prefab;
         public GameObject UpgradedPrefab;
+        public Text CostText;
         public int Cost;
         public int UpgradeCost;
 
         public int GetSellCost()
         {
             return Cost/2;
+        }
+
+        public void Start()
+        {
+            CostText.text =  "x" + Cost + "seeds";
         }
 
     }
