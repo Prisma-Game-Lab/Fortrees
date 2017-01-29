@@ -5,7 +5,8 @@ namespace Assets.Scripts
     public class CameraController : MonoBehaviour {
 
         ///TODO: Clamp side movements
-        public float ScrollSpeed = 5f;
+        public float MouseScrollSpeed = 5f;
+        public float ControllerScrollSpeed = 0.05f;
         public float PanSpeed = 30f;
         public float PanBorderThickness = 10f;
 
@@ -18,6 +19,9 @@ namespace Assets.Scripts
         [Header("Zoom")]
         [Tooltip("Quando menor o ortographic size, maior o zoom")] public float MinOrtographicSize = 5f;
         [Tooltip("Quando menor o ortographic size, maior o zoom")] public float MaxOrtographicSize = 45f;
+
+        [Header("Controller")]
+        [Tooltip("Valor mínimo que um eixo do controle precisa ir para uma direção para detectar movimento")] public float minimumAxisToMove = 0.5f;
 
         private Camera cam;
 
@@ -39,26 +43,31 @@ namespace Assets.Scripts
 
             Vector3 pos = transform.position;
 
-            if (Input.GetKey ("w") || Input.mousePosition.y >= Screen.height - PanBorderThickness) {
+            if (Input.GetAxis("CameraVertical") > minimumAxisToMove || Input.GetKey ("w") || Input.mousePosition.y >= Screen.height - PanBorderThickness) {
                 pos.z += PanSpeed * Time.deltaTime;
                 pos.z = Mathf.Clamp(pos.z, MinZ, MaxZ);
             }
-            if (Input.GetKey ("s") || Input.mousePosition.y <= PanBorderThickness) {
+            if (Input.GetAxis("CameraVertical") < -minimumAxisToMove || Input.GetKey ("s") || Input.mousePosition.y <= PanBorderThickness) {
                 pos.z -= PanSpeed * Time.deltaTime;
                 pos.z = Mathf.Clamp(pos.z, MinZ, MaxZ);
             }
-            if (Input.GetKey ("d") || Input.mousePosition.x >= Screen.width - PanBorderThickness) {
+            if (Input.GetAxis("CameraHorizontal") > minimumAxisToMove || Input.GetKey ("d") || Input.mousePosition.x >= Screen.width - PanBorderThickness) {
                 pos.x += PanSpeed * Time.deltaTime;
                 pos.x = Mathf.Clamp(pos.x, MinX, MaxX);
             }
-            if (Input.GetKey ("a") || Input.mousePosition.x <= PanBorderThickness) {
+            if (Input.GetAxis("CameraHorizontal") < -minimumAxisToMove || Input.GetKey ("a") || Input.mousePosition.x <= PanBorderThickness) {
                 pos.x -= PanSpeed * Time.deltaTime;
                 pos.x = Mathf.Clamp(pos.x, MinX, MaxX);
             }
             transform.position = pos;
 
-            float scroll = Input.GetAxis ("Mouse ScrollWheel");
-            cam.orthographicSize -= scroll * 1000 * ScrollSpeed * Time.deltaTime;
+            float controllerScroll = Input.GetAxis("CameraZoom");
+            float mouseScroll = Input.GetAxis ("Mouse ScrollWheel");
+       
+            float scroll = Mathf.Abs(controllerScroll) > Mathf.Abs(mouseScroll) ? controllerScroll : mouseScroll; //o maior valor entre controllerScroll e mouseScroll vira o valor de scroll
+            float scrollSpeed = (scroll == mouseScroll) ? MouseScrollSpeed : ControllerScrollSpeed;
+
+            cam.orthographicSize -= scroll * 1000 * scrollSpeed * Time.deltaTime;
             cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, MinOrtographicSize, MaxOrtographicSize);
         }
     }
