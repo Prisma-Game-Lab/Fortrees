@@ -5,11 +5,10 @@ namespace Assets.Scripts
 {
     public class EndUI : MonoBehaviour {
 
-        public Sprite treePlaceholderFullHealth;
-        public Sprite treePlaceholderMidHealth;
-        public Sprite treePlaceholderLowHealth;
-        public GameObject TreeSprites;
-        public GameObject BaseColor;
+        public Sprite TreePlaceholderFullHealth;
+        public Sprite TreePlaceholderMidHealth;
+        public Sprite TreePlaceholderLowHealth;
+        public GameObject TreeSpriteGameObject;
         private Color _startColor;
 
         [Header("UnityStuff")]
@@ -17,8 +16,8 @@ namespace Assets.Scripts
 
         public void Start()
         {
-            _startColor = TreeSprites.GetComponent<SpriteRenderer>().color;
-            TreeSprites.GetComponent<SpriteRenderer>().sprite = treePlaceholderFullHealth;
+            _startColor = TreeSpriteGameObject.GetComponent<SpriteRenderer>().color;
+            TreeSpriteGameObject.GetComponent<SpriteRenderer>().sprite = TreePlaceholderFullHealth;
 
         }
 
@@ -32,21 +31,21 @@ namespace Assets.Scripts
 
             s = 1 - HealthBar.fillAmount;
 
-            TreeSprites.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(h, s, v);
+            TreeSpriteGameObject.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(h, s, v);
             
             if (HealthBar.fillAmount <= 0.6f && HealthBar.fillAmount >= 0.3f)//mid
             {
-                TreeSprites.GetComponent<SpriteRenderer>().sprite = treePlaceholderMidHealth;
+                TreeSpriteGameObject.GetComponent<SpriteRenderer>().sprite = TreePlaceholderMidHealth;
             }
 
             else if (HealthBar.fillAmount < 0.3f)//low
             {
-                TreeSprites.GetComponent<SpriteRenderer>().sprite = treePlaceholderLowHealth;
+                TreeSpriteGameObject.GetComponent<SpriteRenderer>().sprite = TreePlaceholderLowHealth;
             }
 
             else//full
             {
-                TreeSprites.GetComponent<SpriteRenderer>().sprite = treePlaceholderFullHealth;
+                TreeSpriteGameObject.GetComponent<SpriteRenderer>().sprite = TreePlaceholderFullHealth;
             }
         }
     }

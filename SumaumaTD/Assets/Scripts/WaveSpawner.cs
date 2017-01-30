@@ -7,9 +7,8 @@ namespace Assets.Scripts
     public class WaveSpawner : MonoBehaviour
     {
         public static int EnemiesAlive = 0;
-
-        //public Transform EnemyPrefab;
-        public Wave[] Waves;
+        
+        private Wave[] _waves;
         public Transform SpawnPoint;
         public Text WaveCountdownText;
 
@@ -23,6 +22,18 @@ namespace Assets.Scripts
         public void Start()
         {
             EnemiesAlive = 0;
+            SetWaves();
+        }
+
+        private void SetWaves()
+        {
+            var waveCount = transform.childCount;
+            _waves = new Wave[waveCount];
+            for (var i = 0; i < waveCount; i++)
+            {
+                var wave = transform.GetChild(i).GetComponent<Wave>();
+                _waves[i] = wave;
+            }
         }
 
         // Update is called once per frame
@@ -53,8 +64,8 @@ namespace Assets.Scripts
         {
             if(_seedsEarned)
                 return;
-
-            PlayerStats.Seeds += Waves[_waveNumber -1].SeedsEarned; //TODO: diminuir de acordo com quantos inimigos chegaram na base?
+            //TODO VER PQ SEEDS
+            PlayerStats.Seeds += _waves[_waveNumber -1].SeedsEarned; //TODO: diminuir de acordo com quantos inimigos chegaram na base?
             _seedsEarned = true;
         }
 
@@ -63,15 +74,22 @@ namespace Assets.Scripts
         {
             
             PlayerStats.Waves ++;
-            Wave wave = Waves[_waveNumber];
-            for (var i = 0; i < wave.Count; i++)
+            Wave wave = _waves[_waveNumber];
+
+            for (var g = 0; g < wave.Groups.Length; g++)
             {
-                SpawnEnemy(wave.EnemyPrefab);
-                yield return new WaitForSeconds(1f/wave.SpawnRate);
+                Group group = wave.Groups[g];
+
+                for (var i = 0; i < group.Count; i++)
+                {
+                    SpawnEnemy(group.EnemyPrefab);
+                    yield return new WaitForSeconds(1f/ group.SpawnRate);
+                }
             }
+            
             _waveNumber++;
 
-            if (_waveNumber == Waves.Length)
+            if (_waveNumber == _waves.Length)
             {
                 Debug.Log("Level won!");
                 this.enabled = false;

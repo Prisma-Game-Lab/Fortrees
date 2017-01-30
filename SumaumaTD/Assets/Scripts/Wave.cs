@@ -2,13 +2,10 @@
 
 namespace Assets.Scripts
 {
-    [System.Serializable]
-    public class Wave
+    public class Wave : MonoBehaviour
     {
-        
-        public GameObject EnemyPrefab;
-        public int Count;
-        public float SpawnRate;
+
         public int SeedsEarned;
+        public Group[] Groups;
     }
 }

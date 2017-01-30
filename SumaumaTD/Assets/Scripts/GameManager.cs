@@ -10,6 +10,11 @@ namespace Assets.Scripts
         public void Start()
         {
             GameIsOver = false;
+
+            #if DEBUG
+            Debug.Assert(GameObject.Find("WaveManager") != null, "Scene precisa de WaveManager seu mongol");
+            #endif
+
         }
 
         public void Update ()
