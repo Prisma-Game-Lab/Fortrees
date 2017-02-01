@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
@@ -7,12 +8,21 @@ namespace Assets.Scripts
     {
 
         public GameObject PauseUI;
+		[Tooltip("Igual o Frames To Wait do NodeController.")] public int FramesToWait = 5; //TODO: juntar com o FramesToWait do NodeController.cs
+
+		private int _framesLeftToWait = 0;
 
         public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+		{
+			while (_framesLeftToWait > 0) {
+				_framesLeftToWait--;
+				return;
+			}
+
+			if ( Input.GetButtonDown("PauseButton") || Input.GetKeyDown(KeyCode.P))
             {
-                TogglePause();
+				TogglePause ();
+				_framesLeftToWait = FramesToWait;
             }
         }
 

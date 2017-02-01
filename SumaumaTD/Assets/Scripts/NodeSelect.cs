@@ -15,7 +15,7 @@ namespace Assets.Scripts
         private Vector3 _selectPosition;
 		private float _radius;
 		private Node _selectedNode;
-        private int _framesWaited = 0;
+		private int _framesLeftToWait = 0;
         private GameObject _buildCanvas;
         private GameObject _updateCanvas;
         private TurretUI _turretUIScript;
@@ -36,9 +36,9 @@ namespace Assets.Scripts
 		// Update is called once per frame
 		void Update () {
             //Evita que a seleção ande muito quando o botão é pressionado
-            if(_framesWaited > 0)
+            if(_framesLeftToWait > 0)
             {
-                _framesWaited--;
+                _framesLeftToWait--;
                 return;
             }
 
@@ -47,26 +47,26 @@ namespace Assets.Scripts
             if (Input.GetAxis("HorizontalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 changeSelectedNode(Vector3.left);
-                _framesWaited = framesToWait;
+                _framesLeftToWait = framesToWait;
 			}
 
             //if (Input.GetKeyDown (KeyCode.RightArrow)) {
             if (Input.GetAxis("HorizontalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 changeSelectedNode (Vector3.right);
-                _framesWaited = framesToWait;
+                _framesLeftToWait = framesToWait;
             }
 
             //if (Input.GetKeyDown (KeyCode.UpArrow)) {
             if (Input.GetAxis("VerticalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.UpArrow)) { 
                 changeSelectedNode (Vector3.forward);
-                _framesWaited = framesToWait;
+                _framesLeftToWait = framesToWait;
             }
 
             //if (Input.GetKeyDown (KeyCode.DownArrow)) {
             if (Input.GetAxis("VerticalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.DownArrow)) { 
                 changeSelectedNode (Vector3.back);
-                _framesWaited = framesToWait;
+                _framesLeftToWait = framesToWait;
             }
 
             //checa controles do Update Canvas (se ele estiver ativado)
@@ -74,13 +74,13 @@ namespace Assets.Scripts
                 if (Input.GetAxis("UpgradeButton") != 0.0)
                 {
                     _turretUIScript.Upgrade();
-                    _framesWaited = framesToWait;
+                    _framesLeftToWait = framesToWait;
                 }
 
                 if(Input.GetAxis("CloseMenuButton") != 0.0)
                 {
                     _updateCanvas.SetActive(false);
-                    _framesWaited = framesToWait;
+                    _framesLeftToWait = framesToWait;
                 }
             }
 
@@ -89,20 +89,20 @@ namespace Assets.Scripts
                 if (Input.GetAxis("StandardBuyButton") != 0.0)
                 {
                     _shop.SelectStandardTurret();
-                    _framesWaited = framesToWait;
+                    _framesLeftToWait = framesToWait;
                 }
 
 
                 if (Input.GetAxis("MissileBuyButton") != 0.0)
                 {
                     _shop.SelectAnotherTurret();
-                    _framesWaited = framesToWait;
+                    _framesLeftToWait = framesToWait;
                 }
 
                 if (Input.GetAxis("CloseMenuButton") != 0.0)
                 {
                     _buildCanvas.SetActive(false);
-                    _framesWaited = framesToWait;
+                    _framesLeftToWait = framesToWait;
                 }
             }
 
@@ -112,7 +112,7 @@ namespace Assets.Scripts
                 if (Input.GetAxis("NodeSelectionButton") != 0.0)
                 {
                     _selectedNode.BuildOnSelectedNode();
-                    _framesWaited = framesToWait;
+                    _framesLeftToWait = framesToWait;
                 }
             }
         }
