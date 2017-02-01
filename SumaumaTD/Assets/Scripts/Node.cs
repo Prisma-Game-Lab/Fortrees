@@ -32,8 +32,8 @@ namespace Assets.Scripts
 
         public void Start()
         {
-            _rend = GetComponent<Renderer>();
-            _startColor = _rend.material.color;
+            _rend = transform.GetChild(0).GetComponent<Renderer>();//GetComponent<Renderer>();
+            //_startColor = _rend.material.color;
             _buildManager = BuildManager.Instance;
             _nodeSelect = gameObject.GetComponentInParent<NodeSelect>();
         }
@@ -62,14 +62,16 @@ namespace Assets.Scripts
 
         public void OnMouseExit()
         {
-            _rend.material.color = _startColor;
+            _rend.material = _nodeSelect.DefaultMaterial;
+            //_rend.material.color = _startColor;
         }
 
         public void Highlight()
         {
             if (CanBuild)
             {
-                _rend.material.color = HoverColor;
+                _rend.material = _nodeSelect.HighlightedMaterial;
+                // _rend.material.color = HoverColor;
             }
             else
             {

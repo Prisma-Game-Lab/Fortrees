@@ -4,9 +4,13 @@ namespace Assets.Scripts
 {
 	public class NodeSelect : MonoBehaviour {
 
-		public Node startNode;
-		public float nodeSize;
-        public GameObject turretUI;
+		public Node StartNode;
+		public float NodeSize;
+        public GameObject TurretUI;
+
+	    public Material DefaultMaterial;
+        public Material HighlightedMaterial;
+
 
         [Header("Controller")]
         [Tooltip("Valor mínimo que um eixo do controle precisa ir para uma direção para detectar movimento")] public float minimumAxisToMove = 0.5f;
@@ -24,13 +28,13 @@ namespace Assets.Scripts
 
         // Use this for initialization
         void Start () {
-			_selectPosition = startNode.transform.position;
-			_radius = nodeSize / 2;
-			_selectedNode = startNode;
-            _updateCanvas = turretUI.transform.GetChild(0).gameObject;
-            _buildCanvas = turretUI.transform.GetChild(1).gameObject;
-            _shop = turretUI.gameObject.GetComponent<Shop>();
-            _turretUIScript = turretUI.gameObject.GetComponent<TurretUI>();
+			_selectPosition = StartNode.transform.position;
+			_radius = NodeSize / 2;
+			_selectedNode = StartNode;
+            _updateCanvas = TurretUI.transform.GetChild(0).gameObject;
+            _buildCanvas = TurretUI.transform.GetChild(1).gameObject;
+            _shop = TurretUI.gameObject.GetComponent<Shop>();
+            _turretUIScript = TurretUI.gameObject.GetComponent<TurretUI>();
         }
 
 		// Update is called once per frame
