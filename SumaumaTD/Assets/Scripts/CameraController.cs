@@ -2,14 +2,17 @@
 
 namespace Assets.Scripts
 {
-    public class CameraController : MonoBehaviour {
+    public class CameraController : MonoBehaviour
+    {
+
+        public bool IsFixed;
 
         ///TODO: Clamp side movements
         public float MouseScrollSpeed = 5f;
         public float ControllerScrollSpeed = 0.05f;
         public float PanSpeed = 30f;
         public float PanBorderThickness = 10f;
-
+        
         [Header("Camera Clamp")]
 		[Tooltip("Posição mínima em X da câmera quando o zoom está no mínimo")] public float MinXZoomMin = -40f;
 		[Tooltip("Posição máxima em X da câmera quando o zoom está no mínimo")] public float MaxXZoomMin = 70f;
@@ -48,6 +51,9 @@ namespace Assets.Scripts
                 this.enabled = false;
                 return;
             }
+
+            if(IsFixed)
+                return;
 
             Vector3 pos = transform.position;
 			pos.z = Mathf.Clamp(pos.z, minZ, maxZ);
