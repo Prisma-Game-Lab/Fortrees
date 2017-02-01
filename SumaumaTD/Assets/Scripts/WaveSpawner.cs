@@ -8,16 +8,20 @@ namespace Assets.Scripts
     {
         public static int EnemiesAlive = 0;
         
-        private Wave[] _waves;
+        [Tooltip("Ponto do qual o inimigo spawna")]
         public Transform SpawnPoint;
         public Text WaveCountdownText;
 
         public float TimeBetweenWaves = 5f;
+        
+        [Header("UnityStuff")]
+        public Image WaveCountdownBar;
         //public float TimeBetweenEnemySpawns = 0.5f;
-
+        private Wave[] _waves;
         private float _countdown = 2f;
         private int _waveNumber = 0;
         private bool _seedsEarned = true;
+        private float _countdownReset = 2f; // used to fill the bar
 
         public void Start()
         {
@@ -46,6 +50,7 @@ namespace Assets.Scripts
             if(_countdown <= 0f) {
                 StartCoroutine(SpawnWave());
                 _countdown = TimeBetweenWaves;
+                _countdownReset = _countdown;
                 _seedsEarned = false;
                 return;
             }
@@ -57,6 +62,8 @@ namespace Assets.Scripts
             _countdown = Mathf.Clamp(_countdown, 0f, Mathf.Infinity);
 
             WaveCountdownText.text = string.Format("{0:00.00}", _countdown);
+
+            WaveCountdownBar.fillAmount = _countdown / _countdownReset;
 
         }
 
