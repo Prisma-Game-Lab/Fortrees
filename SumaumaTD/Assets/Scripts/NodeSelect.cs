@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Linq;
 
 namespace Assets.Scripts
 {
@@ -50,26 +51,29 @@ namespace Assets.Scripts
             //if (Input.GetKeyDown (KeyCode.LeftArrow)) {
             if (Input.GetAxis("HorizontalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                changeSelectedNode(Vector3.left);
+                Debug.Log("Horizontal " + Input.GetAxis("HorizontalSelection"));
+                ChangeSelectedNode(Vector3.left);
                 _framesLeftToWait = framesToWait;
 			}
 
             //if (Input.GetKeyDown (KeyCode.RightArrow)) {
             if (Input.GetAxis("HorizontalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                changeSelectedNode (Vector3.right);
+                ChangeSelectedNode (Vector3.right);
                 _framesLeftToWait = framesToWait;
             }
 
             //if (Input.GetKeyDown (KeyCode.UpArrow)) {
-            if (Input.GetAxis("VerticalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.UpArrow)) { 
-                changeSelectedNode (Vector3.forward);
+            if (Input.GetAxis("VerticalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                ChangeSelectedNode (Vector3.forward);
                 _framesLeftToWait = framesToWait;
             }
 
             //if (Input.GetKeyDown (KeyCode.DownArrow)) {
-            if (Input.GetAxis("VerticalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.DownArrow)) { 
-                changeSelectedNode (Vector3.back);
+            if (Input.GetAxis("VerticalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                ChangeSelectedNode (Vector3.back);
                 _framesLeftToWait = framesToWait;
             }
 
@@ -121,37 +125,59 @@ namespace Assets.Scripts
             }
         }
 
-		void changeSelectedNode(Vector3 dir)
+		void ChangeSelectedNode(Vector3 dir)
         {
             dir = 5 * dir; //5 é o tamanho do espaço entre os centros dos nodes
 			Vector3 temp = _selectPosition + dir; //temp guarda o centro onde a esfera vai buscar por nodes
 			Collider[] cast = Physics.OverlapSphere (temp, _radius);
 
-			if (cast.Length < 1) { //se nada foi overlapped, estamos no último node daquela direção
+            if (cast.Length < 1) { //se nada foi overlapped, estamos no último node daquela direção
 				return;
 			}
 
 			while (cast[0].gameObject.tag != "Node" || !cast[0].GetComponent<Node>().IsSelectable) { //procura por um node selecionável
-				temp += dir;
-				cast = Physics.OverlapSphere (temp, _radius);
+                Collider castedNode = FindNodeInCollisionArray(cast);
 
-                Debug.Log("Teste");
+                if(castedNode != null) //o FindNodeInCollisionArray retorna null se não encontrar nada
+                {
+                    cast[0] = castedNode;
+                    break;
+                }
+
+                //Node não encontrado no vetor, procurando na próxima posição que pode ter um node
+                temp += dir;
+				cast = Physics.OverlapSphere (temp, _radius);
                 if (cast.Length < 1)
 					return;
 			}
-
+            
 			_selectedNode.OnMouseExit (); //tira o highlight
 			_selectedNode = cast [0].GetComponent<Node>();
 			_selectedNode.Highlight ();
 			_selectPosition = temp;
 		}
 
-        public void changeSelectedNode (Node node)
+        public void ChangeSelectedNode (Node node)
         {
             _selectedNode.OnMouseExit();
             _selectedNode = node;
             _selectedNode.Highlight();
             _selectPosition = _selectedNode.transform.position;
+        }
+
+        Collider FindNodeInCollisionArray(Collider[] cast)
+        {
+            while (cast.Length > 2)
+            {
+                cast = cast.Skip(1).ToArray(); //obrigado http://stackoverflow.com/questions/27965131/how-to-remove-the-first-element-in-an-array
+
+                if (cast[0].gameObject.tag == "Node") //achou o Node
+                {
+                    return cast[0];
+                }
+            }
+
+            return null;
         }
 	}
 }

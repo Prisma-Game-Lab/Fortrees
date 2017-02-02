@@ -57,7 +57,7 @@ namespace Assets.Scripts
                 return; //checar se o mouse não tá na IU
             }
 
-            _nodeSelect.changeSelectedNode(this);
+            _nodeSelect.ChangeSelectedNode(this);
         }
 
         public void OnMouseExit()
