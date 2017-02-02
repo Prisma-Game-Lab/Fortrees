@@ -5,6 +5,7 @@ namespace Assets.Scripts
     public class GameManager : MonoBehaviour
     {
         public GameObject GameOverUi;
+        public GameObject CompleteLevelUi;
         public static bool GameIsOver;
 
         public void Start()
@@ -26,6 +27,12 @@ namespace Assets.Scripts
             {
                 EndGame();
             }
+        }
+
+        public void WinLevel()
+        {
+            GameIsOver = true;
+            CompleteLevelUi.SetActive(true);
         }
 
         private void EndGame()

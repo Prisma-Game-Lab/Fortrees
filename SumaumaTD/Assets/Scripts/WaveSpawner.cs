@@ -16,6 +16,7 @@ namespace Assets.Scripts
         
         [Header("UnityStuff")]
         public Image WaveCountdownBar;
+        public GameManager gameManager;
         //public float TimeBetweenEnemySpawns = 0.5f;
         private Wave[] _waves;
         private float _countdown = 2f;
@@ -98,7 +99,7 @@ namespace Assets.Scripts
 
             if (_waveNumber == _waves.Length)
             {
-                Debug.Log("Level won!");
+                gameManager.WinLevel();
                 this.enabled = false;
             }
         }

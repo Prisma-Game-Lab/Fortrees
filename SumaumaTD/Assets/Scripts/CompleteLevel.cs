@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
-    public class GameOver : MonoBehaviour
+    public class CompleteLevel : MonoBehaviour
     {
+        public int NextLevelSceneIndex;
         public int MenuSceneIndex = 0;
 
-        public void Retry()
+        public void Continue()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(NextLevelSceneIndex);
         }
 
         public void Menu()
