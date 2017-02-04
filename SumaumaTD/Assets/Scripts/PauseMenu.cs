@@ -14,15 +14,19 @@ namespace Assets.Scripts
 
         public void Update()
 		{
-			while (_framesLeftToWait > 0) {
-				_framesLeftToWait--;
-				return;
-			}
-
-			if ( Input.GetButtonDown("PauseButton") || Input.GetKeyDown(KeyCode.P))
+            if (!GameManager.GameIsOver)
             {
-				TogglePause ();
-				_framesLeftToWait = FramesToWait;
+                while (_framesLeftToWait > 0)
+                {
+                    _framesLeftToWait--;
+                    return;
+                }
+
+                if (Input.GetButtonDown("PauseButton") || Input.GetKeyDown(KeyCode.P))
+                {
+                    TogglePause();
+                    _framesLeftToWait = FramesToWait;
+                }
             }
         }
 
