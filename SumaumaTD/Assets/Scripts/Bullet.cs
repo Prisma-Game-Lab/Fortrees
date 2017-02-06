@@ -3,23 +3,39 @@
 namespace Assets.Scripts
 {
     public class Bullet : MonoBehaviour {
-
-        public float Speed = 70f;
+        #region Variables
+        public float Speed = 50f;
         public float ExplosionRadius = 0f;
         public GameObject ImpactEffect;
         public int Damage = 50;
+
+        [Header("Bezier")]
+        [Tooltip("Define a porcentagem do caminho da bala onde ocorre a altura máxima")]
+        [Range(0,1)]
+        public float BezierPointX = 0.5f;
+
+        [Tooltip("Define a altura máxima que a parábola da bala atinge")]
+        public float MaxHeight = 5f;
+        
+        private float _bezierCounter;
         private Transform _target;
-        private Vector3 _startScale;
+        private Vector3 _newdir;
+        private Vector3 _bezierPoint;
+        private Vector3 _startPosition;
+        private float _totalDistance;
+        private float _dir;
+        #endregion
 
-
-        public void Start()
+        public void Awake()
         {
-            _startScale = transform.localScale;
-            //Time.timeScale = 0.5f;
+            _bezierCounter = 0;
+            _startPosition = transform.position;
         }
 
         public void Seek(Transform target){
-            this._target = target;
+            _target = target;
+            _totalDistance = (_startPosition - _target.position).magnitude;
+            _dir = _totalDistance;
         }
 
         // Update is called once per frame
@@ -28,85 +44,30 @@ namespace Assets.Scripts
                 Destroy (gameObject);
                 return;
             }
-
-            Vector3 dir = _target.position - transform.position;
+            
+            //Vector3 dir = _target.position - transform.position;
             float distanceThisFrame = Speed * Time.deltaTime;
+            _dir -= distanceThisFrame;
 
-            if (dir.magnitude <= distanceThisFrame) {
+            if (_dir <= distanceThisFrame) {
                 HitTarget ();
                 return;
             }
 
 
-            //alternativa 1
-            //float temp = dir.y;
-            //var angle = 30;
-            //float RadAngle = angle * Mathf.Deg2Rad;
-            //float distance = dir.magnitude;
-            ////dir.y = distance * Mathf.Tan(RadAngle); //elevation angle
-            ////Debug.Log("dir:" + dir);
+            _bezierPoint = _target.position;
+            _bezierPoint.y += MaxHeight;
+            _bezierPoint.x = (_bezierPoint.x + _startPosition.x)*BezierPointX;
+            //_bezierPoint.z = (_bezierPoint.z + _startPosition.z) * BezierPointX;
 
-            //distance += temp / Mathf.Tan(RadAngle); // Correction for small height differences
-
-            //float velocity = Mathf.Sqrt(distance * Physics.gravity.magnitude / Mathf.Sin(2 * RadAngle));
-            ////Debug.Log("velocity:"+ velocity);
-
-            //var vector = velocity * dir.normalized;
-           
-            //alternativa2
-            //y = ((tan ângulo) * x) - (g*x²/(2*(v0*cos(ângulo))²)
-            //var y = (Mathf.Tan(RadAngle) * dir.x) - (Physics.gravity.magnitude * Mathf.Pow(dir.x,2)/ (2*Mathf.Pow(20*distanceThisFrame * Mathf.Cos(RadAngle),2) ));
-            //dir.y = y;
-            //var newScale = _startScale*Mathf.Sin( distanceThisFrame);
-
-            //transform.localScale = newScale;
-
-
-            transform.Translate (dir.normalized*distanceThisFrame, Space.World);
-            transform.LookAt(_target);
-        }
-
-       private Vector3 CalculateVelocityVector(Transform source, Transform target, float angle)
-        {
-            Vector3 direction = target.position - source.position;            // get target direction
-            float h = direction.y;                                            // get height difference
-            direction.y = 0;                                                // remove height
-            float distance = direction.magnitude;                            // get horizontal distance
-            float a = angle * Mathf.Deg2Rad;                                // Convert angle to radians
-            direction.y = distance * Mathf.Tan(a);                            // Set direction to elevation angle
-            distance += h / Mathf.Tan(a);                                        // Correction for small height differences
-
-            // calculate velocity
-            float velocity = Mathf.Sqrt(distance * Physics.gravity.magnitude / Mathf.Sin(2 * a));
-            return velocity * direction.normalized;
             
-        }
+            _newdir = GetPoint(_startPosition, _bezierPoint, _target.position, _bezierCounter);
+            
+            _bezierCounter += distanceThisFrame/_totalDistance;
 
-        private Vector3 calculateBestThrowSpeed(Vector3 origin, Vector3 target, float timeToTarget)
-        {
-            // calculate vectors
-            Vector3 distance = target - origin;
-            Vector3 distanceXZ = distance;
-            distanceXZ.y = 0;
-
-            // calculate xz and y
-            float y = distance.y;
-            float xz = distanceXZ.magnitude;
-
-            // calculate starting speeds for xz and y. Physics forumulase deltaX = v0 * t + 1/2 * a * t * t
-            // where a is "-gravity" but only on the y plane, and a is 0 in xz plane.
-            // so xz = v0xz * t => v0xz = xz / t
-            // and y = v0y * t - 1/2 * gravity * t * t => v0y * t = y + 1/2 * gravity * t * t => v0y = y / t + 1/2 * gravity * t
-            float t = timeToTarget;
-            float v0y = y / t + 0.5f * Physics.gravity.magnitude * t;
-            float v0xz = xz / t;
-
-            // create result vector for calculated starting speeds
-            Vector3 result = distanceXZ.normalized;        // get direction of xz but with magnitude 1
-            result *= v0xz;                                // set magnitude of xz to v0xz (starting speed in xz plane)
-            result.y = v0y;                                // set y to v0y (starting speed of y plane)
-
-            return result;
+            //transform.Translate (newdir.normalized*distanceThisFrame, Space.World);
+            transform.position = _newdir;
+            transform.LookAt(_target);
         }
 
         //instantiate effect and explode/hit enemy and destroy bullet
@@ -117,6 +78,7 @@ namespace Assets.Scripts
             if (ExplosionRadius > 0f)
             {
                 Explode();
+
             }
             else
             {
@@ -154,6 +116,21 @@ namespace Assets.Scripts
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, ExplosionRadius);
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(_newdir, 0.1f);
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(_bezierPoint, 0.1f);
         }
+
+        public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, float t)
+        {
+            
+            var first = Vector3.Lerp(p0, p1, t);
+            var second = Vector3.Lerp(p1, p2, t);
+            var third = Vector3.Lerp(first, second, t);
+            
+            return third;
+        }
+
     }
 }
