@@ -31,8 +31,15 @@ namespace Assets.Scripts
         [Header("Controller")]
         [Tooltip("Valor mínimo que um eixo do controle precisa ir para uma direção para detectar movimento")] public float minimumAxisToMove = 0.5f;
 
+        [Header("Camera Shake")]
+        public bool CanShake;
+        public float ShakeAmount;
+        public float ShakeTime;
+        public float DecreaseFactor = 1.0f;
+
         private Camera cam;
 		private float minX, minZ, maxX, maxZ;
+        private float _shakeTimeRemaining;
 
         public void Start()
         {
@@ -87,6 +94,45 @@ namespace Assets.Scripts
             cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, MinOrtographicSize, MaxOrtographicSize);
 
 			UpdateClamp ();
+
+            CamShake();
+        }
+
+        public void CamShake()
+        {
+            if (CanShake)
+            {
+                /* TENTATIVA 1: IREZUMI WAY
+                 * float randomValue = Random.Range(-Mathf.PI, Mathf.PI);
+                float newX = Mathf.SmoothDamp(transform.position.x, transform.position.x + Mathf.Cos(randomValue) * ShakeAmountX, ref ShakeSpeedX, ShakeTime);
+                float newZ = Mathf.SmoothDamp(transform.position.z, transform.position.z + Mathf.Sin(randomValue) * ShakeAmountZ, ref ShakeSpeedZ, ShakeTime);
+                transform.position = new Vector3(newX, transform.position.y, newZ);*/
+                /* TENTATIVA 2: GOOGLE WAY (PT 1)
+                 * float newX = 0, newZ = 0;
+                if (ShakeAmountX > 0) newX = Mathf.Repeat(ShakeTime, ShakeAmountX);
+                if (ShakeAmountZ > 0) newZ = Mathf.Repeat(ShakeTime, ShakeAmountZ);
+                transform.position = new Vector3(transform.position.x + newX - ShakeAmountX/2, transform.position.y, transform.position.z + newZ - ShakeAmountZ/2);*/
+                /* TENTATIVA 3: GOOGLE WAY (PT 2)
+                 * if (ShakeTime > 0)
+                {
+                    transform.Translate(new Vector3(Random.Range(-ShakeAmountX, ShakeAmountX), 0, Random.Range(-ShakeAmountZ, ShakeAmountZ)));
+                    ShakeTime -= Time.deltaTime;
+                }
+                else ShakeTime = 0.0f;
+                */
+                //Método atual: https://forum.unity3d.com/threads/screen-shake-effect.22886/#post-153233
+                if (_shakeTimeRemaining > 0)
+                {
+                    transform.Translate(Random.insideUnitSphere * ShakeAmount);
+                    _shakeTimeRemaining -= Time.deltaTime * DecreaseFactor;
+
+                }
+                else
+                {
+                    CanShake = false;
+                    _shakeTimeRemaining = ShakeTime;
+                }
+            }
         }
 
 		private void UpdateClamp(){
