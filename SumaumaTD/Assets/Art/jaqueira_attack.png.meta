@@ -1,0 +1,506 @@
+fileFormatVersion: 2
+guid: 9184ba4d5b383a142ad444071eee6b19
+timeCreated: 1486673808
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: jaqueira_attack_0
+    21300002: jaqueira_attack_1
+    21300004: jaqueira_attack_2
+    21300006: jaqueira_attack_3
+    21300008: jaqueira_attack_4
+    21300010: jaqueira_attack_5
+    21300012: jaqueira_attack_6
+    21300014: jaqueira_attack_7
+    21300016: jaqueira_attack_8
+    21300018: jaqueira_attack_9
+    21300020: jaqueira_attack_10
+    21300022: jaqueira_attack_11
+    21300024: jaqueira_attack_12
+    21300026: jaqueira_attack_13
+    21300028: jaqueira_attack_14
+    21300030: jaqueira_attack_15
+    21300032: jaqueira_attack_16
+    21300034: jaqueira_attack_17
+    21300036: jaqueira_attack_18
+    21300038: jaqueira_attack_19
+    21300040: jaqueira_attack_20
+    21300042: jaqueira_attack_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: jaqueira_attack_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 450
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.498505, y: 44}
+        - {x: -40.498505, y: -21}
+        - {x: -25.498505, y: -44}
+        - {x: 16.501495, y: -44}
+        - {x: 41.501495, y: -5}
+        - {x: 41.501495, y: 37}
+        - {x: 36.501495, y: 44}
+    - name: jaqueira_attack_1
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 0
+        width: 456
+        height: 463
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.912346, y: 42}
+        - {x: -16.087654, y: 42}
+        - {x: -32.087654, y: 37}
+        - {x: -41.087654, y: 18}
+        - {x: -41.087654, y: -26}
+        - {x: -29.087654, y: -42}
+        - {x: 21.912346, y: -42}
+        - {x: 41.912346, y: -10}
+        - {x: 41.912346, y: 19}
+        - {x: 37.912346, y: 33}
+    - name: jaqueira_attack_2
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 0
+        width: 467
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.077103, y: 39.5}
+        - {x: -42.077103, y: 33.5}
+        - {x: -42.077103, y: -19.5}
+        - {x: -28.077103, y: -39.5}
+        - {x: 19.922897, y: -39.5}
+        - {x: 42.922897, y: -10.5}
+        - {x: 42.922897, y: 36.5}
+        - {x: 37.922897, y: 39.5}
+    - name: jaqueira_attack_3
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 0
+        width: 484
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.433441, y: 37.5}
+        - {x: -16.566559, y: 37.5}
+        - {x: -39.56656, y: 29.5}
+        - {x: -43.56656, y: 15.5}
+        - {x: -43.56656, y: -15.5}
+        - {x: -30.566559, y: -37.5}
+        - {x: 19.433441, y: -37.5}
+        - {x: 44.43344, y: -8.5}
+        - {x: 44.43344, y: 18.5}
+        - {x: 39.43344, y: 32.5}
+    - name: jaqueira_attack_4
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 489
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.975647, y: 35}
+        - {x: -43.975647, y: 23}
+        - {x: -43.975647, y: -15}
+        - {x: -19.975647, y: -35}
+        - {x: 26.024353, y: -35}
+        - {x: 45.024353, y: -14}
+        - {x: 45.024353, y: 26}
+        - {x: 26.024353, y: 35}
+    - name: jaqueira_attack_5
+      rect:
+        serializedVersion: 2
+        x: 2591
+        y: 0
+        width: 500
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.034912, y: 33}
+        - {x: -33.965088, y: 33}
+        - {x: -44.965088, y: 13}
+        - {x: -44.965088, y: -18}
+        - {x: -22.965088, y: -33}
+        - {x: 24.034912, y: -33}
+        - {x: 46.034912, y: -9}
+        - {x: 46.034912, y: 27}
+    - name: jaqueira_attack_6
+      rect:
+        serializedVersion: 2
+        x: 3102
+        y: 0
+        width: 516
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.454529, y: 30.5}
+        - {x: -46.45453, y: 21.5}
+        - {x: -46.45453, y: -14.5}
+        - {x: -31.454529, y: -30.5}
+        - {x: 21.545471, y: -30.5}
+        - {x: 47.54547, y: -5.5}
+        - {x: 47.54547, y: 22.5}
+        - {x: 37.54547, y: 30.5}
+    - name: jaqueira_attack_7
+      rect:
+        serializedVersion: 2
+        x: 3618
+        y: 0
+        width: 519
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 517, w: 0}
+      outline:
+      - - {x: -26.543701, y: 28.5}
+        - {x: -46.5437, y: 15.5}
+        - {x: -46.5437, y: -6.5}
+        - {x: -27.543701, y: -28.5}
+        - {x: 31.456299, y: -28.5}
+        - {x: 47.4563, y: -3.5}
+        - {x: 47.4563, y: 20.5}
+        - {x: 18.456299, y: 28.5}
+    - name: jaqueira_attack_8
+      rect:
+        serializedVersion: 2
+        x: 4662
+        y: 0
+        width: 495
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.56128, y: 30.5}
+        - {x: -44.56128, y: 24.5}
+        - {x: -44.56128, y: -22.5}
+        - {x: -38.56128, y: -30.5}
+        - {x: 26.43872, y: -30.5}
+        - {x: 45.43872, y: -3.5}
+        - {x: 45.43872, y: 14.5}
+        - {x: 31.43872, y: 30.5}
+    - name: jaqueira_attack_9
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 0
+        width: 466
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.989685, y: 33}
+        - {x: -41.989685, y: -22}
+        - {x: -22.989685, y: -33}
+        - {x: 16.010315, y: -33}
+        - {x: 43.010315, y: -3}
+        - {x: 43.010315, y: 26}
+        - {x: 21.010315, y: 33}
+    - name: jaqueira_attack_10
+      rect:
+        serializedVersion: 2
+        x: 5718
+        y: 0
+        width: 444
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.91809, y: 35.5}
+        - {x: -36.91809, y: 31.5}
+        - {x: -39.91809, y: 20.5}
+        - {x: -39.91809, y: -31.5}
+        - {x: -28.91809, y: -35.5}
+        - {x: 37.08191, y: -35.5}
+        - {x: 41.08191, y: -27.5}
+        - {x: 41.08191, y: 17.5}
+        - {x: 21.08191, y: 35.5}
+    - name: jaqueira_attack_11
+      rect:
+        serializedVersion: 2
+        x: 6245
+        y: 0
+        width: 417
+        height: 419
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.526611, y: 38}
+        - {x: -37.52661, y: 31}
+        - {x: -37.52661, y: -34}
+        - {x: -35.52661, y: -38}
+        - {x: 12.473389, y: -38}
+        - {x: 38.47339, y: -12}
+        - {x: 38.47339, y: 24}
+        - {x: 25.473389, y: 38}
+    - name: jaqueira_attack_12
+      rect:
+        serializedVersion: 2
+        x: 6773
+        y: 0
+        width: 388
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.044922, y: 40.5}
+        - {x: -14.955078, y: 40.5}
+        - {x: -33.95508, y: 33.5}
+        - {x: -34.95508, y: 27.5}
+        - {x: -34.95508, y: -15.5}
+        - {x: -21.955078, y: -40.5}
+        - {x: 19.044922, y: -40.5}
+        - {x: 36.04492, y: -14.5}
+        - {x: 36.04492, y: 24.5}
+        - {x: 26.044922, y: 39.5}
+    - name: jaqueira_attack_13
+      rect:
+        serializedVersion: 2
+        x: 7300
+        y: 0
+        width: 367
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.063477, y: 43.5}
+        - {x: -29.063477, y: 29.5}
+        - {x: -33.063477, y: 19.5}
+        - {x: -33.063477, y: -10.5}
+        - {x: -16.063477, y: -43.5}
+        - {x: 18.936523, y: -43.5}
+        - {x: 33.936523, y: -13.5}
+        - {x: 33.936523, y: 23.5}
+        - {x: 25.936523, y: 43.5}
+    - name: jaqueira_attack_14
+      rect:
+        serializedVersion: 2
+        x: 7828
+        y: 0
+        width: 339
+        height: 505
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.491943, y: 45.5}
+        - {x: -30.491943, y: 24.5}
+        - {x: -30.491943, y: -12.5}
+        - {x: -22.491943, y: -40.5}
+        - {x: -12.491943, y: -45.5}
+        - {x: 25.508057, y: -45.5}
+        - {x: 31.508057, y: -14.5}
+        - {x: 31.508057, y: 34.5}
+        - {x: 14.508057, y: 45.5}
+    - name: jaqueira_attack_15
+      rect:
+        serializedVersion: 2
+        x: 8344
+        y: 0
+        width: 345
+        height: 505
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.081055, y: 45.5}
+        - {x: -31.081055, y: 35.5}
+        - {x: -31.081055, y: -39.5}
+        - {x: -29.081055, y: -45.5}
+        - {x: 14.918945, y: -45.5}
+        - {x: 31.918945, y: -21.5}
+        - {x: 31.918945, y: 33.5}
+        - {x: 21.918945, y: 45.5}
+    - name: jaqueira_attack_16
+      rect:
+        serializedVersion: 2
+        x: 8853
+        y: 0
+        width: 363
+        height: 505
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.069336, y: 27.5}
+        - {x: 16.069336, y: 45.5}
+        - {x: -17.930664, y: 45.5}
+        - {x: -32.930664, y: 39.5}
+        - {x: -32.930664, y: -22.5}
+        - {x: -13.930664, y: -45.5}
+        - {x: 11.069336, y: -45.5}
+        - {x: 13.069336, y: -41.5}
+        - {x: 30.069336, y: -12.5}
+        - {x: 33.069336, y: -2.5}
+    - name: jaqueira_attack_17
+      rect:
+        serializedVersion: 2
+        x: 9366
+        y: 0
+        width: 372
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.43994, y: 28.5}
+        - {x: 20.439941, y: 45.5}
+        - {x: -20.560059, y: 45.5}
+        - {x: -33.56006, y: 38.5}
+        - {x: -33.56006, y: -30.5}
+        - {x: -27.560059, y: -45.5}
+        - {x: 12.439941, y: -45.5}
+        - {x: 14.439941, y: -43.5}
+        - {x: 13.439941, y: -41.5}
+        - {x: 34.43994, y: -2.5}
+    - name: jaqueira_attack_18
+      rect:
+        serializedVersion: 2
+        x: 9872
+        y: 0
+        width: 394
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.449707, y: 45}
+        - {x: -35.449707, y: -45}
+        - {x: 20.550293, y: -45}
+        - {x: 36.550293, y: -17}
+        - {x: 36.550293, y: 28}
+        - {x: 30.550293, y: 45}
+    - name: jaqueira_attack_19
+      rect:
+        serializedVersion: 2
+        x: 10383
+        y: 0
+        width: 408
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.93921, y: 45}
+        - {x: -36.93921, y: 39}
+        - {x: -36.93921, y: -14}
+        - {x: -24.939209, y: -45}
+        - {x: 15.060791, y: -45}
+        - {x: 38.06079, y: -15}
+        - {x: 38.06079, y: 42}
+        - {x: 37.06079, y: 45}
+    - name: jaqueira_attack_20
+      rect:
+        serializedVersion: 2
+        x: 10894
+        y: 0
+        width: 422
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.071411, y: 42.5}
+        - {x: 18.071411, y: 44.5}
+        - {x: -37.92859, y: 44.5}
+        - {x: -37.92859, y: -44.5}
+        - {x: 15.071411, y: -44.5}
+        - {x: 15.071411, y: -40.5}
+        - {x: 39.07141, y: -6.5}
+        - {x: 39.07141, y: 21.5}
+    - name: jaqueira_attack_21
+      rect:
+        serializedVersion: 2
+        x: 4138
+        y: 0
+        width: 515
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.412598, y: 28.5}
+        - {x: -46.412598, y: 21.5}
+        - {x: -46.412598, y: -26.5}
+        - {x: -36.412598, y: -28.5}
+        - {x: 30.587402, y: -28.5}
+        - {x: 46.587402, y: -5.5}
+        - {x: 46.587402, y: 17.5}
+        - {x: 35.587402, y: 28.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,10 +1,25 @@
 fileFormatVersion: 2
 guid: 955bed96c1de5e348bb1ad5e1c4c06ab
-timeCreated: 1485188576
+timeCreated: 1486675498
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: CharsetRed1_0
+    21300002: CharsetRed1_1
+    21300004: CharsetRed1_2
+    21300006: CharsetRed1_3
+    21300008: CharsetRed1_4
+    21300010: CharsetRed1_5
+    21300012: CharsetRed1_6
+    21300014: CharsetRed1_7
+    21300016: CharsetRed1_8
+    21300018: CharsetRed1_9
+    21300020: CharsetRed1_10
+    21300022: CharsetRed1_11
+    21300024: CharsetRed1_12
+    21300026: CharsetRed1_13
+    21300028: CharsetRed1_14
+    21300030: CharsetRed1_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,21 +69,279 @@ TextureImporter:
     - name: CharsetRed1_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 14
         y: 196
-        width: 35
+        width: 34
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -14.5, y: 24}
-        - {x: -17.5, y: 16}
-        - {x: -17.5, y: -22}
-        - {x: -15.5, y: -24}
-        - {x: 17.5, y: -24}
-        - {x: 17.5, y: 22}
-        - {x: 13.5, y: 24}
+      - - {x: -17, y: -24}
+        - {x: 17, y: -24}
+        - {x: 17, y: 22}
+        - {x: 16, y: 24}
+        - {x: -15, y: 24}
+        - {x: -17, y: 23}
+    - name: CharsetRed1_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 194
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 26}
+        - {x: -17, y: -26}
+        - {x: 4, y: -26}
+        - {x: 17, y: -18}
+        - {x: 17, y: 26}
+    - name: CharsetRed1_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 196
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: -24}
+        - {x: 17, y: -24}
+        - {x: 17, y: 22}
+        - {x: 16, y: 24}
+        - {x: -15, y: 24}
+        - {x: -17, y: 23}
+    - name: CharsetRed1_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 194
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 26}
+        - {x: -17, y: 25}
+        - {x: -17, y: -18}
+        - {x: -4, y: -26}
+        - {x: 10, y: -26}
+        - {x: 17, y: -16}
+        - {x: 17, y: 24}
+        - {x: 16, y: 26}
+    - name: CharsetRed1_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 132
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 23}
+        - {x: -16, y: 18}
+        - {x: -16, y: -1}
+        - {x: -11, y: -23}
+        - {x: 12, y: -23}
+        - {x: 16, y: -15}
+        - {x: 16, y: 23}
+    - name: CharsetRed1_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 132
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 24}
+        - {x: -16, y: 22}
+        - {x: -16, y: -15}
+        - {x: -14, y: -24}
+        - {x: 16, y: -24}
+        - {x: 16, y: 24}
+    - name: CharsetRed1_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 132
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 23}
+        - {x: -16, y: 18}
+        - {x: -16, y: -1}
+        - {x: -11, y: -23}
+        - {x: 12, y: -23}
+        - {x: 16, y: -15}
+        - {x: 16, y: 23}
+    - name: CharsetRed1_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 134
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 23}
+        - {x: -16, y: 19}
+        - {x: -16, y: -16}
+        - {x: -15, y: -22}
+        - {x: -14, y: -23}
+        - {x: 13, y: -23}
+        - {x: 14, y: -21}
+        - {x: 16, y: -14}
+        - {x: 16, y: 23}
+    - name: CharsetRed1_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 68
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 23}
+        - {x: -16, y: 20}
+        - {x: -16, y: -22}
+        - {x: -13, y: -23}
+        - {x: 16, y: -23}
+        - {x: 16, y: 23}
+    - name: CharsetRed1_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 68
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 24}
+        - {x: -16, y: -24}
+        - {x: 16, y: -24}
+        - {x: 16, y: 24}
+    - name: CharsetRed1_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 68
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 23}
+        - {x: -16, y: 20}
+        - {x: -16, y: -22}
+        - {x: -13, y: -23}
+        - {x: 16, y: -23}
+        - {x: 16, y: 23}
+    - name: CharsetRed1_11
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 70
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 23}
+        - {x: -16, y: 22}
+        - {x: -16, y: -23}
+        - {x: 13, y: -23}
+        - {x: 16, y: -18}
+        - {x: 16, y: 19}
+        - {x: 13, y: 23}
+    - name: CharsetRed1_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 4
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 23}
+        - {x: -17, y: 19}
+        - {x: -17, y: -23}
+        - {x: 17, y: -23}
+        - {x: 17, y: 23}
+    - name: CharsetRed1_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 2
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 25}
+        - {x: -17, y: 24}
+        - {x: -17, y: -22}
+        - {x: -12, y: -25}
+        - {x: 8, y: -25}
+        - {x: 17, y: -19}
+        - {x: 17, y: 25}
+    - name: CharsetRed1_14
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 4
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 23}
+        - {x: -17, y: 19}
+        - {x: -17, y: -23}
+        - {x: 17, y: -23}
+        - {x: 17, y: 23}
+    - name: CharsetRed1_15
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 25}
+        - {x: -17, y: -20}
+        - {x: -5, y: -25}
+        - {x: 11, y: -25}
+        - {x: 17, y: -14}
+        - {x: 17, y: 25}
     outline: []
   spritePackingTag: 
   userData: 

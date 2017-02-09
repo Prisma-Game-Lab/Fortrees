@@ -6,6 +6,7 @@ namespace Assets.Scripts
 
         private Transform _target;
         private Enemy _targetEnemy;
+        private Animator _spriteAnimator;
 
         [Header("General")]
         public float Range = 15f;
@@ -31,6 +32,7 @@ namespace Assets.Scripts
         public void Start()
         {
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
+            _spriteAnimator = transform.GetChild(1).GetComponent<Animator>();
         }
 
         // Update is called once per frame
@@ -84,11 +86,13 @@ namespace Assets.Scripts
 
         private void Shoot()
         {
+            _spriteAnimator.Play("Shooting");
             GameObject bulletGO = (GameObject) Instantiate (BulletPrefab, FirePoint.position, FirePoint.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet> ();
 
             if (bullet != null)
                 bullet.Seek (_target);
+
         }
 
         public void UpdateTarget()
