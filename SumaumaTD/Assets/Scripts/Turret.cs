@@ -6,12 +6,15 @@ namespace Assets.Scripts
 
         private Transform _target;
         private Enemy _targetEnemy;
-        private Animator _spriteAnimator;
+        
+        private static int _nextAttackAudio = 0; //usada para intercalar os sons de ataque
 
         [Header("General")]
         public float Range = 15f;
 
         [Header("Unity Setup Fields")]
+        public Animator SpriteAnimator;
+        public AudioSource SoundSource;
         public Transform PartToRotate;
         public Transform FirePoint;
         public float TurnSpeed = 10f;
@@ -21,6 +24,7 @@ namespace Assets.Scripts
         public float FireRate = 1f;
         private float _fireCountdown = 0f;
         public GameObject BulletPrefab;
+        [Tooltip("Lista os arquivos de som dos ataques")] public AudioClip[] AttackAudios;
 
         [Header("Use Laser")]
         public bool UseLaser = false;
@@ -32,7 +36,7 @@ namespace Assets.Scripts
         public void Start()
         {
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
-            _spriteAnimator = transform.GetChild(1).GetComponent<Animator>();
+            SpriteAnimator = GetComponent<Animator>();
         }
 
         // Update is called once per frame
@@ -59,7 +63,7 @@ namespace Assets.Scripts
         {
             if (_fireCountdown <= 0f)
             {
-                Shoot();
+                CallShootingAnimation();
                 _fireCountdown = 1f/FireRate;
             }
             _fireCountdown -= Time.deltaTime;
@@ -84,16 +88,32 @@ namespace Assets.Scripts
             PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
         }
 
-        private void Shoot()
+        #region Shooting
+
+        private void CallShootingAnimation()
         {
-            _spriteAnimator.Play("Shooting");
+            SpriteAnimator.Play("Shooting");
+        }
+        
+        private void PlayShootingSound()
+        {
+            if (_nextAttackAudio >= AttackAudios.Length) _nextAttackAudio = 0;
+            SoundSource.PlayOneShot(AttackAudios[_nextAttackAudio]);
+            _nextAttackAudio++;
+        }
+
+        public void Shoot()
+        {
             GameObject bulletGO = (GameObject) Instantiate (BulletPrefab, FirePoint.position, FirePoint.rotation);
+            PlayShootingSound();
+
             Bullet bullet = bulletGO.GetComponent<Bullet> ();
 
             if (bullet != null)
                 bullet.Seek (_target);
-
         }
+
+        #endregion
 
         public void UpdateTarget()
         {

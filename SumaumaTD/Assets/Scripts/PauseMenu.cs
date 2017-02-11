@@ -6,11 +6,11 @@ namespace Assets.Scripts
 {
     public class PauseMenu : MonoBehaviour
     {
-
         public GameObject PauseUI;
 		[Tooltip("Igual o Frames To Wait do NodeController.")] public int FramesToWait = 5; //TODO: juntar com o FramesToWait do NodeController.cs
 
 		private int _framesLeftToWait = 0;
+        private float _audioListenerVolume; //audio listener volume before game was paused
 
         public void Update()
 		{
@@ -37,11 +37,15 @@ namespace Assets.Scripts
             if (PauseUI.activeSelf)
             {
                 Time.timeScale = 0f;
+                _audioListenerVolume = AudioListener.volume;
+                AudioListener.volume = 0;
             }
             else
             {
                 Time.timeScale = 1f;
+                AudioListener.volume = _audioListenerVolume;
             }
+
         }
 
         public void Retry()

@@ -16,7 +16,12 @@ namespace Assets.Scripts
 
         [Tooltip("Define a altura máxima que a parábola da bala atinge")]
         public float MaxHeight = 5f;
-        
+
+        [Header("Audio")]
+        [Tooltip("Volume do som de hit")] [Range(0f,1f)] public float AudioVolume = 1f;
+        public AudioSource SoundSource;
+        [Tooltip("Lista os arquivos de som de quando a fruta atinge o alvo")] public AudioClip[] FruitHitAudios;
+
         private float _bezierCounter;
         private Transform _target;
         private Vector3 _newdir;
@@ -24,6 +29,7 @@ namespace Assets.Scripts
         private Vector3 _startPosition;
         private float _totalDistance;
         private float _dir;
+        private static int _nextFruitHitAudio = 0; //usada para intercalar os sons de quando a fruta atinge o alvo
         #endregion
 
         public void Awake()
@@ -73,19 +79,28 @@ namespace Assets.Scripts
         //instantiate effect and explode/hit enemy and destroy bullet
         public void HitTarget() {
             GameObject effectIns = (GameObject) Instantiate (ImpactEffect, transform.position, transform.rotation);
-            Destroy (effectIns, 5f);
+            PlayNextHitAudio();
+            //Destroy (effectIns, FruitHitAudios[_nextFruitHitAudio - 1].length); //faz com que seja destruído só depois que o áudio já tocou... TODO: simplificar
 
             if (ExplosionRadius > 0f)
             {
                 Explode();
-
             }
             else
             {
                 DamageEnemy(_target);
             }
-            
+
             Destroy (gameObject);
+        }
+
+        private void PlayNextHitAudio()
+        {
+            if (_nextFruitHitAudio >= FruitHitAudios.Length) _nextFruitHitAudio = 0;
+            Debug.Log(FruitHitAudios[_nextFruitHitAudio].name);
+            SoundSource.PlayOneShot(FruitHitAudios[_nextFruitHitAudio], AudioVolume);
+            Debug.Log(FruitHitAudios[_nextFruitHitAudio].name + " TOCOU");
+            _nextFruitHitAudio++;
         }
 
         private void Explode()
