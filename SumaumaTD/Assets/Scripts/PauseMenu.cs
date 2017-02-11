@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 namespace Assets.Scripts
 {
     public class PauseMenu : MonoBehaviour
     {
         public GameObject PauseUI;
+        [Tooltip("Botão selecionado quando o menu é acionado")] public GameObject FirstSelectedButton;
 		[Tooltip("Igual o Frames To Wait do NodeController.")] public int FramesToWait = 5; //TODO: juntar com o FramesToWait do NodeController.cs
 
 		private int _framesLeftToWait = 0;
@@ -33,6 +35,7 @@ namespace Assets.Scripts
         public void TogglePause()
         {
             PauseUI.SetActive( !PauseUI.activeSelf);
+            EventSystem.current.SetSelectedGameObject(FirstSelectedButton);
 
             if (PauseUI.activeSelf)
             {

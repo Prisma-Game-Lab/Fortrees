@@ -49,7 +49,7 @@ namespace Assets.Scripts
 
 			_selectedNode.Highlight ();
             //if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-            if (Input.GetAxis("HorizontalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetAxis("HorizontalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 Debug.Log("Horizontal " + Input.GetAxis("HorizontalSelection"));
                 ChangeSelectedNode(Vector3.left);
@@ -57,7 +57,7 @@ namespace Assets.Scripts
 			}
 
             //if (Input.GetKeyDown (KeyCode.RightArrow)) {
-            if (Input.GetAxis("HorizontalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetAxis("HorizontalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 ChangeSelectedNode (Vector3.right);
                 _framesLeftToWait = framesToWait;
