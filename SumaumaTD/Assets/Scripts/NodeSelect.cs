@@ -48,34 +48,6 @@ namespace Assets.Scripts
             }
 
 			_selectedNode.Highlight ();
-            //if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-            if (Input.GetAxis("HorizontalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                Debug.Log("Horizontal " + Input.GetAxis("HorizontalSelection"));
-                ChangeSelectedNode(Vector3.left);
-                _framesLeftToWait = framesToWait;
-			}
-
-            //if (Input.GetKeyDown (KeyCode.RightArrow)) {
-            if (Input.GetAxis("HorizontalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                ChangeSelectedNode (Vector3.right);
-                _framesLeftToWait = framesToWait;
-            }
-
-            //if (Input.GetKeyDown (KeyCode.UpArrow)) {
-            if (Input.GetAxis("VerticalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                ChangeSelectedNode (Vector3.forward);
-                _framesLeftToWait = framesToWait;
-            }
-
-            //if (Input.GetKeyDown (KeyCode.DownArrow)) {
-            if (Input.GetAxis("VerticalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                ChangeSelectedNode (Vector3.back);
-                _framesLeftToWait = framesToWait;
-            }
 
             //checa controles do Update Canvas (se ele estiver ativado)
             if (_updateCanvas.activeInHierarchy) {
@@ -94,6 +66,7 @@ namespace Assets.Scripts
 
             //checa controles do Build Canvas (se ele estiver ativado)
             else if (_buildCanvas.activeInHierarchy) {
+                /*
                 if (Input.GetAxis("StandardBuyButton") != 0.0)
                 {
                     _shop.SelectStandardTurret();
@@ -106,6 +79,7 @@ namespace Assets.Scripts
                     _shop.SelectAnotherTurret();
                     _framesLeftToWait = framesToWait;
                 }
+                */
 
                 if (Input.GetAxis("CloseMenuButton") != 0.0)
                 {
@@ -115,11 +89,40 @@ namespace Assets.Scripts
             }
 
             //if(Input.GetKeyDown(KeyCode.Return)){
-            //se os 2 canvas estiverem desativados, checa botão de selecionar node
-            else {
+            //se os 2 canvas estiverem desativados, checa botões de selecionar node se o jogo não estiver pausado
+            else if (Time.timeScale > 0.0f){
                 if (Input.GetAxis("NodeSelectionButton") != 0.0)
                 {
                     _selectedNode.BuildOnSelectedNode();
+                    _framesLeftToWait = framesToWait;
+                }
+
+                //if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+                if (Input.GetAxis("HorizontalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    Debug.Log("Horizontal " + Input.GetAxis("HorizontalSelection"));
+                    ChangeSelectedNode(Vector3.left);
+                    _framesLeftToWait = framesToWait;
+                }
+
+                //if (Input.GetKeyDown (KeyCode.RightArrow)) {
+                if (Input.GetAxis("HorizontalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    ChangeSelectedNode(Vector3.right);
+                    _framesLeftToWait = framesToWait;
+                }
+
+                //if (Input.GetKeyDown (KeyCode.UpArrow)) {
+                if (Input.GetAxis("VerticalSelection") > minimumAxisToMove || Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    ChangeSelectedNode(Vector3.forward);
+                    _framesLeftToWait = framesToWait;
+                }
+
+                //if (Input.GetKeyDown (KeyCode.DownArrow)) {
+                if (Input.GetAxis("VerticalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    ChangeSelectedNode(Vector3.back);
                     _framesLeftToWait = framesToWait;
                 }
             }

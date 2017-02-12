@@ -62,7 +62,7 @@ namespace Assets.Scripts
             var found = false;
             foreach (var letter in File.text)
             {
-                if (letter == '\r')
+                if (letter == '\n' || letter == '\r')
                 {
                     found = true;
                     j++;
