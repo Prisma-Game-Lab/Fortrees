@@ -5,8 +5,10 @@ namespace Assets.Scripts
     public class SceneMapGenerator : MonoBehaviour
     {
         #region Variables   
+        public GameObject NodesParentPrefab;
         public GameObject NodePrefab;
         public GameObject PathPrefab;
+        public GameObject TurretUI;
         public TextAsset File;
         public GameObject WaypointPrefab;
 
@@ -24,6 +26,7 @@ namespace Assets.Scripts
         private Waypoints _waypoints;
         private float _currentX;
         private float _currentZ;
+        private bool _startNodeSet = false;
         #endregion
 
         public void GenerateMap()
@@ -39,7 +42,8 @@ namespace Assets.Scripts
 
         private void GenerateGameObjectsParents()
         {
-            _nodesGameObject = new GameObject("Nodes").AddComponent<NodeSelect>();
+            _nodesGameObject = Instantiate(NodesParentPrefab).GetComponent<NodeSelect>();
+            _nodesGameObject.TurretUI = TurretUI;
             _environmentGameObject = new GameObject("Environment");
             _waypoints = new GameObject("Waypoints").AddComponent<Waypoints>();
         }
@@ -105,8 +109,12 @@ namespace Assets.Scripts
                     switch (letter)
                     {
                         case 'N':
-                            InstantiateNode();
-                            
+                            GameObject temp = InstantiateNode();
+                            if (!_startNodeSet)
+                            {
+                                _nodesGameObject.StartNode = temp.GetComponent<Node>();
+                                _startNodeSet = true;
+                            }
                             break;
                         case 'P':
                             InstantiatePath(x,y);
@@ -119,11 +127,11 @@ namespace Assets.Scripts
             }
         }
 
-        private void InstantiateNode()
+        private GameObject InstantiateNode()
         {
             var node = (GameObject)Instantiate(NodePrefab, new Vector3(_currentX, 0, _currentZ), Quaternion.identity);
             node.transform.parent = _nodesGameObject.transform;
-            
+            return node;
         }
 
         private void InstantiatePath(int i, int j)
