@@ -11,6 +11,7 @@ namespace Assets.Scripts
         [Tooltip("Ponto do qual o inimigo spawna")]
         public Transform SpawnPoint;
         public Text WaveCountdownText;
+        public MovingSeedsManager SeedsManager;
 
         public float TimeBetweenWaves = 5f;
         
@@ -73,7 +74,7 @@ namespace Assets.Scripts
             if(_seedsEarned)
                 return;
             //TODO VER PQ SEEDS
-            PlayerStats.Seeds += _waves[_waveNumber -1].SeedsEarned; //TODO: diminuir de acordo com quantos inimigos chegaram na base?
+            SeedsManager.AddSeeds(_waves[_waveNumber - 1].SeedsEarned); //PlayerStats.Seeds += _waves[_waveNumber -1].SeedsEarned; //TODO: diminuir de acordo com quantos inimigos chegaram na base?
             _seedsEarned = true;
         }
 

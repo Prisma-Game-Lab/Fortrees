@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
 namespace Assets.Scripts
 {
     public class SeedsUI : MonoBehaviour
