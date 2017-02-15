@@ -76,8 +76,16 @@ namespace Assets.Scripts
             if(_seedsEarned)
                 return;
             //TODO VER PQ SEEDS
-            SeedsManager.AddSeeds(_waves[_waveNumber - 1].SeedsEarned); //PlayerStats.Seeds += _waves[_waveNumber -1].SeedsEarned; //TODO: diminuir de acordo com quantos inimigos chegaram na base?
+            SeedsManager.AddSeeds(_waves[_waveNumber].SeedsEarned);  //TODO: diminuir de acordo com quantos inimigos chegaram na base?
             _seedsEarned = true;
+
+            _waveNumber++;
+
+            if (_waveNumber == _waves.Length)
+            {
+                GameManager.WinLevel();
+                this.enabled = false;
+            }
         }
 
         //Chamada no começo da wave
@@ -96,14 +104,6 @@ namespace Assets.Scripts
                     SpawnEnemy(group.EnemyPrefab);
                     yield return new WaitForSeconds(1f/ group.SpawnRate);
                 }
-            }
-            
-            _waveNumber++;
-
-            if (_waveNumber == _waves.Length )
-            {
-                GameManager.WinLevel();
-                this.enabled = false;
             }
         }
 
