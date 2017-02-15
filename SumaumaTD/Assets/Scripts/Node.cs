@@ -20,10 +20,11 @@ namespace Assets.Scripts
         public bool IsUpgraded = false;
         public bool IsSelectable = true;
 
-        private Renderer _rend;
-        private Color _startColor;
+        private SpriteRenderer _rend;
         private BuildManager _buildManager;
         private NodeSelect _nodeSelect;
+        private Sprite _defaultSprite;
+
         #endregion
         
         #region Properties
@@ -32,8 +33,8 @@ namespace Assets.Scripts
 
         public void Start()
         {
-            _rend = transform.GetChild(0).GetComponent<Renderer>();//GetComponent<Renderer>();
-            //_startColor = _rend.material.color;
+            _rend = transform.GetChild(0).GetComponent<SpriteRenderer>();//transform.GetChild(0).GetComponent<Renderer>();
+            _defaultSprite = _rend.sprite;
             _buildManager = BuildManager.Instance;
             _nodeSelect = gameObject.GetComponentInParent<NodeSelect>();
         }
@@ -62,21 +63,12 @@ namespace Assets.Scripts
 
         public void OnMouseExit()
         {
-            _rend.material = _nodeSelect.DefaultMaterial;
-            //_rend.material.color = _startColor;
+            _rend.sprite = _defaultSprite;
         }
 
         public void Highlight()
         {
-            if (CanBuild)
-            {
-                _rend.material = _nodeSelect.HighlightedMaterial;
-                // _rend.material.color = HoverColor;
-            }
-            else
-            {
-                _rend.material.color = CantBuildColor;
-            }
+            _rend.sprite = CanBuild ? _nodeSelect.HighlightedSprite : _nodeSelect.CantBuildSprite;
         }
 
         public void BuildOnSelectedNode()

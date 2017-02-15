@@ -48,6 +48,7 @@ namespace Assets.Scripts
         {
             Debug.Log("Generating Map");
             _waypointsCoords = new WaypointsCoords();
+            _waypointDirections = new List<bool>();
 
             GenerateGameObjectsParents();
 

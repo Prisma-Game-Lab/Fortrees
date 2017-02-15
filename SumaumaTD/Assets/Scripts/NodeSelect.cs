@@ -9,8 +9,8 @@ namespace Assets.Scripts
 		public float NodeSize;
         public GameObject TurretUI;
 
-	    public Material DefaultMaterial;
-        public Material HighlightedMaterial;
+	    public Sprite CantBuildSprite;
+        public Sprite HighlightedSprite;
 
 
         [Header("Controller")]
@@ -25,10 +25,8 @@ namespace Assets.Scripts
         private GameObject _updateCanvas;
         private TurretUI _turretUIScript;
         private Shop _shop;
-
-
-        // Use this for initialization
-        void Start () {
+        
+        public void Start () {
 			_selectPosition = StartNode.transform.position;
 			_radius = NodeSize / 2;
 			_selectedNode = StartNode;
@@ -37,9 +35,8 @@ namespace Assets.Scripts
             _shop = TurretUI.gameObject.GetComponent<Shop>();
             _turretUIScript = TurretUI.gameObject.GetComponent<TurretUI>();
         }
-
-		// Update is called once per frame
-		void Update () {
+        
+        public void Update () {
             //Evita que a seleção ande muito quando o botão é pressionado
             if(_framesLeftToWait > 0)
             {
