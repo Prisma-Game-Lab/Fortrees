@@ -6,12 +6,15 @@ namespace Assets.Scripts
     {
         public GameObject GameOverUi;
         public GameObject CompleteLevelUi;
+        public GameObject PressStartUi;
         public static bool GameIsOver;
+        [HideInInspector]
+        public bool GameStarted;
 
         public void Start()
         {
             GameIsOver = false;
-
+            GameStarted = false;
             #if DEBUG
             Debug.Assert(GameObject.Find("WaveManager") != null, "Scene precisa de WaveManager seu mongol");
             #endif
@@ -27,8 +30,14 @@ namespace Assets.Scripts
             {
                 EndGame();
             }
-        }
 
+            if (Input.GetKeyDown(KeyCode.Space) && !GameStarted)
+            {
+                PressStartUi.SetActive(false);
+                GameStarted = true;
+            }
+        }
+        
         public void WinLevel()
         {
             GameIsOver = true;

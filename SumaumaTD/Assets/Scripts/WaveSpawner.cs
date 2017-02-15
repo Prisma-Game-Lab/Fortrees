@@ -44,6 +44,8 @@ namespace Assets.Scripts
 
         // Update is called once per frame
         public void Update () {
+            if(!GameManager.GameStarted)
+                return;
             if (EnemiesAlive > 0)
             {
                 return;
