@@ -40,8 +40,7 @@ namespace Assets.Scripts
                 color.a = transform.localScale.x;
                 _image.color = color;
             }
-
-            Debug.Log((_targetVec2 - _positionVec2).magnitude);
+            
             if ((_targetVec2 - _positionVec2).magnitude <= 1)
             {
                 PlayerStats.Seeds++;
