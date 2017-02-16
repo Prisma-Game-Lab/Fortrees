@@ -7,6 +7,7 @@ namespace Assets.Scripts
         private BuildManager _buildManager;
         public TurretBlueprint StardardTurretBlueprint;
         public TurretBlueprint AnotherTurretBlueprint;
+        public TurretBlueprint MoreTurretBlueprint;
 
         public void Start()
         {
@@ -21,6 +22,12 @@ namespace Assets.Scripts
         public void SelectAnotherTurret()
         {
             _buildManager.SelectTurretToBuild(AnotherTurretBlueprint);
+
+        }
+
+        public void SelectMoreTurret()
+        {
+            _buildManager.SelectTurretToBuild(MoreTurretBlueprint);
 
         }
     }
