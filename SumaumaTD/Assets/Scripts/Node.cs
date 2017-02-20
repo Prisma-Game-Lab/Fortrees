@@ -31,6 +31,9 @@ namespace Assets.Scripts
         public Vector3 GetBuildPosition { get { return transform.position + PositionOffset; } }
         #endregion
 
+        [Header("Audio")]
+        public AudioClip NodeBuildSound;
+
         public void Start()
         {
             _rend = transform.GetChild(0).GetComponent<SpriteRenderer>();//transform.GetChild(0).GetComponent<Renderer>();
@@ -106,6 +109,7 @@ namespace Assets.Scripts
                 Destroy(effect, 5f);
             }
 
+            AudioSource.PlayClipAtPoint(NodeBuildSound, GetBuildPosition);
             Debug.Log("Turret built!");
         }
 

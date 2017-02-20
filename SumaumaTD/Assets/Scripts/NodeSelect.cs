@@ -12,6 +12,10 @@ namespace Assets.Scripts
 	    public Sprite CantBuildSprite;
         public Sprite HighlightedSprite;
 
+        [Header("Audio")]
+        public AudioSource UIAudioSource;
+        public AudioClip ConfirmationSound;
+        public AudioClip SelectionSound;
 
         [Header("Controller")]
         [Tooltip("Valor mínimo que um eixo do controle precisa ir para uma direção para detectar movimento")] public float minimumAxisToMove = 0.5f;
@@ -90,6 +94,7 @@ namespace Assets.Scripts
             else if (Time.timeScale > 0.0f){
                 if (Input.GetAxis("NodeSelectionButton") != 0.0)
                 {
+                    UIAudioSource.PlayOneShot(ConfirmationSound);
                     _selectedNode.BuildOnSelectedNode();
                     _framesLeftToWait = framesToWait;
                 }
@@ -127,6 +132,7 @@ namespace Assets.Scripts
 
 		void ChangeSelectedNode(Vector3 dir)
         {
+            UIAudioSource.PlayOneShot(SelectionSound);
             dir = 5 * dir; //5 é o tamanho do espaço entre os centros dos nodes
 			Vector3 temp = _selectPosition + dir; //temp guarda o centro onde a esfera vai buscar por nodes
 			Collider[] cast = Physics.OverlapSphere (temp, _radius);
@@ -159,6 +165,7 @@ namespace Assets.Scripts
 
         public void ChangeSelectedNode (Node node)
         {
+            UIAudioSource.PlayOneShot(SelectionSound);
             _selectedNode.OnMouseExit();
             _selectedNode = node;
             _selectedNode.Highlight();
