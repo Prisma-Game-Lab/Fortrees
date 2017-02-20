@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.Text;
 
 namespace Assets.Scripts
 {
@@ -58,7 +59,11 @@ namespace Assets.Scripts
 
             GenerateGameObjectsParents();
 
+			ShowTxt ();
+
             GenerateMapReadingsMatrix();
+
+			ShowMapReadings();
 
             BuildSceneMap();
 
@@ -104,7 +109,6 @@ namespace Assets.Scripts
                         continue;
                     }
                     j++;
-                    addWaypointDirection = true;
                     lineWasCreatedLastIteration = true;
                 }
                 else if (letter == '<' || letter == '>')
@@ -345,6 +349,36 @@ namespace Assets.Scripts
             SaveWayPoint(j);
             var end = (GameObject)Instantiate(EndPrefab, new Vector3(_currentX, EndPrefab.transform.localPosition.y, _currentZ), Quaternion.identity);
         }
+
+
+		private void ShowMapReadings()
+		{
+			StringBuilder text = new StringBuilder(); 
+			text.Append (_mapReadings.Length + " matriz\n");
+			for (int i = 0; i < _mapReadings.Length; i++) {
+				for (int j = 0; j < _mapReadings [i].Length; j++)
+					text.Append(_mapReadings [i] [j]);
+				text.Append("\n");
+			}
+			Debug.Log (text + "\n Waypoints:\n" );
+			text = new StringBuilder(); 
+			foreach(var waydirection in _waypointDirections)
+				text.Append(waydirection ? "direita\n" : "esquerda\n");
+			Debug.Log (text);
+		}
+
+		private void ShowTxt (){
+			var app = new StringBuilder();
+			foreach (var t in File.text) {
+				if (t == '\n')
+					app.Append (";n\n");
+				else if (t == '\r')
+					app.Append (";r\r");
+				else
+					app.Append (t);
+			}
+			Debug.Log (app);
+		}
 
         public struct AdjacentPath
         {
