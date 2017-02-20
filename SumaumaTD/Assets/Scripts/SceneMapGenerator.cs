@@ -6,8 +6,10 @@ namespace Assets.Scripts
 {
     public class SceneMapGenerator : MonoBehaviour
     {
-        #region Variables   
-        
+		#region Variables 
+		//Pega a distância entre o centro de 2 nodes
+		static float _sizeOfNode = 4.5f;  
+
         [Header("Mapa em txt")]
         public TextAsset File;
 
@@ -19,6 +21,8 @@ namespace Assets.Scripts
         public GameObject WaypointPrefab;
         public GameObject StartPrefab;
         public GameObject EndPrefab;
+		public GameObject CameraClamp;
+		public GameObject CenterOfScreen;
 
         [Header("Path sprites")]
         public Sprite PathCurveRD;
@@ -32,6 +36,7 @@ namespace Assets.Scripts
         private NodeSelect _nodesGameObject;
         private GameObject _environmentGameObject;
         private Waypoints _waypoints;
+		private BoxCollider _cameraClampCollider;
         private float _currentX;
         private float _currentZ;
         private bool _startNodeSet = false;
@@ -46,6 +51,7 @@ namespace Assets.Scripts
 
         public void GenerateMap()
         {
+			_startNodeSet = false;
             Debug.Log("Generating Map");
             _waypointsCoords = new WaypointsCoords();
             _waypointDirections = new List<bool>();
@@ -57,10 +63,13 @@ namespace Assets.Scripts
             BuildSceneMap();
 
             SetAllWayPoints();
+
+			AdjustCameraClamp ();
         }
 
         private void GenerateGameObjectsParents()
         {
+			_cameraClampCollider = CameraClamp.GetComponent<BoxCollider> ();
             _nodesGameObject = Instantiate(NodesParentPrefab).GetComponent<NodeSelect>();
             _nodesGameObject.TurretUI = TurretUI;
             _environmentGameObject = new GameObject("Environment");
@@ -187,6 +196,19 @@ namespace Assets.Scripts
                 _currentZ-=4.5f;
             }
         }
+
+		private void AdjustCameraClamp(){
+			CameraClamp.transform.position = Vector3.zero;
+			Debug.Log (CameraClamp.transform.position);
+
+			//Dimensões do mapa
+			float width = _mapReadings [0].Length * _sizeOfNode;
+			float height = _mapReadings.Length * _sizeOfNode;
+
+			CameraClamp.transform.Translate(new Vector3(width/2, height/2 - _sizeOfNode, CenterOfScreen.transform.position.y));
+
+			_cameraClampCollider.size = new Vector3 (2f*width, 1.5f*height, 4);
+		}
 
         
 
