@@ -12,14 +12,16 @@ namespace Assets.Scripts
         public Transform SpawnPoint;
         public Text WaveCountdownText;
         public MovingSeedsManager SeedsManager;
-
-        public float TimeBetweenWaves = 5f;
+		public float TimeBetweenWaves = 5f;
         
         [Header("UnityStuff")]
         public Image WaveCountdownBar;
         public GameManager GameManager;
         //public float TimeBetweenEnemySpawns = 0.5f;
-        private Wave[] _waves;
+		[HideInInspector]
+		public static int NumberOfWaves;
+
+		private Wave[] _waves;
         private float _countdown = 2f;
         private int _waveNumber = 0;
         private bool _seedsEarned = true;
@@ -33,9 +35,9 @@ namespace Assets.Scripts
 
         private void SetWaves()
         {
-            var waveCount = transform.childCount;
-            _waves = new Wave[waveCount];
-            for (var i = 0; i < waveCount; i++)
+            NumberOfWaves = transform.childCount;
+			_waves = new Wave[NumberOfWaves];
+			for (var i = 0; i < NumberOfWaves; i++)
             {
                 var wave = transform.GetChild(i).GetComponent<Wave>();
                 _waves[i] = wave;

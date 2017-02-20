@@ -8,10 +8,18 @@ namespace Assets.Scripts
     {
 
         public Text WavesSurvivedText;
+		public GameObject WaveCountImages;
 
         public void OnEnable()
         {
-            WavesSurvivedText.text = PlayerStats.Waves.ToString();
+			var counter =0;
+			WavesSurvivedText.text = PlayerStats.Waves + "/" + WaveSpawner.NumberOfWaves + " waves survived";
+
+			var wavecount =WaveCountImages.transform.childCount;
+			for (; counter < PlayerStats.Waves; counter++)
+				WaveCountImages.transform.GetChild (counter).gameObject.SetActive(true);
+			for(; counter <wavecount; counter++)
+				WaveCountImages.transform.GetChild (counter).gameObject.SetActive(false);
         }
     }
 }
