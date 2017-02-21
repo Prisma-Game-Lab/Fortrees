@@ -17,7 +17,6 @@ namespace Assets.Scripts
         public Image BuildBackgroundImage;
         public Shop TurretShop;
         public Button UpgradeButton;
-
         private Node _target;
         //public Text SellCost;
         

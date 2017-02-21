@@ -16,6 +16,12 @@ namespace Assets.Scripts
 
         public void Update()
 		{
+            if (!GameManager.GameStarted)
+            {
+                _framesLeftToWait = 5; //to prevent pausing the game when we press start for it to begin
+                return;
+            }
+
             if (!GameManager.GameIsOver)
             {
                 while (_framesLeftToWait > 0)

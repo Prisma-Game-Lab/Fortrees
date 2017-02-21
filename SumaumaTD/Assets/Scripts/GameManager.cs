@@ -9,7 +9,7 @@ namespace Assets.Scripts
         public GameObject PressStartUi;
         public static bool GameIsOver;
         [HideInInspector]
-        public bool GameStarted;
+        public static bool GameStarted;
 
         public void Start()
         {
@@ -31,7 +31,7 @@ namespace Assets.Scripts
                 EndGame();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && !GameStarted)
+            if (Input.GetButtonDown("StartGameButton") && !GameStarted)
             {
                 PressStartUi.SetActive(false);
                 GameStarted = true;
