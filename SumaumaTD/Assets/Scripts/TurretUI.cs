@@ -6,13 +6,19 @@ namespace Assets.Scripts
     public class TurretUI : MonoBehaviour
     {
         //TODO remove unnecessary things
+        public Sprite[] BuildBackgrounds;
+
+        [Header("Dependencies")]
         public GameObject UpdateUI;
         public GameObject BuildUI;
-        private Node _target;
         public Text UpgradeCost;
-        public Button UpgradeButton;
-        public Sprite[] BuildBackgrounds;
+        public Text BuildCost;
+        public Animator BuildDescriptionAnimator;
         public Image BuildBackgroundImage;
+        public Shop TurretShop;
+        public Button UpgradeButton;
+
+        private Node _target;
         //public Text SellCost;
         
         public void SetTarget(Node target)
@@ -22,7 +28,7 @@ namespace Assets.Scripts
             
             if (!_target.IsUpgraded)
             {
-                UpgradeCost.text = "$" + _target.TurretBlueprint.UpgradeCost;
+                UpgradeCost.text = _target.TurretBlueprint.UpgradeCost.ToString();
                 UpgradeButton.interactable = true;
             }
             else
@@ -62,9 +68,27 @@ namespace Assets.Scripts
             BuildManager.Instance.DeselectNode();
         }
 
-        public void SetBackground (int item)
+        public void Select (int item)
         {
             BuildBackgroundImage.sprite = BuildBackgrounds[item];
+            switch (item)
+            {
+                case 0:
+                    BuildCost.text = TurretShop.AnotherTurretBlueprint.Cost.ToString();
+                    BuildDescriptionAnimator.runtimeAnimatorController = TurretShop.AnotherTurretBlueprint.TurretAnimator;
+                    break;
+                case 1:
+                    BuildCost.text = TurretShop.StandardTurretBlueprint.Cost.ToString();
+                    BuildDescriptionAnimator.runtimeAnimatorController = TurretShop.StandardTurretBlueprint.TurretAnimator;
+                    break;
+                case 2:
+                    BuildCost.text = TurretShop.MoreTurretBlueprint.Cost.ToString();
+                    BuildDescriptionAnimator.runtimeAnimatorController = TurretShop.MoreTurretBlueprint.TurretAnimator;
+                    break;
+                default:
+                    Debug.Log("Invalid Item Selected");
+                    break;
+            }
         }
     }
 }

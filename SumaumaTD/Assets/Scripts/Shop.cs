@@ -5,7 +5,7 @@ namespace Assets.Scripts
     public class Shop : MonoBehaviour
     {
         private BuildManager _buildManager;
-        public TurretBlueprint StardardTurretBlueprint;
+        public TurretBlueprint StandardTurretBlueprint;
         public TurretBlueprint AnotherTurretBlueprint;
         public TurretBlueprint MoreTurretBlueprint;
 
@@ -16,7 +16,7 @@ namespace Assets.Scripts
 
         public void SelectStandardTurret()
         {
-            _buildManager.SelectTurretToBuild(StardardTurretBlueprint);
+            _buildManager.SelectTurretToBuild(StandardTurretBlueprint);
         }
 
         public void SelectAnotherTurret()
