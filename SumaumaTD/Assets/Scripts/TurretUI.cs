@@ -11,8 +11,10 @@ namespace Assets.Scripts
         private Node _target;
         public Text UpgradeCost;
         public Button UpgradeButton;
+        public Sprite[] BuildBackgrounds;
+        public Image BuildBackgroundImage;
         //public Text SellCost;
-
+        
         public void SetTarget(Node target)
         {
             _target = target;
@@ -60,6 +62,9 @@ namespace Assets.Scripts
             BuildManager.Instance.DeselectNode();
         }
 
-        
+        public void SetBackground (int item)
+        {
+            BuildBackgroundImage.sprite = BuildBackgrounds[item];
+        }
     }
 }
