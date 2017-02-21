@@ -20,10 +20,15 @@ namespace Assets.Scripts
         public bool IsUpgraded = false;
         public bool IsSelectable = true;
 
+        [Header("Range Circle")]
+        public GameObject RangeCircle;
+        [Tooltip("Número pra multiplicar e ajeitar o tamanho do círculo de range")] public float RangeFixAjustment = 0.5f;
+
         private SpriteRenderer _rend;
         private BuildManager _buildManager;
         private NodeSelect _nodeSelect;
         private Sprite _defaultSprite;
+        private GameObject _activeRangeCircle;
 
         #endregion
         
@@ -67,11 +72,31 @@ namespace Assets.Scripts
         public void OnMouseExit()
         {
             _rend.sprite = _defaultSprite;
+
+            //Remove o círculo de range
+            if (_activeRangeCircle != null) Destroy(_activeRangeCircle);
         }
 
         public void Highlight()
         {
             _rend.sprite = CanBuild ? _nodeSelect.HighlightedSprite : _nodeSelect.CantBuildSprite;
+
+            if(Turret != null && _activeRangeCircle == null)
+            {
+                float range = Turret.GetComponent<Turret>().Range;
+
+                //Habilita o círculo de Range
+                _activeRangeCircle = (GameObject)Instantiate(RangeCircle, transform);
+
+                //Ajusta o tamanho http://answers.unity3d.com/questions/139199/scale-object-to-certain-length.html
+                float currentSize = _activeRangeCircle.GetComponent<Collider>().bounds.size.z;
+                float newScale = range / currentSize;
+                _activeRangeCircle.transform.localScale = new Vector3(newScale, newScale, newScale);
+
+                //Ajusta a posição (+ alguns ajustes no tamanho)
+                _activeRangeCircle.transform.position = transform.position;
+                _activeRangeCircle.transform.localScale *= RangeFixAjustment;
+            }
         }
 
         public void BuildOnSelectedNode()
