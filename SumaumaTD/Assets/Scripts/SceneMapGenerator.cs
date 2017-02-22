@@ -48,6 +48,8 @@ namespace Assets.Scripts
         private const char EndLetter = 'E';
         private const char PathLetter = 'P';
         private const char NodeLetter = 'N';
+		private const char UnbuildableNodeLetter = 'U';
+		private const char EmptyLetter = '_';
         #endregion
 
         public void GenerateMap()
@@ -143,7 +145,7 @@ namespace Assets.Scripts
 
         private bool IsALetter(char letter)
         {
-            return letter == NodeLetter || letter == PathLetter || letter == StartLetter || letter == EndLetter;
+			return letter == NodeLetter || letter == PathLetter || letter == StartLetter || letter == EndLetter || letter == UnbuildableNodeLetter || letter == EmptyLetter;
         }
 
         private void FillMapReadingsMatrix()
@@ -173,27 +175,29 @@ namespace Assets.Scripts
                 {
                     var letter = _mapReadings[y][x];
 
-                    switch (letter)
-                    {
-                        case NodeLetter:
-                            InstantiateNodeCase();
-                            break;
-                        case PathLetter:
-                            InstantiatePathCase(x,y);
-                            break;
-                        case StartLetter:
-                            InstantiateNodeCase();
-                            InstantiateStartCase();
-                            break;
-                        case EndLetter:
-                            InstantiateNodeCase();
-                            InstantiateEndCase(y);
-                            break;
-                       default:
-                            _currentX -= 4.5f;
-                            break;
-
-                    }
+					switch (letter) {
+					case NodeLetter:
+						InstantiateNodeCase ();
+						break;
+					case PathLetter:
+						InstantiatePathCase (x, y);
+						break;
+					case StartLetter:
+						InstantiateNodeCase ();
+						InstantiateStartCase ();
+						break;
+					case EndLetter:
+						InstantiateNodeCase ();
+						InstantiateEndCase (y);
+						break;
+					case EmptyLetter:
+						break;
+					case UnbuildableNodeLetter:
+						break;
+					default:
+						_currentX -= 4.5f;
+						break;
+					}
                     _currentX+=4.5f;
                 }
                 _currentX = 0;
