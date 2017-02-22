@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 868bc8dae8d0202419a07d04dfee25e0
+timeCreated: 1487789370
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: araucaria_skill_spritesheet_12
+    21300002: araucaria_skill_spritesheet_8
+    21300004: araucaria_skill_spritesheet_0
+    21300006: araucaria_skill_spritesheet_1
+    21300008: araucaria_skill_spritesheet_2
+    21300010: araucaria_skill_spritesheet_3
+    21300012: araucaria_skill_spritesheet_4
+    21300014: araucaria_skill_spritesheet_5
+    21300016: araucaria_skill_spritesheet_6
+    21300018: araucaria_skill_spritesheet_7
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 20
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 240
+        width: 264
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 172
+        width: 427
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 145
+        width: 555
+        height: 562
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 179
+        width: 589
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 186
+        width: 684
+        height: 575
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 3447
+        y: 166
+        width: 704
+        height: 568
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 4307
+        y: 172
+        width: 697
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 5268
+        y: 145
+        width: 698
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 6114
+        y: 118
+        width: 677
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: araucaria_skill_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 6913
+        y: 98
+        width: 772
+        height: 568
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
