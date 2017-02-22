@@ -13,13 +13,14 @@ namespace Assets.Scripts
         public void OnEnable()
         {
 			var counter =0;
-			WavesSurvivedText.text = PlayerStats.Waves + "/" + WaveSpawner.NumberOfWaves + " waves survived";
+			WavesSurvivedText.text = PlayerStats.Waves + "/" + WaveSpawner.NumberOfWaves + " waves";
 
 			var wavecount =WaveCountImages.transform.childCount;
-			for (; counter < PlayerStats.Waves; counter++)
+			for (; counter < 6; counter++)
 				WaveCountImages.transform.GetChild (counter).gameObject.SetActive(true);
-			for(; counter <wavecount; counter++)
+			for(; counter <0; counter++)
 				WaveCountImages.transform.GetChild (counter).gameObject.SetActive(false);
+			
         }
     }
 }

@@ -66,7 +66,7 @@ namespace Assets.Scripts
         public void Menu()
         {
             TogglePause();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
     }
