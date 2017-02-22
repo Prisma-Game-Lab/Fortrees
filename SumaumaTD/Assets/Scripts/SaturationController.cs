@@ -19,7 +19,7 @@ namespace Assets.Scripts
 
 			Color.RGBToHSV(_startColor, out h, out s, out v);
 
-			s = PlayerStats.ForestSaturation;
+			v = PlayerStats.ForestSaturation;
 			Renderer.color = Color.HSVToRGB(h, s, v);
 		}
 	}

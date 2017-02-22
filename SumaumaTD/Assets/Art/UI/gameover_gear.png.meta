@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c1a404bfd86f6204fb86f331657c58cb
-timeCreated: 1487615926
+timeCreated: 1487786952
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -81,7 +81,7 @@ TextureImporter:
         width: 941
         height: 958
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -89,12 +89,12 @@ TextureImporter:
       name: gameover_gear_1
       rect:
         serializedVersion: 2
-        x: 1218
-        y: 152
-        width: 693
-        height: 695
+        x: 1100
+        y: 12
+        width: 941
+        height: 958
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -107,7 +107,7 @@ TextureImporter:
         width: 941
         height: 958
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
