@@ -11,7 +11,7 @@ namespace Assets.Scripts
 
         // Update is called once per frame
         public void Update () {
-            SeedsCountdownText.text = "x" + PlayerStats.Seeds;
+            SeedsCountdownText.text = "" + PlayerStats.Seeds;
         }
     }
 }

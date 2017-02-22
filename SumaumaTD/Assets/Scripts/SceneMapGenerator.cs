@@ -2,6 +2,8 @@
 using System.Linq;
 using UnityEngine;
 using System.Text;
+using System;
+
 
 namespace Assets.Scripts
 {
@@ -24,6 +26,8 @@ namespace Assets.Scripts
         public GameObject EndPrefab;
 		public GameObject CameraClamp;
 		public GameObject CenterOfScreen;
+		[Header("Audio")]
+		public AudioSource AudioSource;
 
         [Header("Path sprites")]
         public Sprite PathCurveRD;
@@ -38,11 +42,17 @@ namespace Assets.Scripts
         private GameObject _environmentGameObject;
         private Waypoints _waypoints;
 		private BoxCollider _cameraClampCollider;
+		private WaypointsCoords _waypointsCoords;
+		private List<bool> _waypointDirections;
+
         private float _currentX;
         private float _currentZ;
         private bool _startNodeSet = false;
-        private WaypointsCoords _waypointsCoords;
-        private List<bool> _waypointDirections;
+
+		private Sprite[] _grass;
+		private Sprite[] _rocks;
+
+		private System.Random _random = new System.Random();
 
         private const char StartLetter = 'S';
         private const char EndLetter = 'E';
@@ -53,11 +63,11 @@ namespace Assets.Scripts
         #endregion
 
         public void GenerateMap()
-        {
-			_startNodeSet = false;
+        {			
             Debug.Log("Generating Map");
             _waypointsCoords = new WaypointsCoords();
             _waypointDirections = new List<bool>();
+			_startNodeSet = false;
 
             GenerateGameObjectsParents();
 
@@ -79,6 +89,9 @@ namespace Assets.Scripts
 			_cameraClampCollider = CameraClamp.GetComponent<BoxCollider> ();
             _nodesGameObject = Instantiate(NodesParentPrefab).GetComponent<NodeSelect>();
             _nodesGameObject.TurretUI = TurretUI;
+			_nodesGameObject.UIAudioSource = AudioSource;
+			_grass = _nodesGameObject.Grass;
+			_rocks = _nodesGameObject.Rocks;
             _environmentGameObject = new GameObject("Environment");
             _waypoints = new GameObject("Waypoints").AddComponent<Waypoints>();
         }
@@ -177,22 +190,23 @@ namespace Assets.Scripts
 
 					switch (letter) {
 					case NodeLetter:
-						InstantiateNodeCase ();
+						InstantiateNodeCase (true, false);
+						break;
+					case UnbuildableNodeLetter:
+						InstantiateNodeCase (false, false);
 						break;
 					case PathLetter:
 						InstantiatePathCase (x, y);
 						break;
 					case StartLetter:
-						InstantiateNodeCase ();
+						InstantiateNodeCase (true, true);
 						InstantiateStartCase ();
 						break;
 					case EndLetter:
-						InstantiateNodeCase ();
+						InstantiateNodeCase (true, true);
 						InstantiateEndCase (y);
 						break;
 					case EmptyLetter:
-						break;
-					case UnbuildableNodeLetter:
 						break;
 					default:
 						_currentX -= 4.5f;
@@ -220,9 +234,9 @@ namespace Assets.Scripts
 
         
 
-        private void InstantiateNodeCase()
+		private void InstantiateNodeCase(bool buildable, bool startOrEnd)
         {
-            GameObject temp = InstantiateNode();
+			GameObject temp = InstantiateNode(buildable, startOrEnd);
             if (!_startNodeSet)
             {
                 _nodesGameObject.StartNode = temp.GetComponent<Node>();
@@ -230,10 +244,24 @@ namespace Assets.Scripts
             }
         }
 
-        private GameObject InstantiateNode()
+		private GameObject InstantiateNode(bool buildable, bool startOrEnd)
         {
-            var node = (GameObject)Instantiate(NodePrefab, new Vector3(_currentX, 0, _currentZ), Quaternion.identity);
+			var node = (GameObject)Instantiate(NodePrefab, new Vector3(_currentX, 0, _currentZ), Quaternion.identity);
             node.transform.parent = _nodesGameObject.transform;
+			if (buildable) {
+				var num = _random.Next (0, _grass.Length);
+				node.GetComponentInChildren<SpriteRenderer> ().sprite = _grass [num];
+				if (startOrEnd)
+					node.GetComponent<Node>().CanBuild = false;
+				else
+					node.GetComponent<Node>().CanBuild = true;
+			} else {
+				var num = _random.Next (0, _rocks.Length);
+				node.GetComponentInChildren<SpriteRenderer> ().sprite = _rocks [num];
+				node.GetComponent<Node>().CanBuild = false;
+			}
+			
+
             return node;
         }
 
