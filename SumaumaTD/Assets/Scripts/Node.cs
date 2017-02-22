@@ -9,8 +9,6 @@ namespace Assets.Scripts
         #region Variables
 
         public bool CanBuild = true;
-        public Color HoverColor;
-        public Color CantBuildColor;
         public Vector3 PositionOffset;
         [HideInInspector]
         public GameObject Turret;
@@ -18,7 +16,6 @@ namespace Assets.Scripts
         public TurretBlueprint TurretBlueprint;
         [HideInInspector]
         public bool IsUpgraded = false;
-        public bool IsSelectable = true;
 
         [Header("Range Circle")]
         public GameObject RangeCircle;
@@ -79,7 +76,9 @@ namespace Assets.Scripts
 
         public void Highlight()
         {
-            _rend.sprite = CanBuild ? _nodeSelect.HighlightedSprite : _nodeSelect.CantBuildSprite;
+			if (!CanBuild)
+				return;
+            _rend.sprite = _nodeSelect.HighlightedSprite ;
 
             if(Turret != null && _activeRangeCircle == null)
             {

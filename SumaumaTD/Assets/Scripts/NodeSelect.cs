@@ -9,8 +9,11 @@ namespace Assets.Scripts
 		public float NodeSize;
         public GameObject TurretUI;
 
-	    public Sprite CantBuildSprite;
         public Sprite HighlightedSprite;
+
+		[Header("Sprites")]
+		public Sprite[] Grass;
+		public Sprite[] Rocks;
 
         [Header("Audio")]
         public AudioSource UIAudioSource;
@@ -141,7 +144,7 @@ namespace Assets.Scripts
 				return;
 			}
 
-			while (cast[0].gameObject.tag != "Node" || !cast[0].GetComponent<Node>().IsSelectable) { //procura por um node selecionável
+			while (cast[0].gameObject.tag != "Node" || !cast[0].GetComponent<Node>().CanBuild) { //procura por um node selecionável
                 Collider castedNode = FindNodeInCollisionArray(cast);
 
                 if(castedNode != null) //o FindNodeInCollisionArray retorna null se não encontrar nada
