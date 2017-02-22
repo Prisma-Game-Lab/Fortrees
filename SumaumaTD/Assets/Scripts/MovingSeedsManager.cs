@@ -8,7 +8,8 @@ namespace Assets.Scripts
         public Camera Cam;
         public Transform Target;
         public GameObject SeedPrefab;
-        public float Speed = 10.0f;
+		public float Speed = 10.0f;
+		[Range(0,1)] public float MaxSize;
 
         private int _seedsToSpawn = 0;
         private MovingSeedUI _seed = null;
@@ -31,6 +32,7 @@ namespace Assets.Scripts
             _seed.Cam = Cam;
             _seed.Target = Target;
             _seed.Speed = Speed;
+			_seed.MaxSize = MaxSize;
 
             _seedsToSpawn--;
         }

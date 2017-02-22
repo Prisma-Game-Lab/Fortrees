@@ -10,6 +10,7 @@ namespace Assets.Scripts
         public Transform Target;
         public float Speed = 10.0f;
         public MovingSeedsManager Manager;
+		public float MaxSize;
 
         private Vector3 _dir;
         private Vector2 _targetVec2;
@@ -33,7 +34,7 @@ namespace Assets.Scripts
             transform.Translate(_dir * Speed * Time.deltaTime);
             _positionVec2 = new Vector2(transform.position.x, transform.position.z);
 
-            if (transform.localScale.x < 1)
+            if (transform.localScale.x < MaxSize)
             {
                 transform.localScale *= 1 + (Time.deltaTime * Speed / 50);
                 Color color = _image.color;
@@ -46,6 +47,18 @@ namespace Assets.Scripts
                 PlayerStats.Seeds++;
                 Destroy(gameObject);
             }
+
+			AlphaChange ();
         }
+
+		void AlphaChange()
+		{
+			float distance = (_targetVec2 - _positionVec2).magnitude;
+			if (distance <= 10) {
+				Color color = _image.color;
+				color.a = 1 - (10 - distance)/10;
+				_image.color = color;
+			}
+		}
     }
 }
