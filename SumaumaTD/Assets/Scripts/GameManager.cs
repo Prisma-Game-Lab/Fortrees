@@ -11,10 +11,11 @@ namespace Assets.Scripts
         [HideInInspector]
         public static bool GameStarted;
 
-        public void Start()
+        public void Awake()
         {
             GameIsOver = false;
             GameStarted = false;
+            PressStartUi.SetActive(true);
             #if DEBUG
             Debug.Assert(GameObject.Find("WaveManager") != null, "Scene precisa de WaveManager seu mongol");
             #endif

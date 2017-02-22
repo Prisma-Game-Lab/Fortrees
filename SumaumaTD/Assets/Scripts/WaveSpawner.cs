@@ -26,6 +26,7 @@ namespace Assets.Scripts
         private int _waveNumber = 0;
         private bool _seedsEarned = true;
         private float _countdownReset = 2f; // used to fill the bar
+        private bool _waveEnded = true;
 
         public void Start()
         {
@@ -48,12 +49,12 @@ namespace Assets.Scripts
         public void Update () {
             if(!GameManager.GameStarted)
                 return;
-            if (EnemiesAlive > 0)
+            if (EnemiesAlive > 0 || _waveEnded == false)
             {
                 return;
             }
             
-            if(_countdown <= 0f) {
+            if(_countdown <= 0f ) {
                 StartCoroutine(SpawnWave());
                 _countdown = TimeBetweenWaves;
                 _countdownReset = _countdown;
@@ -93,6 +94,7 @@ namespace Assets.Scripts
         //Chamada no começo da wave
         private IEnumerator SpawnWave()
         {
+            _waveEnded = false;
             
             PlayerStats.Waves ++;
             Wave wave = _waves[_waveNumber];
@@ -100,12 +102,18 @@ namespace Assets.Scripts
             for (var g = 0; g < wave.Groups.Length; g++)
             {
                 Group group = wave.Groups[g];
+                StartCoroutine(SpawnGroup(group));
+                yield return new WaitForSeconds(group.SecondsToNextGroup);
+            }
+            _waveEnded = true;
+        }
 
-                for (var i = 0; i < group.Count; i++)
-                {
-                    SpawnEnemy(group.EnemyPrefab);
-                    yield return new WaitForSeconds(1f/ group.SpawnRate);
-                }
+        private IEnumerator SpawnGroup(Group group)
+        {
+            for (var i = 0; i < group.Count; i++)
+            {
+                SpawnEnemy(group.EnemyPrefab);
+                yield return new WaitForSeconds(1f / group.EnemySpawnRate);
             }
         }
 

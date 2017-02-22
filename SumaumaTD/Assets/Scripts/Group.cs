@@ -8,6 +8,7 @@ namespace Assets.Scripts
         
         public GameObject EnemyPrefab;
         public int Count;
-        public float SpawnRate;
+        public float EnemySpawnRate;
+        public float SecondsToNextGroup;
     }
 }
