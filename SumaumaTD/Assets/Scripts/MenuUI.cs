@@ -8,10 +8,14 @@ namespace Assets.Scripts
 
         public int LevelToLoad;
         public GameObject FirstButtonSelected;
+        public GameObject ReturnButton;
+        public GameObject Credits;
 
         public void OnEnable()
         {
-            EventSystem.current.SetSelectedGameObject(FirstButtonSelected);
+            SetCurrentElement(FirstButtonSelected);
+            Credits.SetActive(false);
+            //EventSystem.current.SetSelectedGameObject(FirstButtonSelected);
         }
 
         public void StartGame()
@@ -19,9 +23,27 @@ namespace Assets.Scripts
             SceneManager.LoadScene(LevelToLoad);
         }
 
+        public void Return()
+        {
+            Credits.SetActive(false);
+            SetCurrentElement(FirstButtonSelected);
+        }
+
+        public void LoadCredits()
+        {
+            Credits.SetActive(true);
+            SetCurrentElement(ReturnButton);
+        }
+
         public void QuitGame()
         {
            Application.Quit();
         }
+
+        private void SetCurrentElement(GameObject selected)
+        {
+            EventSystem.current.SetSelectedGameObject(selected);
+        }
+
     }
 }
