@@ -10,6 +10,8 @@ namespace Assets.Scripts
         public static int Lives;
         public int StartLives = 20;
 
+		public static float ForestSaturation = 0;
+
         [HideInInspector]
         public static int TotalLives;
 
@@ -23,6 +25,12 @@ namespace Assets.Scripts
             TotalLives = StartLives;
         }
 
+		public void Update()
+		{
+			var healthFillAmount = PlayerStats.Lives/(float) PlayerStats.TotalLives;
+
+			ForestSaturation = 1 - healthFillAmount;
+		}
         
     }
 }

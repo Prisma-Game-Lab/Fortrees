@@ -43,7 +43,6 @@ namespace Assets.Scripts
             _buildManager = BuildManager.Instance;
             _nodeSelect = gameObject.GetComponentInParent<NodeSelect>();
         }
-
        
         public void OnMouseDown()
         {
