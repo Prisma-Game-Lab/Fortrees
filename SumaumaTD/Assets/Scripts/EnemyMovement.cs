@@ -11,10 +11,10 @@ namespace Assets.Scripts
         private int _wavepointIndex = 0;
 
         //I'm using the same method in the "EndUI" script
-        public Sprite EnemyPlaceholderSpriteRight;
-        public Sprite EnemyPlaceholderSpriteLeft;
-        public Sprite EnemyPlaceholderSpriteUp;
-        public Sprite EnemyPlaceholderSpriteDown;
+        public Sprite EnemySpriteRight;
+        public Sprite EnemySpriteLeft;
+        public Sprite EnemySpriteUp;
+        public Sprite EnemySpriteDown;
         public GameObject EnemySpriteGameObject;
 
         private Enemy _enemy;
@@ -25,7 +25,6 @@ namespace Assets.Scripts
             _enemy = GetComponent<Enemy>();
             _sound = GetComponent<EnemySound>();
             _target = Waypoints.Points[0];
-            EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemyPlaceholderSpriteRight;
         }
 
         public void Update()
@@ -40,25 +39,25 @@ namespace Assets.Scripts
                 //TODO: remover ands depois do txt ficar pronto
                 if (_target.position.x >= transform.position.x && _target.position.x - transform.position.x > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemyPlaceholderSpriteRight;
+                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteRight;
                     Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " RIGHT");
                 }
 
                 else if (_target.position.x < transform.position.x && transform.position.x - _target.position.x > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemyPlaceholderSpriteLeft;
+                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteLeft;
                     Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " LEFT");
                 }
 
                 else if (_target.position.z >= transform.position.z && _target.position.z - transform.position.z > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemyPlaceholderSpriteUp;
+                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteUp;
                     Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " UP");
                 }
 
                 else if (_target.position.z < transform.position.z && transform.position.z - _target.position.z > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemyPlaceholderSpriteDown;
+                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteDown;
                     Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " DOWN");
                 }
             }

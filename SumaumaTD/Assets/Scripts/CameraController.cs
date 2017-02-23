@@ -16,8 +16,9 @@ namespace Assets.Scripts
         [Header("Camera Clamp")]
         public GameObject CameraClamp;
         
-        [Tooltip("Quando menor o ortographic size, maior o zoom")] public float MinOrtographicSize = 5f;
-        [Tooltip("Quando menor o ortographic size, maior o zoom")] public float MaxOrtographicSize = 45f;
+        //[Tooltip("NÃO FUNCIONA MAIS: Quando menor o ortographic size, maior o zoom")] public float MinOrtographicSize = 5f;
+        //[Tooltip("NÃO FUNCIONA MAIS: Quando menor o ortographic size, maior o zoom")] public float MaxOrtographicSize = 45f;
+		public float OrtographicSize;
 
         [Header("Controller")]
         [Tooltip("Valor mínimo que um eixo do controle precisa ir para uma direção para detectar movimento")] public float minimumAxisToMove = 0.5f;
@@ -33,6 +34,10 @@ namespace Assets.Scripts
         private float _shakeTimeRemaining;
         private Transform _centerOfScreen;
         private Collider _cameraClampCollider;
+
+		public void OnValidate(){
+			this.GetComponent<Camera>().orthographicSize = OrtographicSize;
+		}
 
         public void Start()
         {
@@ -146,7 +151,7 @@ namespace Assets.Scripts
             transform.position = pos;
             if (!_cameraClampCollider.bounds.Contains(_centerOfScreen.transform.position)) FixOutOfBounds();
 
-            //Zoom
+            /*/Zoom
             float controllerScroll = Input.GetAxis("CameraZoom");
             float mouseScroll = Input.GetAxis("Mouse ScrollWheel");
 
@@ -154,7 +159,7 @@ namespace Assets.Scripts
             float scrollSpeed = (scroll == mouseScroll) ? MouseScrollSpeed : ControllerScrollSpeed;
 
             cam.orthographicSize -= scroll * 1000 * scrollSpeed * Time.deltaTime;
-            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, MinOrtographicSize, MaxOrtographicSize); 
+            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, MinOrtographicSize, MaxOrtographicSize); */
 
             
         }
