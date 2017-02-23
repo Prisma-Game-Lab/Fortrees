@@ -4,13 +4,18 @@ namespace Assets.Scripts
 {
     public class Turret : MonoBehaviour {
 
-        private Transform _target;
+		private Transform _target;
         private Enemy _targetEnemy;
         
         private static int _nextAttackAudio = 0; //usada para intercalar os sons de ataque
 
         [Header("General")]
         public float Range = 15f;
+
+		[Header("Bonus Specs")]
+		public float SlowAmount = 0.2f;
+		public float SeedTime = 30f;
+		public float PoisonDamage = 5f;
 
         [Header("Unity Setup Fields")]
         public Animator SpriteAnimator;
@@ -65,6 +70,9 @@ namespace Assets.Scripts
                 Laser();
             else
                 UseBullet();
+
+		if (_surroundings.Bonus)
+			ActivateAbility (_surroundings.BonusType);
         }
 
         private void UseBullet()
@@ -154,5 +162,35 @@ namespace Assets.Scripts
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, Range);
         }
+
+		#region Abilities
+		public void ActivateAbility(SurroundingExplorer.BonusTypeEnum type){
+			switch(type){
+					case SurroundingExplorer.BonusTypeEnum.Jaqueira:
+					Poison();
+					break;
+					case SurroundingExplorer.BonusTypeEnum.Ipe:
+					GenerateSeed();
+					break;
+					case SurroundingExplorer.BonusTypeEnum.Araucaria:
+					Slow();
+					break;
+			}
+		}
+
+		void Slow(){
+			if(Vector3.Distance(transform.position, _target.position) <= Range)
+			{
+				_targetEnemy.Slow(SlowAmount);
+			}
+		}
+
+		void GenerateSeed(){
+		}
+
+		void Poison(){
+		}
+
+		#endregion
     }
 }
