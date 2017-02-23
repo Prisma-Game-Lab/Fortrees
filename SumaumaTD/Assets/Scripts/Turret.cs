@@ -32,16 +32,22 @@ namespace Assets.Scripts
         public int DamageOverTime = 20;
         public float SlowFactorPercentage = .5f;
 
+        private SurroundingExplorer _surroundings;
+
         // Use this for initialization
         public void Start()
         {
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
             SpriteAnimator = GetComponent<Animator>();
+            _surroundings = new SurroundingExplorer();
         }
 
         // Update is called once per frame
         public void Update()
         {
+
+            _surroundings.GetSurroundings(1, this);
+
             if (_target == null)
             {
                 if (UseLaser)
@@ -49,6 +55,8 @@ namespace Assets.Scripts
                         LineRenderer.enabled = false;
                 return;
             }
+
+            //checar se está com bonus aqui
 
             //target lock on
             LockOnTarget();
