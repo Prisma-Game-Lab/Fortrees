@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -8,15 +8,18 @@ namespace Assets.Scripts
     {
         public Camera Cam;
         public Transform Target;
-        public float Speed = 10.0f;
+        public float Speed;
         public MovingSeedsManager Manager;
 		public float MaxSize;
 
         private Vector3 _dir;
         private Vector2 _targetVec2;
         private Vector2 _positionVec2;
-        private Transform _centerOfScreen;
+		private float _currVelocity = 0f;
+		private Vector3 _currVelocityVec3;
+		private Transform _centerOfScreen;
         private Image _image;
+		
 
         // Use this for initialization
         void Start()
@@ -31,6 +34,9 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+			//transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref _currVelocityVec3, 0.1f, 30, Time.deltaTime);
+			Speed = Mathf.SmoothDamp(Speed, 10f, ref _currVelocity, 0.7f);
+			Debug.Log(Speed);	
             transform.Translate(_dir * Speed * Time.deltaTime);
             _positionVec2 = new Vector2(transform.position.x, transform.position.z);
 
@@ -60,5 +66,5 @@ namespace Assets.Scripts
 				_image.color = color;
 			}
 		}
-    }
+	}
 }
