@@ -27,10 +27,11 @@ namespace Assets.Scripts
         void Start()
         {
             _audioSource = GetComponent<AudioSource>();
-			if (EnemyLoopSound != null)
-				_enemyLoopSoundLength = EnemyLoopSound.length;
-			else
-				_audioSource.PlayOneShot (EnemyEntranceSound, EnemyEntranceSoundVolume);
+            if (EnemyLoopSound != null)
+            {
+                _enemyLoopSoundLength = EnemyLoopSound.length;
+                _audioSource.PlayOneShot(EnemyEntranceSound, EnemyEntranceSoundVolume);
+            }
         }
 
         // Update is called once per frame
