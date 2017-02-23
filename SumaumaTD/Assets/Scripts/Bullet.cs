@@ -8,6 +8,10 @@ namespace Assets.Scripts
         public float ExplosionRadius = 0f;
         public GameObject ImpactEffect;
         public int Damage = 50;
+		[HideInInspector] public bool IsPoisoned = false;
+		[HideInInspector] public float PoisonTime;
+		[HideInInspector] public float PoisonDamage;
+		[HideInInspector] public float PoisonCooldown;
 
         [Header("Bezier")]
         [Tooltip("Define a porcentagem do caminho da bala onde ocorre a altura máxima")]
@@ -126,6 +130,11 @@ namespace Assets.Scripts
                 e.TakeDamage(Damage);
             }
 
+			if (IsPoisoned) {
+				e.RemainingPoisonTime = PoisonTime;
+				e.PoisonDamage = PoisonDamage;
+				e.TotalPoisonCooldown = PoisonCooldown;
+			}
         }
 
         public void OnDrawGizmosSelected()

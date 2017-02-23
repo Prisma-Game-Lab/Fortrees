@@ -16,6 +16,8 @@ namespace Assets.Scripts
 		public float SlowAmount = 0.2f;
 		public float SeedTime = 30f;
 		public float PoisonDamage = 5f;
+		public float PoisonTime = 2f;
+		public float PoisonCooldown = 1f;
 
         [Header("Unity Setup Fields")]
         public Animator SpriteAnimator;
@@ -38,6 +40,7 @@ namespace Assets.Scripts
         public float SlowFactorPercentage = .5f;
 
         private SurroundingExplorer _surroundings;
+		private bool _poisonedBullet = false;
 
         // Use this for initialization
         public void Start()
@@ -125,6 +128,13 @@ namespace Assets.Scripts
 
             Bullet bullet = bulletGO.GetComponent<Bullet> ();
 
+			if (_poisonedBullet == true) {
+				bullet.IsPoisoned = true;
+				bullet.PoisonCooldown = PoisonCooldown;
+				bullet.PoisonTime = PoisonTime;
+				bullet.PoisonDamage = PoisonDamage;
+			}
+
             if (bullet != null)
                 bullet.Seek (_target);
         }
@@ -189,6 +199,7 @@ namespace Assets.Scripts
 		}
 
 		void Poison(){
+			_poisonedBullet = true;
 		}
 
 		#endregion
