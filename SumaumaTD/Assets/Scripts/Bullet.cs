@@ -80,7 +80,7 @@ namespace Assets.Scripts
         public void HitTarget() {
             GameObject effectIns = (GameObject) Instantiate (ImpactEffect, transform.position, transform.rotation);
             float length = PlayNextHitAudio();
-            //Destroy (effectIns, FruitHitAudios[_nextFruitHitAudio - 1].length); //faz com que seja destruído só depois que o áudio já tocou... TODO: simplificar
+            Destroy (effectIns, FruitHitAudios[_nextFruitHitAudio - 1].length); //faz com que seja destruído só depois que o áudio já tocou... TODO: simplificar
 
             if (ExplosionRadius > 0f)
             {
