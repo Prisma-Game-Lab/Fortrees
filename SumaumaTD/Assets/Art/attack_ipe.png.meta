@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: 2d997a2ba84746947a4e9f61e6d30faa
+timeCreated: 1487955367
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: attack_ipe_0
+    21300002: attack_ipe_1
+    21300004: attack_ipe_2
+    21300006: attack_ipe_3
+    21300008: attack_ipe_4
+    21300010: attack_ipe_5
+    21300012: attack_ipe_6
+    21300014: attack_ipe_7
+    21300016: attack_ipe_8
+    21300018: attack_ipe_9
+    21300020: attack_ipe_10
+    21300022: attack_ipe_11
+    21300024: attack_ipe_12
+    21300026: attack_ipe_13
+    21300028: attack_ipe_30
+    21300030: attack_ipe_15
+    21300032: attack_ipe_16
+    21300034: attack_ipe_17
+    21300036: attack_ipe_18
+    21300038: attack_ipe_19
+    21300040: attack_ipe_20
+    21300042: attack_ipe_21
+    21300044: attack_ipe_22
+    21300046: attack_ipe_23
+    21300048: attack_ipe_24
+    21300050: attack_ipe_25
+    21300052: attack_ipe_26
+    21300054: attack_ipe_27
+    21300056: attack_ipe_28
+    21300058: attack_ipe_29
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 300
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: tvOS
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Tizen
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Samsung TV
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: attack_ipe_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1487
+        width: 940
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_1
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1487
+        width: 927
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_2
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1487
+        width: 916
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_3
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 1487
+        width: 903
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_4
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 1487
+        width: 886
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_5
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1487
+        width: 875
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_6
+      rect:
+        serializedVersion: 2
+        x: 5992
+        y: 1487
+        width: 874
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_7
+      rect:
+        serializedVersion: 2
+        x: 6986
+        y: 1487
+        width: 862
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_8
+      rect:
+        serializedVersion: 2
+        x: 7974
+        y: 1475
+        width: 860
+        height: 1475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_9
+      rect:
+        serializedVersion: 2
+        x: 8860
+        y: 1486
+        width: 1060
+        height: 1464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_10
+      rect:
+        serializedVersion: 2
+        x: 9941
+        y: 1484
+        width: 866
+        height: 1466
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_11
+      rect:
+        serializedVersion: 2
+        x: 10932
+        y: 1484
+        width: 876
+        height: 1466
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_12
+      rect:
+        serializedVersion: 2
+        x: 11918
+        y: 1492
+        width: 883
+        height: 1458
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_13
+      rect:
+        serializedVersion: 2
+        x: 12893
+        y: 1495
+        width: 897
+        height: 1452
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_15
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 28
+        width: 907
+        height: 1414
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_16
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 28
+        width: 916
+        height: 1422
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_17
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 35
+        width: 936
+        height: 1419
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_18
+      rect:
+        serializedVersion: 2
+        x: 2979
+        y: 31
+        width: 939
+        height: 1431
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_19
+      rect:
+        serializedVersion: 2
+        x: 3957
+        y: 28
+        width: 955
+        height: 1430
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_20
+      rect:
+        serializedVersion: 2
+        x: 4936
+        y: 31
+        width: 976
+        height: 1435
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_21
+      rect:
+        serializedVersion: 2
+        x: 5912
+        y: 35
+        width: 989
+        height: 1424
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_22
+      rect:
+        serializedVersion: 2
+        x: 6902
+        y: 29
+        width: 984
+        height: 1434
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_23
+      rect:
+        serializedVersion: 2
+        x: 7887
+        y: 35
+        width: 990
+        height: 1440
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_24
+      rect:
+        serializedVersion: 2
+        x: 8877
+        y: 29
+        width: 991
+        height: 1446
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_25
+      rect:
+        serializedVersion: 2
+        x: 9868
+        y: 31
+        width: 989
+        height: 1452
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_26
+      rect:
+        serializedVersion: 2
+        x: 10856
+        y: 29
+        width: 986
+        height: 1455
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_27
+      rect:
+        serializedVersion: 2
+        x: 11844
+        y: 28
+        width: 986
+        height: 1460
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_28
+      rect:
+        serializedVersion: 2
+        x: 12827
+        y: 31
+        width: 980
+        height: 1458
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_29
+      rect:
+        serializedVersion: 2
+        x: 13825
+        y: 29
+        width: 966
+        height: 1472
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: attack_ipe_30
+      rect:
+        serializedVersion: 2
+        x: 14828
+        y: 28
+        width: 956
+        height: 1474
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
