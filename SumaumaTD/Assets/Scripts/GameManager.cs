@@ -44,12 +44,14 @@ namespace Assets.Scripts
         {
             GameIsOver = true;
             CompleteLevelUi.SetActive(true);
+            Time.timeScale = 0f;
         }
 
         private void EndGame()
         {
             GameIsOver = true;
             GameOverUi.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }
