@@ -2,29 +2,37 @@
 
 namespace Assets.Scripts
 {
-    public class Bullet : MonoBehaviour {
+    public class Bullet : MonoBehaviour
+    {
         #region Variables
         public float Speed = 50f;
         public float ExplosionRadius = 0f;
         public GameObject ImpactEffect;
         public int Damage = 50;
-		[HideInInspector] public bool IsPoisoned = false;
-		[HideInInspector] public float PoisonTime;
-		[HideInInspector] public float PoisonDamage;
-		[HideInInspector] public float PoisonCooldown;
+        [Tooltip("Time to play particle effect when it hits the enemy")]
+        public float EffectLength = 0.5f;
+        [HideInInspector]
+        public bool IsPoisoned = false;
+        [HideInInspector]
+        public float PoisonTime;
+        [HideInInspector]
+        public float PoisonDamage;
+        [HideInInspector]
+        public float PoisonCooldown;
 
         [Header("Bezier")]
         [Tooltip("Define a porcentagem do caminho da bala onde ocorre a altura máxima")]
-        [Range(0,1)]
+        [Range(0, 1)]
         public float BezierPointX = 0.5f;
 
         [Tooltip("Define a altura máxima que a parábola da bala atinge")]
         public float MaxHeight = 5f;
 
         [Header("Audio")]
-        [Tooltip("Volume do som de hit")] [Range(0f,1f)] public float AudioVolume = 1f;
+        [Tooltip("Volume do som de hit")]
+        [Range(0f, 1f)]
+        public float AudioVolume = 1f;
         public AudioSource SoundSource;
-        [Tooltip("Lista os arquivos de som de quando a fruta atinge o alvo")] public AudioClip[] FruitHitAudios;
 
         private float _bezierCounter;
         private Transform _target;
@@ -42,38 +50,42 @@ namespace Assets.Scripts
             _startPosition = transform.position;
         }
 
-        public void Seek(Transform target){
+        public void Seek(Transform target)
+        {
             _target = target;
             _totalDistance = (_startPosition - _target.position).magnitude;
             _dir = _totalDistance;
         }
 
         // Update is called once per frame
-        public void Update () {
-            if (_target == null) {
-                Destroy (gameObject);
+        public void Update()
+        {
+            if (_target == null)
+            {
+                Destroy(gameObject);
                 return;
             }
-            
+
             //Vector3 dir = _target.position - transform.position;
             float distanceThisFrame = Speed * Time.deltaTime;
             _dir -= distanceThisFrame;
 
-            if (_dir <= distanceThisFrame) {
-                HitTarget ();
+            if (_dir <= distanceThisFrame)
+            {
+                HitTarget();
                 return;
             }
 
 
             _bezierPoint = _target.position;
             _bezierPoint.y += MaxHeight;
-            _bezierPoint.x = (_bezierPoint.x + _startPosition.x)*BezierPointX;
+            _bezierPoint.x = (_bezierPoint.x + _startPosition.x) * BezierPointX;
             //_bezierPoint.z = (_bezierPoint.z + _startPosition.z) * BezierPointX;
 
-            
+
             _newdir = GetPoint(_startPosition, _bezierPoint, _target.position, _bezierCounter);
-            
-            _bezierCounter += distanceThisFrame/_totalDistance;
+
+            _bezierCounter += distanceThisFrame / _totalDistance;
 
             //transform.Translate (newdir.normalized*distanceThisFrame, Space.World);
             transform.position = _newdir;
@@ -81,10 +93,11 @@ namespace Assets.Scripts
         }
 
         //instantiate effect and explode/hit enemy and destroy bullet
-        public void HitTarget() {
-            GameObject effectIns = (GameObject) Instantiate (ImpactEffect, transform.position, transform.rotation);
+        public void HitTarget()
+        {
+            GameObject effectIns = (GameObject)Instantiate(ImpactEffect, transform.position, transform.rotation);
             float length = PlayNextHitAudio();
-            Destroy (effectIns, FruitHitAudios[_nextFruitHitAudio - 1].length); //faz com que seja destruído só depois que o áudio já tocou... TODO: simplificar
+            Destroy(effectIns, EffectLength); //faz com que seja destruído só depois que o áudio já tocou... TODO: simplificar
 
             if (ExplosionRadius > 0f)
             {
@@ -95,17 +108,18 @@ namespace Assets.Scripts
                 DamageEnemy(_target);
             }
 
-            Destroy (gameObject, length);
+            Destroy(gameObject, length);
         }
 
         private float PlayNextHitAudio()
         {
-            if (_nextFruitHitAudio >= FruitHitAudios.Length) _nextFruitHitAudio = 0;
+            /*if (_nextFruitHitAudio >= FruitHitAudios.Length) _nextFruitHitAudio = 0;
             Debug.Log(FruitHitAudios[_nextFruitHitAudio].name);
             SoundSource.PlayOneShot(FruitHitAudios[_nextFruitHitAudio], AudioVolume);
             Debug.Log(FruitHitAudios[_nextFruitHitAudio].name + " TOCOU");
             _nextFruitHitAudio++;
-            return FruitHitAudios[_nextFruitHitAudio - 1].length;
+            return FruitHitAudios[_nextFruitHitAudio - 1].length;*/
+            return EffectLength;
         }
 
         private void Explode()
@@ -130,11 +144,12 @@ namespace Assets.Scripts
                 e.TakeDamage(Damage);
             }
 
-			if (IsPoisoned) {
-				e.RemainingPoisonTime = PoisonTime;
-				e.PoisonDamage = PoisonDamage;
-				e.TotalPoisonCooldown = PoisonCooldown;
-			}
+            if (IsPoisoned)
+            {
+                e.RemainingPoisonTime = PoisonTime;
+                e.PoisonDamage = PoisonDamage;
+                e.TotalPoisonCooldown = PoisonCooldown;
+            }
         }
 
         public void OnDrawGizmosSelected()
@@ -149,11 +164,11 @@ namespace Assets.Scripts
 
         public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, float t)
         {
-            
+
             var first = Vector3.Lerp(p0, p1, t);
             var second = Vector3.Lerp(p1, p2, t);
             var third = Vector3.Lerp(first, second, t);
-            
+
             return third;
         }
 

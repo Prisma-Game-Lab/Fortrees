@@ -7,6 +7,9 @@ namespace Assets.Scripts
     {
         //TODO remove unnecessary things
         public Sprite[] BuildBackgrounds;
+        public Transform IpeButtonImage;
+        public Transform AraucariaButtonImage;
+        public Transform JaqueiraButtonImage;
 
         [Header("Dependencies")]
         public GameObject UpdateUI;
@@ -18,8 +21,10 @@ namespace Assets.Scripts
         public Shop TurretShop;
         public Button UpgradeButton;
         private Node _target;
+        private Vector3 _resizedScale = new Vector3(1.4f, 1.4f, 1f);
+        private Vector3 _defaultScale = Vector3.one;
         //public Text SellCost;
-        
+
         public void SetTarget(Node target)
         {
             _target = target;
@@ -75,14 +80,25 @@ namespace Assets.Scripts
                 case 0:
                     BuildCost.text = TurretShop.AnotherTurretBlueprint.Cost.ToString();
                     BuildDescriptionAnimator.runtimeAnimatorController = TurretShop.AnotherTurretBlueprint.TurretAnimator;
+                    IpeButtonImage.localScale = _defaultScale;
+                    AraucariaButtonImage.localScale = _defaultScale;
+                    JaqueiraButtonImage.localScale = _resizedScale;
                     break;
                 case 1:
                     BuildCost.text = TurretShop.StandardTurretBlueprint.Cost.ToString();
                     BuildDescriptionAnimator.runtimeAnimatorController = TurretShop.StandardTurretBlueprint.TurretAnimator;
+                    IpeButtonImage.localScale = _resizedScale;
+                    AraucariaButtonImage.localScale = _defaultScale;
+                    JaqueiraButtonImage.localScale = _defaultScale;
+
                     break;
                 case 2:
                     BuildCost.text = TurretShop.MoreTurretBlueprint.Cost.ToString();
                     BuildDescriptionAnimator.runtimeAnimatorController = TurretShop.MoreTurretBlueprint.TurretAnimator;
+                    IpeButtonImage.localScale = _defaultScale;
+                    AraucariaButtonImage.localScale = _resizedScale;
+                    JaqueiraButtonImage.localScale = _defaultScale;
+
                     break;
                 default:
                     Debug.Log("Invalid Item Selected");
