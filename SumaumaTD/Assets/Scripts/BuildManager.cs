@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -13,10 +13,14 @@ namespace Assets.Scripts
 
         [Header("Optional")]
         public GameObject BuildParticleEffectPrefab;
-        public GameObject SellParticleEffectPrefab;
+		public GameObject ClickParticleEffectPrefab;
+		public GameObject SellParticleEffectPrefab;
+
+		public Camera mainCamera;
 
         private TurretBlueprint _turretToBuild;
         private Node _selectedNode;
+		private ParticleSystem _clickParticle;
         #endregion
 
         #region Properties
@@ -30,9 +34,25 @@ namespace Assets.Scripts
                 return;
             }
             Instance = this;
+			_clickParticle = GetComponent<ParticleSystem>();
         }
-        
-        public void SelectTurretToBuild(TurretBlueprint turret)
+		private void Update()
+		{
+			if(Input.GetButtonDown("Fire1"))
+			{
+				Destroy(GameObject.Find("RingParticle(Clone)"));
+				//GameObject effect =
+				//(GameObject)Instantiate(BuildParticleEffectPrefab, new Vector3(1,1,1), Quaternion.identity);
+				Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+				RaycastHit rayHit;
+				Physics.Raycast(cameraRay, out rayHit, 10000f);
+
+				Instantiate(ClickParticleEffectPrefab,new Vector3 (rayHit.point.x,rayHit.point.y,rayHit.point.z), Quaternion.identity);
+			}
+
+		}
+
+		public void SelectTurretToBuild(TurretBlueprint turret)
         {
             if (turret == null)
             {
