@@ -27,6 +27,7 @@ namespace Assets.Scripts
 
         [Header("Audio")]
         public AudioClip NodeBuildSound;
+        [Range(0,1)] public float SoundVolume = 1f;
 
 
         #endregion
@@ -151,7 +152,7 @@ namespace Assets.Scripts
                 Destroy(effect, 5f);
             }
 
-            AudioSource.PlayClipAtPoint(NodeBuildSound, GetBuildPosition);
+            AudioSource.PlayClipAtPoint(NodeBuildSound, GetBuildPosition, SoundVolume);
             Debug.Log("Turret built!");
         }
 
