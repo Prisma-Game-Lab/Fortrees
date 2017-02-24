@@ -8,10 +8,17 @@ namespace Assets.Scripts
 		public Node StartNode;
 		public float NodeSize;
         public GameObject TurretUI;
+        
+	    [Header("Highlight")]
+        public GameObject Highlight;
+        public GameObject NoMoneyHighlight;
 
-        public Sprite HighlightedSprite;
+        [Header("Range Circle")]
+        public GameObject RangeCircle;
+        [Tooltip("Número pra multiplicar e ajeitar o tamanho do círculo de range")]
+        public float RangeFixAjustment = 0.5f;
 
-		[Header("Sprites")]
+        [Header("Sprites")]
 		public Sprite[] Grass;
 		public Sprite[] Rocks;
 

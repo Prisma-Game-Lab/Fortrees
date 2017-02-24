@@ -20,8 +20,6 @@ namespace Assets.Scripts
         #endregion
 
         #region Properties
-        /*public bool CanBuild { get { return _turretToBuild != null; } }*/
-        public bool HasEnoughMoney { get { return true; /*PlayerStats.Seeds .Money >= _turretToBuild.Cost;*/ } }
         public TurretBlueprint GetTurretToBuild { get { return _turretToBuild; } }
         #endregion
 

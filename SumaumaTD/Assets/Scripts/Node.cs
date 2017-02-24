@@ -17,15 +17,17 @@ namespace Assets.Scripts
         [HideInInspector]
         public bool IsUpgraded = false;
 
-        [Header("Range Circle")]
-        public GameObject RangeCircle;
-        [Tooltip("Número pra multiplicar e ajeitar o tamanho do círculo de range")] public float RangeFixAjustment = 0.5f;
-
         private SpriteRenderer _rend;
         private BuildManager _buildManager;
         private NodeSelect _nodeSelect;
-        private Sprite _defaultSprite;
+        private Color _defaultColor;
         private GameObject _activeRangeCircle;
+        private GameObject _highlight;
+        private Transform _quad;
+
+        [Header("Audio")]
+        public AudioClip NodeBuildSound;
+
 
         #endregion
         
@@ -33,13 +35,13 @@ namespace Assets.Scripts
         public Vector3 GetBuildPosition { get { return transform.position + PositionOffset; } }
         #endregion
 
-        [Header("Audio")]
-        public AudioClip NodeBuildSound;
 
         public void Start()
         {
-            _rend = transform.GetChild(0).GetComponent<SpriteRenderer>();//transform.GetChild(0).GetComponent<Renderer>();
-            _defaultSprite = _rend.sprite;
+            _quad = transform.GetChild(0);
+            _rend = _quad.GetComponent<SpriteRenderer>();
+
+            _defaultColor = _rend.color;
             _buildManager = BuildManager.Instance;
             _nodeSelect = gameObject.GetComponentInParent<NodeSelect>();
         }
@@ -67,33 +69,50 @@ namespace Assets.Scripts
 
         public void OnMouseExit()
         {
-            _rend.sprite = _defaultSprite;
-
             //Remove o círculo de range
             if (_activeRangeCircle != null) Destroy(_activeRangeCircle);
+
+            if (_highlight != null) Destroy(_highlight);
         }
 
         public void Highlight()
         {
 			if (!CanBuild)
 				return;
-            _rend.sprite = _nodeSelect.HighlightedSprite ;
+            
+            ShowHighlight();
 
-            if(Turret != null && _activeRangeCircle == null)
+            ShowRangeCircle();
+        }
+
+        private void ShowHighlight()
+        {
+            if (_highlight == null)
+            {
+                GameObject prefab = PlayerStats.Seeds < 1 ? _nodeSelect.NoMoneyHighlight : _nodeSelect.Highlight;
+                _highlight = (GameObject) Instantiate(prefab, transform);
+                _highlight.transform.localScale = _quad.localScale;
+                _highlight.transform.position = _quad.position;
+            }
+        }
+
+        private void ShowRangeCircle()
+        {
+            if (Turret != null && _activeRangeCircle == null)
             {
                 float range = Turret.GetComponent<Turret>().Range;
 
                 //Habilita o círculo de Range
-                _activeRangeCircle = (GameObject)Instantiate(RangeCircle, transform);
+                _activeRangeCircle = (GameObject) Instantiate(_nodeSelect.RangeCircle, transform);
 
                 //Ajusta o tamanho http://answers.unity3d.com/questions/139199/scale-object-to-certain-length.html
                 float currentSize = _activeRangeCircle.GetComponent<Collider>().bounds.size.z;
-                float newScale = range / currentSize;
+                float newScale = range/currentSize;
                 _activeRangeCircle.transform.localScale = new Vector3(newScale, newScale, newScale);
 
                 //Ajusta a posição (+ alguns ajustes no tamanho)
                 _activeRangeCircle.transform.position = transform.position;
-                _activeRangeCircle.transform.localScale *= RangeFixAjustment;
+                _activeRangeCircle.transform.localScale *= _nodeSelect.RangeFixAjustment;
             }
         }
 
