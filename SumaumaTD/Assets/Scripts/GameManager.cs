@@ -7,6 +7,7 @@ namespace Assets.Scripts
         public GameObject GameOverUi;
         public GameObject CompleteLevelUi;
         public GameObject PressStartUi;
+        public GameObject WaveManager;
         public static bool GameIsOver;
         [HideInInspector]
         public static bool GameStarted;
@@ -17,7 +18,7 @@ namespace Assets.Scripts
             GameStarted = false;
             PressStartUi.SetActive(true);
             #if DEBUG
-            Debug.Assert(GameObject.Find("WaveManager") != null, "Scene precisa de WaveManager seu mongol");
+            Debug.Assert(WaveManager != null, "Scene precisa de WaveManager seu mongol");
             #endif
 
         }

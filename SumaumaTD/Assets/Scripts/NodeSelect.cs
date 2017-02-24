@@ -73,10 +73,12 @@ namespace Assets.Scripts
                     _updateCanvas.SetActive(false);
                     _framesLeftToWait = framesToWait;
                 }
+                
             }
 
             //checa controles do Build Canvas (se ele estiver ativado)
-            else if (_buildCanvas.activeInHierarchy) {
+            else if (_buildCanvas.activeInHierarchy)
+            {
                 /*
                 if (Input.GetAxis("StandardBuyButton") != 0.0)
                 {
@@ -97,6 +99,7 @@ namespace Assets.Scripts
                     _buildCanvas.SetActive(false);
                     _framesLeftToWait = framesToWait;
                 }
+                
             }
 
             //if(Input.GetKeyDown(KeyCode.Return)){
