@@ -7,6 +7,7 @@ public class MenuSounds : MonoBehaviour {
     public AudioSource UIAudioSource;
     [Range(0, 1)] public float ConfirmationSoundVolume = 1f;
     public AudioClip ConfirmationSound;
+    public AudioClip FailSound;
     [Range(0, 1)] public float SelectionSoundVolume = 1f;
     public AudioClip SelectionSound;
 
@@ -20,5 +21,8 @@ public class MenuSounds : MonoBehaviour {
         UIAudioSource.PlayOneShot(ConfirmationSound, ConfirmationSoundVolume);
     }
 
-
+    public void PressFail()
+    {
+        UIAudioSource.PlayOneShot(FailSound, ConfirmationSoundVolume);
+    }
 }
