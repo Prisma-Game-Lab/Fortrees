@@ -131,15 +131,17 @@ namespace Assets.Scripts
             _buildManager.SelectNodeToBuild(this);
         }
 
-        public void BuildTurret(TurretBlueprint blueprint)
+        public void BuildTurret(TurretBlueprint blueprint, MenuSounds sounds)
         {
             if (PlayerStats.Seeds < blueprint.Cost)
             {
                 Debug.Log("Not enough money");
+                sounds.PressFail();
                 return;
             }
             PlayerStats.Seeds -= blueprint.Cost;
 
+            sounds.Press();
             GameObject turret = (GameObject)Instantiate(blueprint.Prefab, GetBuildPosition, Quaternion.identity);
             Turret = turret;
 
@@ -156,14 +158,16 @@ namespace Assets.Scripts
             Debug.Log("Turret built!");
         }
 
-        public void UpgradeTurret()
+        public void UpgradeTurret(MenuSounds sounds)
         {
             if (PlayerStats.Seeds < TurretBlueprint.UpgradeCost)
             {
                 Debug.Log("Not enough money to upgrade");
+                sounds.PressFail();
                 return;
             }
             PlayerStats.Seeds  -= TurretBlueprint.UpgradeCost;
+            sounds.Press();
 
             //Get rid of the old turret
             Destroy(Turret);

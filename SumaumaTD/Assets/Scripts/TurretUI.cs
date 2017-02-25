@@ -20,6 +20,7 @@ namespace Assets.Scripts
         public Image BuildBackgroundImage;
         public Shop TurretShop;
         public Button UpgradeButton;
+        public MenuSounds Sounds;
         private Node _target;
         private Vector3 _resizedScale = new Vector3(1.4f, 1.4f, 1f);
         private Vector3 _defaultScale = Vector3.one;
@@ -62,7 +63,7 @@ namespace Assets.Scripts
 
         public void Upgrade()
         {
-            _target.UpgradeTurret();
+            _target.UpgradeTurret(Sounds);
             BuildManager.Instance.DeselectNode();
         }
         

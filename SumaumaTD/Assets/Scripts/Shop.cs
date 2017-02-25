@@ -8,6 +8,7 @@ namespace Assets.Scripts
         public TurretBlueprint StandardTurretBlueprint;
         public TurretBlueprint AnotherTurretBlueprint;
         public TurretBlueprint MoreTurretBlueprint;
+        public MenuSounds Sounds;
 
         public void Start()
         {
@@ -16,18 +17,18 @@ namespace Assets.Scripts
 
         public void SelectStandardTurret()
         {
-            _buildManager.SelectTurretToBuild(StandardTurretBlueprint);
+            _buildManager.SelectTurretToBuild(StandardTurretBlueprint, Sounds);
         }
 
         public void SelectAnotherTurret()
         {
-            _buildManager.SelectTurretToBuild(AnotherTurretBlueprint);
+            _buildManager.SelectTurretToBuild(AnotherTurretBlueprint, Sounds);
 
         }
 
         public void SelectMoreTurret()
         {
-            _buildManager.SelectTurretToBuild(MoreTurretBlueprint);
+            _buildManager.SelectTurretToBuild(MoreTurretBlueprint, Sounds);
 
         }
     }

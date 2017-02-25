@@ -52,7 +52,7 @@ namespace Assets.Scripts
 
 		}
 
-		public void SelectTurretToBuild(TurretBlueprint turret)
+		public void SelectTurretToBuild(TurretBlueprint turret, MenuSounds sounds)
         {
             if (turret == null)
             {
@@ -60,7 +60,7 @@ namespace Assets.Scripts
                 return;
             }
             _turretToBuild = turret;
-            _selectedNode.BuildTurret(_turretToBuild);
+            _selectedNode.BuildTurret(_turretToBuild, sounds);
             DeselectNode(); //selecting a turret from shop disables selection of node
         }
 
