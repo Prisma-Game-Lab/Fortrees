@@ -7,6 +7,7 @@ namespace Assets.Scripts
 
 		public Node StartNode;
 		public float NodeSize;
+        [Tooltip("Espaço entre os centros dos nodes")] public float NodeDistance = 4f;
         public GameObject TurretUI;
         
 	    [Header("Highlight")]
@@ -145,8 +146,9 @@ namespace Assets.Scripts
 
 		void ChangeSelectedNode(Vector3 dir)
         {
+            Debug.Log("Move");
             UIAudioSource.PlayOneShot(SelectionSound);
-            dir = 5 * dir; //5 é o tamanho do espaço entre os centros dos nodes
+            dir = NodeDistance * dir;
 			Vector3 temp = _selectPosition + dir; //temp guarda o centro onde a esfera vai buscar por nodes
 			Collider[] cast = Physics.OverlapSphere (temp, _radius);
 
@@ -163,6 +165,7 @@ namespace Assets.Scripts
                     break;
                 }
 
+                Debug.Log("Skip");
                 //Node não encontrado no vetor, procurando na próxima posição que pode ter um node
                 temp += dir;
 				cast = Physics.OverlapSphere (temp, _radius);
