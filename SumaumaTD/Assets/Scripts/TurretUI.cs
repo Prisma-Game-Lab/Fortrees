@@ -22,7 +22,7 @@ namespace Assets.Scripts
         public Button UpgradeButton;
         public MenuSounds Sounds;
         private Node _target;
-        private Vector3 _resizedScale = new Vector3(1.4f, 1.4f, 1f);
+        private Vector3 _resizedScale = new Vector3(1.6f, 1.8f, 1f);
         private Vector3 _defaultScale = Vector3.one;
         //public Text SellCost;
 

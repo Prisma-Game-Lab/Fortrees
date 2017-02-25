@@ -96,7 +96,6 @@ namespace Assets.Scripts
         public void HitTarget()
         {
             GameObject effectIns = (GameObject)Instantiate(ImpactEffect, transform.position, transform.rotation);
-            float length = PlayNextHitAudio();
             Destroy(effectIns, EffectLength); //faz com que seja destruído só depois que o áudio já tocou... TODO: simplificar
 
             if (ExplosionRadius > 0f)
@@ -108,20 +107,9 @@ namespace Assets.Scripts
                 DamageEnemy(_target);
             }
 
-            Destroy(gameObject, length);
+            Destroy(gameObject);
         }
-
-        private float PlayNextHitAudio()
-        {
-            /*if (_nextFruitHitAudio >= FruitHitAudios.Length) _nextFruitHitAudio = 0;
-            Debug.Log(FruitHitAudios[_nextFruitHitAudio].name);
-            SoundSource.PlayOneShot(FruitHitAudios[_nextFruitHitAudio], AudioVolume);
-            Debug.Log(FruitHitAudios[_nextFruitHitAudio].name + " TOCOU");
-            _nextFruitHitAudio++;
-            return FruitHitAudios[_nextFruitHitAudio - 1].length;*/
-            return EffectLength;
-        }
-
+        
         private void Explode()
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, ExplosionRadius);//pega todos os colliders dentro de um raio (de uma esfera com centro em position)

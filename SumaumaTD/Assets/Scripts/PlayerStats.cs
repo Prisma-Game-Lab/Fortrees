@@ -9,14 +9,13 @@ namespace Assets.Scripts
         public int StartSeeds = 3;
         public static int Lives;
         public int StartLives = 20;
-
-		public static float ForestSaturation =1 ;
+        public static float ForestSaturation =1 ;
 
         [HideInInspector]
         public static int TotalLives;
-
         public static int Waves;
-
+        [HideInInspector]
+        public static int PlantedTrees =0 ;
         public void Start ()
         {
             Waves = 0;

@@ -140,6 +140,7 @@ namespace Assets.Scripts
                 return;
             }
             PlayerStats.Seeds -= blueprint.Cost;
+            PlayerStats.PlantedTrees ++;
 
             sounds.Press();
             GameObject turret = (GameObject)Instantiate(blueprint.Prefab, GetBuildPosition, Quaternion.identity);
