@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: ab54ac9a0824c4845aa75831cd5dc4ed
+timeCreated: 1487987083
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ipe_skill_spritesheet_0
+    21300002: ipe_skill_spritesheet_1
+    21300004: ipe_skill_spritesheet_2
+    21300006: ipe_skill_spritesheet_3
+    21300008: ipe_skill_spritesheet_4
+    21300010: ipe_skill_spritesheet_5
+    21300012: ipe_skill_spritesheet_6
+    21300014: ipe_skill_spritesheet_7
+    21300016: ipe_skill_spritesheet_8
+    21300018: ipe_skill_spritesheet_9
+    21300020: ipe_skill_spritesheet_10
+    21300022: ipe_skill_spritesheet_11
+    21300024: ipe_skill_spritesheet_12
+    21300026: ipe_skill_spritesheet_13
+    21300028: ipe_skill_spritesheet_14
+    21300030: ipe_skill_spritesheet_15
+    21300032: ipe_skill_spritesheet_16
+    21300034: ipe_skill_spritesheet_17
+    21300036: ipe_skill_spritesheet_18
+    21300038: ipe_skill_spritesheet_19
+    21300040: ipe_skill_spritesheet_20
+    21300042: ipe_skill_spritesheet_21
+    21300044: ipe_skill_spritesheet_22
+    21300046: ipe_skill_spritesheet_23
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: tvOS
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Tizen
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Samsung TV
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 2074
+        width: 207
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 2076
+        width: 206
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 2080
+        width: 207
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 2078
+        width: 204
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 2080
+        width: 207
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 2080
+        width: 207
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 3429
+        y: 1974
+        width: 270
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 3809
+        y: 1971
+        width: 272
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 4202
+        y: 1968
+        width: 273
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 1971
+        width: 270
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 5121
+        y: 1971
+        width: 270
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 5588
+        y: 1971
+        width: 270
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 2080
+        width: 204
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 6062
+        y: 1971
+        width: 270
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 2080
+        width: 207
+        height: 673
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 6592
+        y: 1971
+        width: 271
+        height: 895
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 130
+        width: 369
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 136
+        width: 372
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 136
+        width: 372
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 130
+        width: 370
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 2614
+        y: 127
+        width: 369
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 3257
+        y: 127
+        width: 368
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 130
+        width: 369
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ipe_skill_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 4638
+        y: 135
+        width: 371
+        height: 1224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
