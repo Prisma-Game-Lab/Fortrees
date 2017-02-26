@@ -8,15 +8,20 @@ namespace Assets.Scripts
         public float Speed;
         public float StartSpeed = 10f;
         public float StartHealth = 100;
-		[HideInInspector] public float RemainingPoisonTime = 0f;
-		[HideInInspector] public float CurrentPoisonCooldown = 0f;
-		[HideInInspector] public float PoisonDamage;
-		[HideInInspector] public float TotalPoisonCooldown;
 
+		private float _remainingPoisonTime = 0f;
+		private float _currentPoisonCooldown = 0f;
+		private float _poisonDamage;
+		private float _totalPoisonCooldown;
         private float _health;
         
         [Header("Unity Stuff")]
         public Image HealthBar;
+
+        private bool IsPoisoned
+        {
+            get { return _remainingPoisonTime > 0f; }
+        }
 
         public void Start()
         {
@@ -25,8 +30,8 @@ namespace Assets.Scripts
         }
 
 		public void Update(){
-			if (RemainingPoisonTime > 0f)
-				Poison ();
+			if (IsPoisoned)
+				Poison();
 		}
 
         public void TakeDamage(float amount)
@@ -34,9 +39,7 @@ namespace Assets.Scripts
             _health -= amount;
             HealthBar.fillAmount = _health / StartHealth;
             if (_health <= 0)
-            {
                 Die();
-            }
         }
 
         private void Die()
@@ -50,19 +53,25 @@ namespace Assets.Scripts
             Speed = StartSpeed*(1f - slowFactorPercentage);
         }
 
-		public void Poison()
-		{
-			if(RemainingPoisonTime >= 0f)
-			{
-				RemainingPoisonTime = RemainingPoisonTime - Time.deltaTime;
-				CurrentPoisonCooldown -= Time.deltaTime;
+        public void Poison()
+        {
+            _remainingPoisonTime -= Time.deltaTime;
+            _currentPoisonCooldown -= Time.deltaTime;
+            
+            if (_currentPoisonCooldown <= 0f)
+            {
+                _currentPoisonCooldown = _totalPoisonCooldown;
+                Debug.Log("POISON");
+                TakeDamage(_poisonDamage);
 
-				if (CurrentPoisonCooldown <= 0f) {
-					CurrentPoisonCooldown = TotalPoisonCooldown;
-					Debug.Log ("POISON");
-					TakeDamage(PoisonDamage);
-				}
-			}
-		}
+            }
+        }
+
+        public void TakePoison(float poisonTime, float poisonDamage, float poisonCooldown)
+        {
+            _remainingPoisonTime = poisonTime;
+            _poisonDamage = poisonDamage;
+            _totalPoisonCooldown = poisonCooldown;
+        }
     }
 }

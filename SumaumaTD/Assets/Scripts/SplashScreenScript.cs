@@ -61,7 +61,6 @@ public class SplashScreenScript : MonoBehaviour {
 	}
 
 	private void updateFadeIn(){
-		float aux;
 		if (timer < fadeInDuration) {
 			colorWithAlpha (timer/fadeInDuration);
 		} else {

@@ -23,7 +23,7 @@ namespace Assets.Scripts
             }
         }
 
-        void SpawnSeed()
+        private void SpawnSeed()
         {
             _seed = ((GameObject)Instantiate(SeedPrefab, transform.position, Quaternion.identity)).GetComponent<MovingSeedUI>();
 

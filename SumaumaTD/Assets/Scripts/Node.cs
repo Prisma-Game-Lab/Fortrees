@@ -20,7 +20,6 @@ namespace Assets.Scripts
         private SpriteRenderer _rend;
         private BuildManager _buildManager;
         private NodeSelect _nodeSelect;
-        private Color _defaultColor;
         private GameObject _activeRangeCircle;
         private GameObject _highlight;
         private Transform _quad;
@@ -41,8 +40,7 @@ namespace Assets.Scripts
         {
             _quad = transform.GetChild(0);
             _rend = _quad.GetComponent<SpriteRenderer>();
-
-            _defaultColor = _rend.color;
+            
             _buildManager = BuildManager.Instance;
             _nodeSelect = gameObject.GetComponentInParent<NodeSelect>();
         }

@@ -13,11 +13,10 @@ namespace Assets.Scripts
         public float EffectLength = 0.5f;
         [HideInInspector]
         public bool IsPoisoned = false;
-        [HideInInspector]
-        public float PoisonTime;
-        [HideInInspector]
+
+        [Header("Poison")]
         public float PoisonDamage;
-        [HideInInspector]
+        public float PoisonTime;
         public float PoisonCooldown;
 
         [Header("Bezier")]
@@ -41,7 +40,6 @@ namespace Assets.Scripts
         private Vector3 _startPosition;
         private float _totalDistance;
         private float _dir;
-        private static int _nextFruitHitAudio = 0; //usada para intercalar os sons de quando a fruta atinge o alvo
         #endregion
 
         public void Awake()
@@ -126,18 +124,12 @@ namespace Assets.Scripts
         private void DamageEnemy(Transform enemy)
         {
             Enemy e = enemy.GetComponent<Enemy>();
+            if (e == null) return;
 
-            if (e != null)
-            {
-                e.TakeDamage(Damage);
-            }
+            e.TakeDamage(Damage);
 
             if (IsPoisoned)
-            {
-                e.RemainingPoisonTime = PoisonTime;
-                e.PoisonDamage = PoisonDamage;
-                e.TotalPoisonCooldown = PoisonCooldown;
-            }
+                e.TakePoison(PoisonTime, PoisonDamage, PoisonCooldown);
         }
 
         public void OnDrawGizmosSelected()
@@ -152,7 +144,6 @@ namespace Assets.Scripts
 
         public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, float t)
         {
-
             var first = Vector3.Lerp(p0, p1, t);
             var second = Vector3.Lerp(p1, p2, t);
             var third = Vector3.Lerp(first, second, t);

@@ -40,25 +40,25 @@ namespace Assets.Scripts
                 if (_target.position.x >= transform.position.x && _target.position.x - transform.position.x > 0.2f)
                 {
                     EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteRight;
-                    Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " RIGHT");
+                    //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " RIGHT");
                 }
 
                 else if (_target.position.x < transform.position.x && transform.position.x - _target.position.x > 0.2f)
                 {
                     EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteLeft;
-                    Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " LEFT");
+                    //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " LEFT");
                 }
 
                 else if (_target.position.z >= transform.position.z && _target.position.z - transform.position.z > 0.2f)
                 {
                     EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteUp;
-                    Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " UP");
+                    //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " UP");
                 }
 
                 else if (_target.position.z < transform.position.z && transform.position.z - _target.position.z > 0.2f)
                 {
                     EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteDown;
-                    Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " DOWN");
+                    //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " DOWN");
                 }
             }
 

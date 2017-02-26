@@ -379,7 +379,7 @@ namespace Assets.Scripts
         private void InstantiateEndCase(int j)
         {
             SaveWayPoint(j);
-            var end = (GameObject)Instantiate(EndPrefab, new Vector3(_currentX, EndPrefab.transform.localPosition.y, _currentZ), Quaternion.identity);
+            Instantiate(EndPrefab, new Vector3(_currentX, EndPrefab.transform.localPosition.y, _currentZ), Quaternion.identity);
         }
 
 
