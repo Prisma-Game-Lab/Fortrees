@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: ba6fbffad830db0489490ef695e3bd2b
+timeCreated: 1488304855
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: idle_araucaria_0
+    21300002: idle_araucaria_1
+    21300004: idle_araucaria_2
+    21300006: idle_araucaria_3
+    21300008: idle_araucaria_4
+    21300010: idle_araucaria_5
+    21300012: idle_araucaria_6
+    21300014: idle_araucaria_7
+    21300016: idle_araucaria_8
+    21300018: idle_araucaria_9
+    21300020: idle_araucaria_10
+    21300022: idle_araucaria_11
+    21300024: idle_araucaria_12
+    21300026: idle_araucaria_13
+    21300028: idle_araucaria_14
+    21300030: idle_araucaria_15
+    21300032: idle_araucaria_16
+    21300034: idle_araucaria_17
+    21300036: idle_araucaria_18
+    21300038: idle_araucaria_19
+    21300040: idle_araucaria_20
+    21300042: idle_araucaria_21
+    21300044: idle_araucaria_22
+    21300046: idle_araucaria_23
+    21300048: idle_araucaria_24
+    21300050: idle_araucaria_25
+    21300052: idle_araucaria_26
+    21300054: idle_araucaria_27
+    21300056: idle_araucaria_28
+    21300058: idle_araucaria_29
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 300
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: tvOS
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Tizen
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Samsung TV
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: idle_araucaria_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5860
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_1
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 5860
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_2
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 5860
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_3
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 5860
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_4
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 5860
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_5
+      rect:
+        serializedVersion: 2
+        x: 4150
+        y: 5860
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4395
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_7
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 4395
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_8
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 4395
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_9
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 4395
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_10
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 4395
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_11
+      rect:
+        serializedVersion: 2
+        x: 4150
+        y: 4395
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2930
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_13
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 2930
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_14
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 2930
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_15
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 2930
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_16
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 2930
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_17
+      rect:
+        serializedVersion: 2
+        x: 4150
+        y: 2930
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1465
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_19
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1465
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_20
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 1465
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_21
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 1465
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_22
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 1465
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_23
+      rect:
+        serializedVersion: 2
+        x: 4150
+        y: 1465
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_25
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 0
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_26
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 0
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_27
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 0
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_28
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 0
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idle_araucaria_29
+      rect:
+        serializedVersion: 2
+        x: 4150
+        y: 0
+        width: 830
+        height: 1465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
