@@ -43,7 +43,7 @@ namespace Assets.Scripts
             }
 
             //SellCost.text = "$" + _target.TurretBlueprint.GetSellCost();
-            UpdateUI.SetActive(true);
+            Debug.Log("No more upgrades :("); //UpdateUI.SetActive(true);
             BuildUI.SetActive(false);
         }
 
