@@ -20,13 +20,16 @@ namespace Assets.Scripts
         public GameObject NodesParentPrefab;
         public GameObject NodePrefab;
         public GameObject PathPrefab;
-        public GameObject TurretUI;
         public GameObject WaypointPrefab;
         public GameObject StartPrefab;
         public GameObject EndPrefab;
 		public GameObject CameraClamp;
 		public GameObject CenterOfScreen;
-		[Header("Audio")]
+
+        [Header("In-Scene Game Objects")]
+        [Tooltip("NÃO USE O PREFAB, USE O DA CENA")]public GameObject TurretUI;
+
+        [Header("Audio")]
 		public AudioSource AudioSource;
 
         [Header("Path sprites")]
