@@ -53,6 +53,8 @@ namespace Assets.Scripts
 
         public void Start()
         {
+            if (MovingSeedsManager == null) MovingSeedsManager = MovingSeedsManager.Instance;
+
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
             SpriteAnimator = GetComponent<Animator>();
             _surroundings = new SurroundingExplorer();

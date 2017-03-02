@@ -66,7 +66,13 @@ namespace Assets.Scripts
         #endregion
 
         public void GenerateMap()
-        {			
+        {
+            if (TurretUI == null)
+            {
+                Debug.LogError("Turret UI não setado no generator do GameMaster (ARRASTE O DA CENA, NÃO O PREFAB)");
+                return;
+            }
+
             Debug.Log("Generating Map");
             _waypointsCoords = new WaypointsCoords();
             _waypointDirections = new List<bool>();

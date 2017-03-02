@@ -5,6 +5,9 @@ namespace Assets.Scripts
 {
     public class MovingSeedsManager : MonoBehaviour
     {
+
+        public static MovingSeedsManager Instance;
+
         public Camera Cam;
         public Transform Target;
         public GameObject SeedPrefab;
@@ -13,6 +16,16 @@ namespace Assets.Scripts
 
         private int _seedsToSpawn = 0;
         private MovingSeedUI _seed = null;
+
+        public void Awake()
+        {
+            if (Instance != null)
+            {
+                Debug.LogError("More than one MovingSeedsManager in scene!");
+                return;
+            }
+            Instance = this;
+        }
 
         // Update is called once per frame
         void Update()
