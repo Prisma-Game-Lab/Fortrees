@@ -116,7 +116,6 @@ namespace Assets.Scripts
                 //if (Input.GetKeyDown (KeyCode.LeftArrow)) {
                 if (Input.GetAxis("HorizontalSelection") < -minimumAxisToMove || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    Debug.Log("Horizontal " + Input.GetAxis("HorizontalSelection"));
                     ChangeSelectedNode(Vector3.left);
                     _framesLeftToWait = framesToWait;
                 }
@@ -146,7 +145,6 @@ namespace Assets.Scripts
 
 		void ChangeSelectedNode(Vector3 dir)
         {
-            Debug.Log("Move");
             UIAudioSource.PlayOneShot(SelectionSound);
             dir = NodeDistance * dir;
 			Vector3 temp = _selectPosition + dir; //temp guarda o centro onde a esfera vai buscar por nodes
@@ -165,7 +163,6 @@ namespace Assets.Scripts
                     break;
                 }
 
-                Debug.Log("Skip");
                 //Node não encontrado no vetor, procurando na próxima posição que pode ter um node
                 temp += dir;
 				cast = Physics.OverlapSphere (temp, _radius);
