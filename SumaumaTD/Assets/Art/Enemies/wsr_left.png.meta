@@ -1,0 +1,441 @@
+fileFormatVersion: 2
+guid: f051a6b0769cff44c8b18a5183f711ac
+timeCreated: 1488559811
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: wsr_left_0
+    21300002: wsr_left_1
+    21300004: wsr_left_2
+    21300006: wsr_left_3
+    21300008: wsr_left_4
+    21300010: wsr_left_5
+    21300012: wsr_left_6
+    21300014: wsr_left_7
+    21300016: wsr_left_8
+    21300018: wsr_left_9
+    21300020: wsr_left_10
+    21300022: wsr_left_11
+    21300024: wsr_left_12
+    21300026: wsr_left_13
+    21300028: wsr_left_14
+    21300030: wsr_left_15
+    21300032: wsr_left_16
+    21300034: wsr_left_17
+    21300036: wsr_left_18
+    21300038: wsr_left_19
+    21300040: wsr_left_20
+    21300042: wsr_left_21
+    21300044: wsr_left_22
+    21300046: wsr_left_23
+    21300048: wsr_left_24
+    21300050: wsr_left_25
+    21300052: wsr_left_26
+    21300054: wsr_left_27
+    21300056: wsr_left_28
+    21300058: wsr_left_29
+    21300060: wsr_left_30
+    21300062: wsr_left_31
+    21300064: wsr_left_32
+    21300066: wsr_left_33
+    21300068: wsr_left_34
+    21300070: wsr_left_35
+    21300072: wsr_left_36
+    21300074: wsr_left_37
+    21300076: wsr_left_38
+    21300078: wsr_left_39
+    21300080: wsr_left_40
+    21300082: wsr_left_41
+    21300084: wsr_left_42
+    21300086: wsr_left_43
+    21300088: wsr_left_44
+    21300090: wsr_left_45
+    21300092: wsr_left_46
+    21300094: wsr_left_47
+    21300096: wsr_left_48
+    21300098: wsr_left_49
+    21300100: wsr_left_50
+    21300102: wsr_left_51
+    21300104: wsr_left_52
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wsr_left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 325
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_2
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 269
+        width: 328
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_4
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 269
+        width: 325
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_6
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 270
+        width: 327
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_8
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 271
+        width: 326
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_9
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 271
+        width: 324
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_10
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 271
+        width: 338
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_11
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 270
+        width: 332
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_13
+      rect:
+        serializedVersion: 2
+        x: 2798
+        y: 270
+        width: 327
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_14
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 271
+        width: 328
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_15
+      rect:
+        serializedVersion: 2
+        x: 3478
+        y: 271
+        width: 327
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_17
+      rect:
+        serializedVersion: 2
+        x: 3828
+        y: 271
+        width: 329
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 325
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_28
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 328
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_30
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 0
+        width: 327
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_31
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 0
+        width: 326
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_33
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 0
+        width: 327
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_34
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 0
+        width: 326
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_35
+      rect:
+        serializedVersion: 2
+        x: 2090
+        y: 0
+        width: 326
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_36
+      rect:
+        serializedVersion: 2
+        x: 2445
+        y: 0
+        width: 327
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_38
+      rect:
+        serializedVersion: 2
+        x: 2798
+        y: 0
+        width: 327
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_39
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 0
+        width: 328
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_40
+      rect:
+        serializedVersion: 2
+        x: 3478
+        y: 0
+        width: 327
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wsr_left_42
+      rect:
+        serializedVersion: 2
+        x: 3833
+        y: 0
+        width: 324
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
