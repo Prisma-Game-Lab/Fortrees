@@ -152,7 +152,7 @@ namespace Assets.Scripts
 
             bullet.IsPoisoned = _poisonedBullet;
 
-            if (bullet != null)
+            if (bullet != null && _target != null)
                 bullet.Seek (_target);
         }
 
@@ -235,6 +235,7 @@ namespace Assets.Scripts
         }
 
         private void Slow(){
+            if (_target == null) return;
 			if(Vector3.Distance(transform.position, _target.position) <= Range)
 			{
 				_targetEnemy.Slow(SlowAmount);
@@ -248,6 +249,7 @@ namespace Assets.Scripts
             {
                 _currentSeedGenerationTime = SeedGenerationTime;
                 MovingSeedsManager.AddSeeds(1);
+                Debug.Log("Gerou seed");
             }
         }
          

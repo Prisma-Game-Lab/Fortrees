@@ -105,6 +105,9 @@ namespace Assets.Scripts
                 StartCoroutine(SpawnGroup(group));
                 yield return new WaitForSeconds(group.SecondsToNextGroup);
             }
+
+            while (EnemiesAlive > 0) { yield return new WaitForSeconds(2); }
+
             _waveEnded = true;
         }
 

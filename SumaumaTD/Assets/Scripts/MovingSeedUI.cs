@@ -36,7 +36,6 @@ namespace Assets.Scripts
         {
 			//transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref _currVelocityVec3, 0.1f, 30, Time.deltaTime);
 			Speed = Mathf.SmoothDamp(Speed, 10f, ref _currVelocity, 0.7f);
-			Debug.Log(Speed);	
             transform.Translate(_dir * Speed * Time.deltaTime);
             _positionVec2 = new Vector2(transform.position.x, transform.position.z);
 

@@ -14,6 +14,7 @@ namespace Assets.Scripts
 		private float _poisonDamage;
 		private float _totalPoisonCooldown;
         private float _health;
+        private bool _isDead = false;
         
         [Header("Unity Stuff")]
         public Image HealthBar;
@@ -44,8 +45,13 @@ namespace Assets.Scripts
 
         private void Die()
         {
-            WaveSpawner.EnemiesAlive--;
-            Destroy(gameObject);
+            if (!_isDead)
+            {
+                _isDead = true;
+                WaveSpawner.EnemiesAlive--;
+                Debug.Log(this.GetInstanceID() + " morreu. " + WaveSpawner.EnemiesAlive + " restantes.");
+                Destroy(gameObject);
+            }
         }
 
         public void Slow(float slowFactorPercentage)
