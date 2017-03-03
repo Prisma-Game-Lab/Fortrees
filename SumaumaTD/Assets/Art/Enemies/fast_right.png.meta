@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: 040a616edd57f9247b3a9329f5df8dfe
+timeCreated: 1488564273
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fast_right_0
+    21300002: fast_right_1
+    21300004: fast_right_2
+    21300006: fast_right_4
+    21300008: fast_right_6
+    21300010: fast_right_8
+    21300012: fast_right_10
+    21300014: fast_right_11
+    21300016: fast_right_12
+    21300018: fast_right_13
+    21300020: fast_right_15
+    21300022: fast_right_17
+    21300024: fast_right_18
+    21300026: fast_right_19
+    21300028: fast_right_20
+    21300030: fast_right_22
+    21300032: fast_right_23
+    21300034: fast_right_24
+    21300036: fast_right_26
+    21300038: fast_right_27
+    21300040: fast_right_28
+    21300042: fast_right_29
+    21300044: fast_right_31
+    21300046: fast_right_33
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fast_right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 284
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 250
+        width: 287
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_2
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 250
+        width: 285
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_4
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 250
+        width: 285
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_6
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 250
+        width: 283
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_8
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 250
+        width: 283
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_10
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 248
+        width: 283
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_11
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 248
+        width: 286
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_12
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 248
+        width: 285
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_13
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 250
+        width: 285
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_15
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 250
+        width: 283
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_17
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 250
+        width: 283
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 284
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_19
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 283
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_20
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 0
+        width: 285
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_22
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 0
+        width: 285
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_23
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 0
+        width: 285
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_24
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 0
+        width: 285
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_26
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 0
+        width: 283
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_27
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 0
+        width: 284
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_28
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 0
+        width: 285
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_29
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 0
+        width: 285
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_31
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 0
+        width: 283
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fast_right_33
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 0
+        width: 283
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
