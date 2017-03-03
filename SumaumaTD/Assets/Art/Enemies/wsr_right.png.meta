@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 20f9ebcb34100d941b47d10e46fbc08c
-timeCreated: 1488558560
+timeCreated: 1488561379
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -127,11 +127,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 269
+        y: 271
         width: 329
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -140,24 +140,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 351
-        y: 269
+        y: 272
         width: 328
-        height: 271
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_2
-      rect:
-        serializedVersion: 2
-        x: 694
-        y: 508
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -166,11 +153,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 697
-        y: 269
+        y: 272
         width: 327
-        height: 271
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -179,24 +166,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1032
-        y: 268
+        y: 271
         width: 327
-        height: 272
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_5
-      rect:
-        serializedVersion: 2
-        x: 1382
-        y: 491
-        width: 5
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -205,11 +179,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1385
-        y: 267
+        y: 270
         width: 332
-        height: 273
+        height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -218,11 +192,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1740
-        y: 269
+        y: 271
         width: 336
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -231,11 +205,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2084
-        y: 269
+        y: 272
         width: 326
-        height: 271
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -244,24 +218,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2433
-        y: 269
+        y: 271
         width: 327
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_10
-      rect:
-        serializedVersion: 2
-        x: 2798
-        y: 489
-        width: 6
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -270,24 +231,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2802
-        y: 269
+        y: 272
         width: 327
-        height: 271
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_12
-      rect:
-        serializedVersion: 2
-        x: 3147
-        y: 490
-        width: 5
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -296,24 +244,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3149
-        y: 269
+        y: 271
         width: 327
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_14
-      rect:
-        serializedVersion: 2
-        x: 3488
-        y: 503
-        width: 8
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -322,24 +257,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3489
-        y: 269
+        y: 270
         width: 331
-        height: 271
+        height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_16
-      rect:
-        serializedVersion: 2
-        x: 3829
-        y: 503
-        width: 8
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -347,116 +269,12 @@ TextureImporter:
       name: wsr_right_17
       rect:
         serializedVersion: 2
-        x: 3833
-        y: 269
+        x: 3832
+        y: 271
         width: 324
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_18
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 333
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_19
-      rect:
-        serializedVersion: 2
-        x: 676
-        y: 333
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_20
-      rect:
-        serializedVersion: 2
-        x: 1020
-        y: 331
-        width: 8
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_21
-      rect:
-        serializedVersion: 2
-        x: 1356
-        y: 337
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_22
-      rect:
-        serializedVersion: 2
-        x: 1709
-        y: 331
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_23
-      rect:
-        serializedVersion: 2
-        x: 2064
-        y: 328
-        width: 8
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_24
-      rect:
-        serializedVersion: 2
-        x: 2407
-        y: 331
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_25
-      rect:
-        serializedVersion: 2
-        x: 3126
-        y: 337
-        width: 4
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -467,9 +285,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 326
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -480,22 +298,9 @@ TextureImporter:
         x: 351
         y: 0
         width: 328
-        height: 271
+        height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_28
-      rect:
-        serializedVersion: 2
-        x: 694
-        y: 224
-        width: 4
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -506,9 +311,9 @@ TextureImporter:
         x: 697
         y: 0
         width: 327
-        height: 273
+        height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -519,22 +324,9 @@ TextureImporter:
         x: 1032
         y: 0
         width: 327
-        height: 273
+        height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_31
-      rect:
-        serializedVersion: 2
-        x: 1382
-        y: 235
-        width: 5
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -545,9 +337,9 @@ TextureImporter:
         x: 1385
         y: 0
         width: 327
-        height: 271
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -558,9 +350,9 @@ TextureImporter:
         x: 1741
         y: 0
         width: 326
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -571,9 +363,9 @@ TextureImporter:
         x: 2084
         y: 0
         width: 326
-        height: 273
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -584,22 +376,9 @@ TextureImporter:
         x: 2433
         y: 0
         width: 328
-        height: 273
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_36
-      rect:
-        serializedVersion: 2
-        x: 2798
-        y: 234
-        width: 6
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -610,9 +389,9 @@ TextureImporter:
         x: 2800
         y: 0
         width: 327
-        height: 273
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -623,22 +402,9 @@ TextureImporter:
         x: 3149
         y: 0
         width: 325
-        height: 271
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_39
-      rect:
-        serializedVersion: 2
-        x: 3488
-        y: 219
-        width: 8
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -649,22 +415,9 @@ TextureImporter:
         x: 3492
         y: 0
         width: 328
-        height: 271
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_41
-      rect:
-        serializedVersion: 2
-        x: 3829
-        y: 219
-        width: 7
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -675,139 +428,9 @@ TextureImporter:
         x: 3833
         y: 0
         width: 324
-        height: 273
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_43
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 64
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_44
-      rect:
-        serializedVersion: 2
-        x: 676
-        y: 64
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_45
-      rect:
-        serializedVersion: 2
-        x: 1020
-        y: 62
-        width: 8
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_46
-      rect:
-        serializedVersion: 2
-        x: 1356
-        y: 66
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_47
-      rect:
-        serializedVersion: 2
-        x: 1710
-        y: 62
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_48
-      rect:
-        serializedVersion: 2
-        x: 2064
-        y: 59
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_49
-      rect:
-        serializedVersion: 2
-        x: 2406
-        y: 60
-        width: 8
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_50
-      rect:
-        serializedVersion: 2
-        x: 3125
-        y: 63
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_51
-      rect:
-        serializedVersion: 2
-        x: 2795
-        y: 0
-        width: 28
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: wsr_right_52
-      rect:
-        serializedVersion: 2
-        x: 3120
-        y: 0
-        width: 28
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
