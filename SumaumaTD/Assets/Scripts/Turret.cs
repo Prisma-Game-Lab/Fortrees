@@ -11,7 +11,7 @@ namespace Assets.Scripts
         private static int _nextAttackAudio = 0; //usada para intercalar os sons de ataque
         private SurroundingExplorer _surroundings;
         private bool _poisonedBullet;
-        private float _currentSeedGenerationTime = 0f;
+        private float _currentSeedGenerationTime ;
 
         [Header("General")]
         public float Range = 15f;
@@ -21,7 +21,8 @@ namespace Assets.Scripts
         [Tooltip("Time in seconds to generate a single seed")]
 		public float SeedGenerationTime= 30f;
         public GameObject SeedGenerationPrefab;
-        
+		private GameObject _seedGenerationeffect;
+
         [Header("Unity Setup Fields")]
         public Animator SpriteAnimator;
         public AudioSource SoundSource;
@@ -59,11 +60,13 @@ namespace Assets.Scripts
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
             SpriteAnimator = GetComponent<Animator>();
             _surroundings = new SurroundingExplorer();
+			_currentSeedGenerationTime = SeedGenerationTime;
         }
         
         public void Update()
         {
-            _surroundings.GetSurroundings(1, this);
+			_surroundings.GetSurroundings(1, this);
+			ActivateAbility();
 
             if (!UseRangeDamage)
             {
@@ -86,7 +89,6 @@ namespace Assets.Scripts
                 RangeDamage();
                 
 
-			ActivateAbility();
         }
 
         private void RangeDamage()
@@ -245,17 +247,29 @@ namespace Assets.Scripts
 
         private void GenerateSeed()
         {
+			if (!GameManager.GameStarted)
+				return;
             _currentSeedGenerationTime -= Time.deltaTime;
-            if (_currentSeedGenerationTime <= 0f)
+			if (Mathf.Floor(_currentSeedGenerationTime) == Mathf.Floor(SeedGenerationTime/4)) {
+				if (_seedGenerationeffect == null) {
+					InstantiateSeedGenerationEffect ();
+				}
+			}
+            else if (_currentSeedGenerationTime <= 0f)
             {
                 _currentSeedGenerationTime = SeedGenerationTime;
+				Destroy(_seedGenerationeffect);
                 MovingSeedsManager.AddSeeds(1);
-                GameObject effect =
-                    (GameObject)Instantiate(SeedGenerationPrefab, transform.position, Quaternion.identity);
-                Destroy(effect, SeedGenerationTime);
             }
         }
          
+		private void InstantiateSeedGenerationEffect(){
+			var newpos = transform.position;
+			newpos.y += 3.5f;
+			_seedGenerationeffect =
+				(GameObject)Instantiate(SeedGenerationPrefab, newpos, Quaternion.identity);
+		}
+
         private void Poison(){
 			_poisonedBullet = true;
 		}

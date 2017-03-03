@@ -52,7 +52,6 @@ namespace Assets.Scripts
             {
                 _isDead = true;
                 WaveSpawner.EnemiesAlive--;
-                Debug.Log(this.GetInstanceID() + " morreu. " + WaveSpawner.EnemiesAlive + " restantes.");
                 Destroy(gameObject);
             }
         }
