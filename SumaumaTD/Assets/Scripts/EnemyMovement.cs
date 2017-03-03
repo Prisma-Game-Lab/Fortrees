@@ -11,11 +11,11 @@ namespace Assets.Scripts
         private int _wavepointIndex = 0;
 
         //I'm using the same method in the "EndUI" script
-        public Sprite EnemySpriteRight;
-        public Sprite EnemySpriteLeft;
-        public Sprite EnemySpriteUp;
-        public Sprite EnemySpriteDown;
-        public GameObject EnemySpriteGameObject;
+        public string EnemyRight = "Right";
+		public string EnemyLeft = "Left";
+		public string EnemyUp = "Down";
+		public string EnemyDown = "Down";
+        public Animator EnemyAnimator;
 
         private Enemy _enemy;
         private EnemySound _sound;
@@ -39,25 +39,25 @@ namespace Assets.Scripts
                 //TODO: remover ands depois do txt ficar pronto
                 if (_target.position.x >= transform.position.x && _target.position.x - transform.position.x > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteRight;
+					EnemyAnimator.Play(EnemyRight);
                     //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " RIGHT");
                 }
 
                 else if (_target.position.x < transform.position.x && transform.position.x - _target.position.x > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteLeft;
+					EnemyAnimator.Play(EnemyLeft);
                     //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " LEFT");
                 }
 
                 else if (_target.position.z >= transform.position.z && _target.position.z - transform.position.z > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteUp;
+					EnemyAnimator.Play(EnemyUp);
                     //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " UP");
                 }
 
                 else if (_target.position.z < transform.position.z && transform.position.z - _target.position.z > 0.2f)
                 {
-                    EnemySpriteGameObject.GetComponent<SpriteRenderer>().sprite = EnemySpriteDown;
+					EnemyAnimator.Play(EnemyDown);
                     //Debug.Log("Target: " + _target.position + " Transform: " + transform.position + " DOWN");
                 }
             }
