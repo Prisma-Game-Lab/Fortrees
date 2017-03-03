@@ -6,6 +6,7 @@ namespace Assets.Scripts
 	public class NodeSelect : MonoBehaviour {
 
 		public Node StartNode;
+        public int MaxDistance = 5;
 		public float NodeSize;
         [Tooltip("Espaço entre os centros dos nodes")] public float NodeDistance = 4f;
         public GameObject TurretUI;
@@ -97,7 +98,7 @@ namespace Assets.Scripts
 
                 if (Input.GetAxis("CloseMenuButton") != 0.0)
                 {
-                    _buildCanvas.SetActive(false);
+                    _turretUIScript.Hide();//_buildCanvas.SetActive(false);
                     _framesLeftToWait = framesToWait;
                 }
                 
@@ -145,6 +146,7 @@ namespace Assets.Scripts
 
 		void ChangeSelectedNode(Vector3 dir)
         {
+            int currentDistance = 0;
             UIAudioSource.PlayOneShot(SelectionSound);
             dir = NodeDistance * dir;
 			Vector3 temp = _selectPosition + dir; //temp guarda o centro onde a esfera vai buscar por nodes
@@ -164,9 +166,10 @@ namespace Assets.Scripts
                 }
 
                 //Node não encontrado no vetor, procurando na próxima posição que pode ter um node
+                currentDistance++;
                 temp += dir;
 				cast = Physics.OverlapSphere (temp, _radius);
-                if (cast.Length < 1)
+                if (cast.Length < 1 || currentDistance >= MaxDistance)
 					return;
 			}
             

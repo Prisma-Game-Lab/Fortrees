@@ -15,7 +15,10 @@ namespace Assets.Scripts
 		private float _totalPoisonCooldown;
         private float _health;
         private bool _isDead = false;
-        
+
+        [Header("Poison")]
+        public GameObject PoisonEffect;
+
         [Header("Unity Stuff")]
         public Image HealthBar;
 
@@ -67,7 +70,10 @@ namespace Assets.Scripts
             if (_currentPoisonCooldown <= 0f)
             {
                 _currentPoisonCooldown = _totalPoisonCooldown;
-                Debug.Log("POISON");
+                GameObject effect =
+                    (GameObject)Instantiate(PoisonEffect, transform);
+                effect.transform.position = transform.position;
+                Destroy(effect, _totalPoisonCooldown);
                 TakeDamage(_poisonDamage);
 
             }

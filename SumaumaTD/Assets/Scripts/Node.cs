@@ -69,7 +69,7 @@ namespace Assets.Scripts
         public void OnMouseExit()
         {
             //Remove o círculo de range
-            if (_activeRangeCircle != null) Destroy(_activeRangeCircle);
+            DestroyRangeCircle();
 
             if (_highlight != null) Destroy(_highlight);
         }
@@ -95,9 +95,14 @@ namespace Assets.Scripts
             }
         }
 
-        public void ShowRangeCircle(GameObject turret)
+        public void DestroyRangeCircle()
         {
             if (_activeRangeCircle != null) Destroy(_activeRangeCircle);
+        }
+
+        public void ShowRangeCircle(GameObject turret)
+        {
+            DestroyRangeCircle();
 
             float range = turret.GetComponent<Turret>().Range;
 

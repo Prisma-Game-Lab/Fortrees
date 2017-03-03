@@ -20,6 +20,7 @@ namespace Assets.Scripts
 		public float SlowAmount = 0.2f;
         [Tooltip("Time in seconds to generate a single seed")]
 		public float SeedGenerationTime= 30f;
+        public GameObject SeedGenerationPrefab;
         
         [Header("Unity Setup Fields")]
         public Animator SpriteAnimator;
@@ -249,7 +250,9 @@ namespace Assets.Scripts
             {
                 _currentSeedGenerationTime = SeedGenerationTime;
                 MovingSeedsManager.AddSeeds(1);
-                Debug.Log("Gerou seed");
+                GameObject effect =
+                    (GameObject)Instantiate(SeedGenerationPrefab, transform.position, Quaternion.identity);
+                Destroy(effect, SeedGenerationTime);
             }
         }
          

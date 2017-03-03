@@ -53,12 +53,14 @@ namespace Assets.Scripts
             transform.position = _target.GetBuildPosition;
             UpdateUI.SetActive(false);
             BuildUI.SetActive(true);
+            Select(0);
         }
 
         public void Hide()
         {
             UpdateUI.SetActive(false);
             BuildUI.SetActive(false);
+            _target.DestroyRangeCircle();
         }
 
         public void Upgrade()
