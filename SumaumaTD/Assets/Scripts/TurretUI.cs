@@ -84,6 +84,7 @@ namespace Assets.Scripts
                     IpeButtonImage.localScale = _defaultScale;
                     AraucariaButtonImage.localScale = _defaultScale;
                     JaqueiraButtonImage.localScale = _resizedScale;
+                    _target.ShowRangeCircle(TurretShop.AnotherTurretBlueprint.Prefab);
                     break;
                 case 1:
                     BuildCost.text = TurretShop.StandardTurretBlueprint.Cost.ToString();
@@ -91,6 +92,7 @@ namespace Assets.Scripts
                     IpeButtonImage.localScale = _resizedScale;
                     AraucariaButtonImage.localScale = _defaultScale;
                     JaqueiraButtonImage.localScale = _defaultScale;
+                    _target.ShowRangeCircle(TurretShop.StandardTurretBlueprint.Prefab);
 
                     break;
                 case 2:
@@ -99,6 +101,7 @@ namespace Assets.Scripts
                     IpeButtonImage.localScale = _defaultScale;
                     AraucariaButtonImage.localScale = _resizedScale;
                     JaqueiraButtonImage.localScale = _defaultScale;
+                    _target.ShowRangeCircle(TurretShop.MoreTurretBlueprint.Prefab);
 
                     break;
                 default:

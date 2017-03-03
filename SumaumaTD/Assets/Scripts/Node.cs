@@ -95,23 +95,30 @@ namespace Assets.Scripts
             }
         }
 
+        public void ShowRangeCircle(GameObject turret)
+        {
+            if (_activeRangeCircle != null) Destroy(_activeRangeCircle);
+
+            float range = turret.GetComponent<Turret>().Range;
+
+            //Habilita o círculo de Range
+            _activeRangeCircle = (GameObject)Instantiate(_nodeSelect.RangeCircle, transform);
+
+            //Ajusta o tamanho http://answers.unity3d.com/questions/139199/scale-object-to-certain-length.html
+            float currentSize = _activeRangeCircle.GetComponent<Collider>().bounds.size.z;
+            float newScale = range / currentSize;
+            _activeRangeCircle.transform.localScale = new Vector3(newScale, newScale, newScale);
+
+            //Ajusta a posição (+ alguns ajustes no tamanho)
+            _activeRangeCircle.transform.position = transform.position;
+            _activeRangeCircle.transform.localScale *= _nodeSelect.RangeFixAjustment;
+        }
+
         private void ShowRangeCircle()
         {
             if (Turret != null && _activeRangeCircle == null)
             {
-                float range = Turret.GetComponent<Turret>().Range;
-
-                //Habilita o círculo de Range
-                _activeRangeCircle = (GameObject) Instantiate(_nodeSelect.RangeCircle, transform);
-
-                //Ajusta o tamanho http://answers.unity3d.com/questions/139199/scale-object-to-certain-length.html
-                float currentSize = _activeRangeCircle.GetComponent<Collider>().bounds.size.z;
-                float newScale = range/currentSize;
-                _activeRangeCircle.transform.localScale = new Vector3(newScale, newScale, newScale);
-
-                //Ajusta a posição (+ alguns ajustes no tamanho)
-                _activeRangeCircle.transform.position = transform.position;
-                _activeRangeCircle.transform.localScale *= _nodeSelect.RangeFixAjustment;
+                ShowRangeCircle(Turret);
             }
         }
 
