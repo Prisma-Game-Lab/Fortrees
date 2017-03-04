@@ -24,7 +24,7 @@ namespace Assets.Scripts
 		private Wave[] _waves;
         private float _countdown = 2f;
         private int _waveNumber = 0;
-        private bool _seedsEarned = true;
+        private bool _countdownReseted = true;
         private float _countdownReset = 2f; // used to fill the bar
         private bool _waveEnded = true;
 
@@ -47,8 +47,10 @@ namespace Assets.Scripts
 
         // Update is called once per frame
         public void Update () {
-            if(!GameManager.GameStarted)
+
+            if (!GameManager.GameStarted)
                 return;
+
             if (EnemiesAlive > 0 || _waveEnded == false)
             {
                 return;
@@ -58,37 +60,47 @@ namespace Assets.Scripts
                 StartCoroutine(SpawnWave());
                 _countdown = TimeBetweenWaves;
                 _countdownReset = _countdown;
-                _seedsEarned = false;
+                _countdownReseted = false;
                 return;
             }
 
-            EarnSeeds();
+            CheckIfWaveEnded();
 
             _countdown -= Time.deltaTime;
-
             _countdown = Mathf.Clamp(_countdown, 0f, Mathf.Infinity);
-
             WaveCountdownText.text = string.Format("{0:00.00}", _countdown);
-
             WaveCountdownBar.fillAmount = _countdown / _countdownReset;
 
         }
 
-        private void EarnSeeds()
+        private void CheckIfWaveEnded()
         {
-            if(_seedsEarned)
+            if (_countdownReseted)
                 return;
-            //TODO VER PQ SEEDS
-            SeedsManager.AddSeeds(_waves[_waveNumber].SeedsEarned);  //TODO: diminuir de acordo com quantos inimigos chegaram na base?
-            _seedsEarned = true;
 
+            if(!CheckIfLevelWin())
+                EarnSeeds();
+
+            _countdownReseted = true;
+        }
+
+        private bool CheckIfLevelWin()
+        {
             _waveNumber++;
 
             if (_waveNumber == _waves.Length)
             {
                 GameManager.WinLevel();
                 this.enabled = false;
+                return true;
             }
+
+            return false;
+        }
+
+        private void EarnSeeds()
+        {
+            SeedsManager.AddSeeds(_waves[_waveNumber -1].SeedsEarned);  //TODO: diminuir de acordo com quantos inimigos chegaram na base?
         }
 
         //Chamada no começo da wave

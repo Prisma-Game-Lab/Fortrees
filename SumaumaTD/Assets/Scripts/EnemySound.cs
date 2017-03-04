@@ -37,7 +37,7 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (EnemyLoopSound != null)
+            if (EnemyLoopSound != null && !GameManager.GameIsOver)
             {
                 //Checa se o áudio do loop já terminou e, se já tiver, reinicia ele
                 if (_timeLeftToPlayAgain <= 0 && !_enemyReachedEnd)
