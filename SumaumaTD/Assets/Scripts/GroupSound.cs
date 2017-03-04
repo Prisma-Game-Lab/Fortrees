@@ -42,8 +42,6 @@ public class GroupSound {
     {
         _audioVsQnt[audio]--;
 
-        Debug.Log("Enemies with " + audio + " left: " + _audioVsQnt[audio]);
-
         if(_audioVsQnt[audio] == 0) {
             StopAudio(audio);
         }

@@ -238,11 +238,18 @@ namespace Assets.Scripts
         }
 
         private void Slow(){
+            /* OLD
             if (_target == null) return;
+
 			if(Vector3.Distance(transform.position, _target.position) <= Range)
 			{
 				_targetEnemy.Slow(SlowAmount);
-			}
+			} */
+
+            foreach(Enemy e in _enemiesOnRange)
+            {
+                e.Slow(SlowAmount);
+            }
 		}
 
         private void GenerateSeed()
