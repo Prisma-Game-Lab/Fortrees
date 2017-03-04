@@ -9,17 +9,16 @@ namespace Assets.Scripts
         public bool Bonus = false;
         public BonusTypeEnum BonusType;
 
-        private const float NodeSize = 6.5f;
+        private const float NodeSize = 5.5f;
 
         public void GetSurroundings(int radius, Turret turret)
         {
             var newRad = radius*NodeSize;
             var selfTag = turret.gameObject.tag;
             var temp = turret.transform.position;
-            var radiusVector = Vector3.one*newRad;
 
-            var cast = Physics.OverlapBox(temp, radiusVector);
-
+            var cast = Physics.OverlapSphere(temp, newRad);
+            
             var activateBonus = cast.Count(c => c.tag == selfTag);
 
             if (activateBonus < 2) return;
@@ -47,16 +46,16 @@ namespace Assets.Scripts
         public enum BonusTypeEnum
         {
             Araucaria,
-            //normal: dano na range (implementar)             //prioridade 1 (maior)
-            //bonus: slow (azul - tipo congelado? )
+            //normal: dano na range 
+            //bonus: slow (não tem efeito ainda)
 
             Ipe,
             //normal: atira normalmente
-            //bonus: gera uma seed a cada tantos segundos (1 seed - 30 s estipulado) (light)
+            //bonus: gera uma seed a cada tantos segundos (1 seed - 30 s estipulado) 
 
             Jaqueira
             //normal: jaqueira explode 
-            //bonus: inimigo leva dano continuo (poison) (vermelho piscando)
+            //bonus: inimigo leva dano continuo (poison) (effect: maquina soltando faisca)
         }
 
     }
