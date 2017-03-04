@@ -8,6 +8,7 @@ namespace Assets.Scripts
         public GameObject CompleteLevelUi;
         public GameObject PressStartUi;
         public GameObject WaveManager;
+        public GroupSound GroupSound;
         public static bool GameIsOver;
         [HideInInspector]
         public static bool GameStarted;
@@ -19,8 +20,9 @@ namespace Assets.Scripts
             PressStartUi.SetActive(true);
             #if DEBUG
             Debug.Assert(WaveManager != null, "Scene precisa de WaveManager seu mongol");
-            #endif
+#endif
 
+            if (GroupSound.AudioSources[2] == null) Debug.LogError("Necessário setar audio sources dos inimigos (estão na câmera)");
         }
 
         public void Update ()

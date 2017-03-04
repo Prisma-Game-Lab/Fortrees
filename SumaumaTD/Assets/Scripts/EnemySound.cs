@@ -16,6 +16,8 @@ namespace Assets.Scripts
         [Tooltip("Som que toca quando o inimigo atinge a Sumauma")]
         public AudioClip EnemyDoesDamageSound;
         public float EnemyDoesDamageSoundVolume = 2;
+        public AudioClip EnemyDiedSound;
+        public float EnemyDiedSoundVolume = 1;
 
         private AudioSource _audioSource;
         private float _enemyLoopSoundLength;
@@ -30,10 +32,15 @@ namespace Assets.Scripts
             if (EnemyLoopSound != null)
             {
                 _enemyLoopSoundLength = EnemyLoopSound.length;
-                _audioSource.PlayOneShot(EnemyEntranceSound, EnemyEntranceSoundVolume);
             }
+
+            if(EnemyEntranceSound != null)
+                _audioSource.PlayOneShot(EnemyEntranceSound, EnemyEntranceSoundVolume);
+
+            GroupSound.GetInstance.EnemyEnter(EnemyLoopSound);
         }
 
+        /*
         // Update is called once per frame
         void Update()
         {
@@ -49,13 +56,23 @@ namespace Assets.Scripts
                 _timeLeftToPlayAgain -= Time.deltaTime;
             }
         }
+        */
 
         public void EnemyReachedEnd()
         {
             _enemyReachedEnd = true;
+            GroupSound.GetInstance.EnemyLeft(EnemyLoopSound);
 
             //Plays the last sound at the enemies position
             if (EnemyDoesDamageSound != null) AudioSource.PlayClipAtPoint(EnemyDoesDamageSound, transform.position, EnemyDoesDamageSoundVolume);
+        }
+
+        public void EnemyDied()
+        {
+            GroupSound.GetInstance.EnemyLeft(EnemyLoopSound);
+
+            if(EnemyDiedSound != null)
+                AudioSource.PlayClipAtPoint(EnemyDiedSound, transform.position, EnemyDiedSoundVolume);
         }
     }
 }

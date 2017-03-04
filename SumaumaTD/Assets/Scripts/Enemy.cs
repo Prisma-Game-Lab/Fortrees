@@ -21,6 +21,7 @@ namespace Assets.Scripts
 
         [Header("Unity Stuff")]
         public Image HealthBar;
+        public EnemySound sound;
 
         private bool IsPoisoned
         {
@@ -50,6 +51,7 @@ namespace Assets.Scripts
         {
             if (!_isDead)
             {
+                sound.EnemyDied();
                 _isDead = true;
                 WaveSpawner.EnemiesAlive--;
                 Destroy(gameObject);
