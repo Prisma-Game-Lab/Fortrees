@@ -64,15 +64,17 @@ namespace Assets.Scripts
             GroupSound.GetInstance.EnemyLeft(EnemyLoopSound);
 
             //Plays the last sound at the enemies position
-            if (EnemyDoesDamageSound != null) AudioSource.PlayClipAtPoint(EnemyDoesDamageSound, transform.position, EnemyDoesDamageSoundVolume);
+            if (EnemyDoesDamageSound != null) AudioSource.PlayClipAtPoint(EnemyDoesDamageSound, Camera.current.transform.position, EnemyDoesDamageSoundVolume);
         }
 
         public void EnemyDied()
         {
             GroupSound.GetInstance.EnemyLeft(EnemyLoopSound);
 
-            if(EnemyDiedSound != null)
-                AudioSource.PlayClipAtPoint(EnemyDiedSound, transform.position, EnemyDiedSoundVolume);
+            if (EnemyDiedSound != null)
+            {
+                AudioSource.PlayClipAtPoint(EnemyDiedSound, Camera.current.transform.position, EnemyDiedSoundVolume);
+            }
         }
     }
 }
