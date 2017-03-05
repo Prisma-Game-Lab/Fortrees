@@ -17,7 +17,7 @@ namespace Assets.Scripts
         public float Range = 15f;
 
 		[Header("Bonus Specs")]
-		public float SlowAmount = 0.2f;
+		[Range(0,1)] public float SlowAmount = 0.2f;
         [Tooltip("Time in seconds to generate a single seed")]
 		public float SeedGenerationTime= 30f;
         public GameObject SeedGenerationPrefab;
