@@ -6,21 +6,16 @@ namespace Assets.Scripts
 {
     public class RoundsSurvived : MonoBehaviour
     {
-
-        //public Text WavesSurvivedText;
 		public GameObject WaveCountImages;
 
-        public void OnEnable()
+        public void Update()
         {
 			int counter ;
-			//WavesSurvivedText.text = PlayerStats.Waves + "/" + WaveSpawner.NumberOfWaves + " waves";
-
 			var wavecount =WaveCountImages.transform.childCount;
 			for (counter = 0; counter < PlayerStats.Waves; counter++)
 				SetImageAlpha(counter, true);
 			for(; counter < wavecount; counter++)
                 SetImageAlpha(counter, false);
-
         }
 
         private void SetImageAlpha(int counter, bool visible)
