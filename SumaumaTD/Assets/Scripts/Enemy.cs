@@ -73,7 +73,9 @@ namespace Assets.Scripts
                 _currentPoisonCooldown = _totalPoisonCooldown;
                 GameObject effect =
                     (GameObject)Instantiate(PoisonEffect, transform);
-                effect.transform.position = transform.position;
+                var temp = transform.position;
+                temp.y += 2f;
+                effect.transform.position = temp;
                 Destroy(effect, _totalPoisonCooldown);
                 TakeDamage(_poisonDamage);
 
