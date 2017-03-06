@@ -47,7 +47,7 @@ namespace Assets.Scripts
 				RaycastHit rayHit;
 				Physics.Raycast(cameraRay, out rayHit, 10000f);
 
-				Instantiate(ClickParticleEffectPrefab,new Vector3 (rayHit.point.x,rayHit.point.y,rayHit.point.z), Quaternion.identity);
+				if(ClickParticleEffectPrefab != null) Instantiate(ClickParticleEffectPrefab,new Vector3 (rayHit.point.x,rayHit.point.y,rayHit.point.z), Quaternion.identity);
 			}
 
 		}
