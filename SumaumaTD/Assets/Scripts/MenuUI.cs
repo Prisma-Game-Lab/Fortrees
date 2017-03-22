@@ -20,6 +20,7 @@ namespace Assets.Scripts
 
         public void StartGame()
         {
+            PlayerStats.PlantedTrees = 0;
             SceneManager.LoadScene(LevelToLoad);
         }
 

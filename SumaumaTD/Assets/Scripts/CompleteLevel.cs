@@ -18,11 +18,13 @@ namespace Assets.Scripts
 
         public void Continue()
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(NextLevelSceneIndex);
         }
 
         public void Menu()
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(MenuSceneIndex);
         }
     }
